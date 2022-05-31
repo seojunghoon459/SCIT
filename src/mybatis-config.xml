@@ -6,8 +6,15 @@
 	<properties resource="db.properties" />
 
 	<!-- Java Class에 대한 alias 지정 -->
-
-	
+	<typeAliases>
+		<typeAlias type="MC.VO.DessertVO" alias="DessertVO" />
+		<typeAlias type="MC.VO.DrinkVO" alias="DrinkVO" />
+		<typeAlias type="MC.VO.HamburgerVO" alias="HamburgerVO" />
+		<typeAlias type="MC.VO.KioskVO" alias="KioskVO" />
+		<typeAlias type="MC.VO.SauceVO" alias="SauceVO" />
+		<typeAlias type="MC.VO.SnacksAndSideVO"
+			alias="SnacksAndSideVO" />
+	</typeAliases>
 	<!-- DB접속 정보 셋팅 -->
 	<environments default="development">
 		<environment id="development">
@@ -20,9 +27,9 @@
 			</dataSource>
 		</environment>
 	</environments>
-	
+
 	<mappers>
 		<mapper resource="MCMapper.xml" />
 	</mappers>
-	
+
 </configuration>

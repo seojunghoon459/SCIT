@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
@@ -16,7 +17,7 @@ public class MCDAO {
 
 	// 세트만들기
 	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
-
+		
 		return null;
 	}
 
@@ -71,42 +72,83 @@ public class MCDAO {
 	}
 
 	public SnacksAndSideVO SearchSnacksAndSide(String str) {
-
-		return null;
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		SnacksAndSideVO result = mapper.SearchSnacksAndSide(str);
+		return result;
 	}
 
 	public List<HamburgerVO> getHamburger() {
-
-		return null;
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<HamburgerVO> result = mapper.getHamburger();
+		return result;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
-
-		return null;
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<SnacksAndSideVO> result = mapper.getLSnaksandSides();
+		return result;
 	}
 
 	public List<SnacksAndSideVO> getLSnaksandSides() {
-
-		return null;
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<SnacksAndSideVO> result = mapper.getMSnaksandSides();
+		return result;
 	}
 
-	public List<SnacksAndSideVO> getSDrink() {
-
-		return null;
+	public List<DrinkVO> getSDrink() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<DrinkVO> result = mapper.getSDrink();
+		return result;
 	}
 
-	public List<SnacksAndSideVO> getMDrink() {
-
-		return null;
+	public List<DrinkVO> getMDrink() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<DrinkVO> result = mapper.getSDrink();
+		return result;
 	}
 
-	public List<SnacksAndSideVO> getLDrink() {
-
-		return null;
+	public List<DrinkVO> getLDrink() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<DrinkVO> result = mapper.getSDrink();
+		return result;
 	}
 
-	public List<SnacksAndSideVO> getSauce() {
-
-		return null;
+	public List<SauceVO> getSauce() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<SauceVO> result = mapper.getSauce();
+		return result;
+	}
+	
+	public List<DessertVO> getDessert() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<DessertVO> result = mapper.getDessert();
+		return result;
 	}
 }

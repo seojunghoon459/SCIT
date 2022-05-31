@@ -5,6 +5,7 @@ import java.util.List;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
@@ -38,11 +39,14 @@ public interface MCMapper {
 
 	public List<SnacksAndSideVO> getLSnaksandSides();
 
-	public List<SnacksAndSideVO> getSDrink();
+	public List<DrinkVO> getSDrink();
 
-	public List<SnacksAndSideVO> getMDrink();
+	public List<DrinkVO> getMDrink();
 
-	public List<SnacksAndSideVO> getLDrink();
+	public List<DrinkVO> getLDrink();
 
-	public List<SnacksAndSideVO> getSauce();
+	public List<SauceVO> getSauce();
+	
+	public List<DessertVO> getDessert();
+
 }

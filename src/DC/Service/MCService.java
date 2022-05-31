@@ -5,6 +5,7 @@ import java.util.List;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
@@ -80,20 +81,23 @@ public class MCService {
 		return null;
 	}
 
-	public List<SnacksAndSideVO> getSDrink() {
+	public List<DrinkVO> getSDrink() {
 		return null;
 	}
 
-	public List<SnacksAndSideVO> getMDrink() {
+	public List<DrinkVO> getMDrink() {
 		return null;
 	}
 
-	public List<SnacksAndSideVO> getLDrink() {
+	public List<DrinkVO> getLDrink() {
 		return null;
 	}
 
-	public List<SnacksAndSideVO> getSauce() {
+	public List<SauceVO> getSauce() {
 		return null;
 	}
 
+	public List<DessertVO> getDessert() {
+		return null;
+	}
 }

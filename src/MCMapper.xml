@@ -5,4 +5,150 @@
 
 <mapper namespace="MC.Dao.MCMapper.java"> 
 
+
+
+
+
+<!--/////////////////////////////////////////검색/////////////////////////////////////-->
+<!-- 디저트 -->
+<select id="SearchDDessert" resultType="DessertVO" parameterType="String">
+select
+	*
+from
+	dessert
+where
+	dessert_name like '%' ||#{dessert_name}|| '%'
+order by
+	dessert_name
+</select>
+
+<!-- 음료 -->
+<select id="SearchDrink" resultType="DrinkVO" parameterType="String">
+select
+	*
+from
+	drink
+where
+	drink_name like '%' ||#{drink_name}|| '%'
+order by
+	drink_name
+</select>
+
+<!-- 햄버거 -->
+<select id="SearchHamburger" resultType="HamburgerVO" parameterType="String">
+select
+	*
+from
+	hamburger
+where
+	hamburger_name like '%' ||#{hamburger_name}|| '%'
+order by
+	hamburger_name
+</select>
+
+<!-- 스낵앤사이드 -->
+<select id="SearchSnacksAndSide" resultType="SnacksAndSideVO" parameterType="String">
+select
+	*
+from
+	snacksandside
+where
+	snacksandside_name like '%' ||#{snacksandside_name}|| '%'
+order by
+	snacksandside_name
+</select>
+
+
+<!--/////////////////////////////////////////조회/////////////////////////////////////-->
+<!-- 햄버거 -->
+<select id="getHamburger" resultType="HamburgerVO">
+select
+	*
+from
+	hamburger
+order by
+	hamburger_name
+</select>
+
+<!-- 스낵앤사이드 -->
+<select id="getMSnaksandSides" resultType="SnacksAndSideVO">
+select
+	*
+from
+	snacksandside
+where
+	ssize = 2
+order by
+	snacksandside_name
+</select>
+
+
+<select id="getLSnaksandSides" resultType="SnacksAndSideVO">
+select
+	*
+from
+	snacksandside
+where
+	ssize = 3
+order by
+	snacksandside_name
+</select>
+
+
+<!-- 음료 -->
+<select id="getSDrink" resultType="DrinkVO">
+select
+	*
+from
+	drink
+where
+	ssize = 1
+order by
+	drink_name
+</select>
+
+
+<select id="getMDrink" resultType="DrinkVO">
+select
+	*
+from
+	drink
+where
+	ssize = 2
+order by
+	drink_name
+</select>
+
+
+<select id="getLDrink" resultType="DrinkVO">
+select
+	*
+from
+	drink
+where
+	ssize = 3
+order by
+	drink_name
+</select>
+
+
+<!-- 소스 -->
+<select id="getSauce" resultType="SauceVO">
+select
+	*
+from
+	sauce
+order by
+	sauce_name
+</select>
+
+<!-- 디저트 -->
+<select id="getDessert" resultType="DessertVO">
+select
+	*
+from
+	dessert
+order by
+	dessert_name
+</select>
 </mapper>
