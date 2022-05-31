@@ -57,9 +57,19 @@ public class MCService {
 	public SnacksAndSideVO SearchSnacksAndSideVO(String str) {
 		return null;
 	}
-
-	public List<HamburgerVO> getHamburgerVO() {
+	
+	public HamburgerVO pickHamburge() {
+		
+		
+		
 		return null;
+	}
+
+	public List<HamburgerVO> getHamburger() {
+		List<HamburgerVO> hlist = dao.getHamburger
+		
+		
+		return hlist;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {

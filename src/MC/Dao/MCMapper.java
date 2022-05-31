@@ -30,9 +30,9 @@ public interface MCMapper {
 
 	public HamburgerVO SearchHamburger(String str);
 
-	public SnacksAndSideVO SearchSnacksAndSideVO(String str);
+	public SnacksAndSideVO SearchSnacksAndSide(String str);
 
-	public List<HamburgerVO> getHamburgerVO();
+	public List<HamburgerVO> getHamburger();
 
 	public List<SnacksAndSideVO> getMSnaksandSides();
 
