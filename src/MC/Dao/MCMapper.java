@@ -39,6 +39,10 @@ public interface MCMapper {
 
 	public List<SnacksAndSideVO> getLSnaksandSides();
 
+	public List<SnacksAndSideVO> getSnaksandSides();
+
+	public List<DrinkVO> getDrink();
+
 	public List<DrinkVO> getSDrink();
 
 	public List<DrinkVO> getMDrink();

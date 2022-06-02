@@ -63,7 +63,8 @@
 		*
 		FROM
 		hamburger
-		ORDER BY
+		ORDER
+		BY
 		hamburger_name
 	</select>
 
@@ -89,13 +90,25 @@
 		snacksandside_name
 	</select>
 
+	<select id="getSnaksandSides" resultType="SnacksAndSideVO">
+		SELECT
+		*
+		FROM
+		snacksandside
+		WHERE
+		price != 0
+		ORDER BY
+		snacksandside_name
+	</select>
+
 	<select id="getSDrink" resultType="DrinkVO">
 		SELECT
 		*
 		FROM
 		drink
 		WHERE
-		ssize = 1 and price != 0
+		ssize = 1
+		and price != 0
 		ORDER BY
 		drink_name
 	</select>
@@ -106,7 +119,8 @@
 		FROM
 		drink
 		WHERE
-		ssize = 2 and price != 0
+		ssize = 2
+		and price != 0
 		ORDER BY
 		drink_name
 	</select>
@@ -117,7 +131,19 @@
 		FROM
 		drink
 		WHERE
-		ssize = 3 and price != 0
+		ssize = 3
+		and price != 0
+		ORDER BY
+		drink_name
+	</select>
+
+	<select id="getDrink" resultType="DrinkVO">
+		SELECT
+		*
+		FROM
+		drink
+		WHERE
+		price != 0
 		ORDER BY
 		drink_name
 	</select>

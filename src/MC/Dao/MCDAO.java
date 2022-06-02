@@ -156,4 +156,22 @@ public class MCDAO {
 		List<DessertVO> result = mapper.getDessert();
 		return result;
 	}
+
+	public List<SnacksAndSideVO> getSnaksandSides() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		List<SnacksAndSideVO> result = mapper.getSnaksandSides();
+		return result;
+	}
+
+	public List<DrinkVO> getDrink() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		List<DrinkVO> result = mapper.getDrink();
+		return result;
+	}
 }

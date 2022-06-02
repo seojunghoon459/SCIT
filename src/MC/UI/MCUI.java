@@ -50,7 +50,7 @@ public class MCUI {
 	}
 
 	private void SnacksAndSideMenu() {
-		List<SnacksAndSideVO> slist = mcs.getSnacksAndSide();
+		List<SnacksAndSideVO> slist = mcs.getSnaksandSides();
 		int cnt = 1;
 		for (SnacksAndSideVO ssvo : slist) {
 			System.out.println(cnt++ + "." + ssvo);

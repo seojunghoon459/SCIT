@@ -67,9 +67,8 @@ public class MCService {
 	}
 
 	public List<SnacksAndSideVO> getSnaksandSides() {
-//		List<SnacksAndSideVO> slist = mdao.getSnaksandSides();
-//		return slist;
-		return null;
+		List<SnacksAndSideVO> slist = mdao.getSnaksandSides();
+		return slist;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
@@ -80,6 +79,11 @@ public class MCService {
 	public List<SnacksAndSideVO> getLSnaksandSides() {
 		List<SnacksAndSideVO> slist = mdao.getMSnaksandSides();
 		return slist;
+	}
+
+	public List<DrinkVO> getDrink() {
+		List<DrinkVO> dlist = mdao.getDrink();
+		return dlist;
 	}
 
 	public List<DrinkVO> getSDrink() {
