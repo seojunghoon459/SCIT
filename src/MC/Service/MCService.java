@@ -33,6 +33,11 @@ public class MCService {
 		// 장바구니에 있는 내역들 주문 -> sql있는 키오스크 bill에 스트링으로 변환 저장후 sql로 보내기
 		return null;
 	}
+	
+	public Object order(Object obj) {
+		// 주문 받을걸바로 주문 -> sql있는 키오스크 bill에 스트링으로 변환 저장후 sql로 보내기
+		return null;
+	}
 
 	// 장바구니
 	public List<SetVO> shopping_basket(Object obj, int count) {
