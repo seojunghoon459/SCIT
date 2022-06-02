@@ -40,15 +40,17 @@ public class MCUI {
 
 	private void HamburgerMenu() {
 		List<HamburgerVO> hlist = mcs.getHamburger();
+		System.out.println(hlist.size());
+
 		int HamburgerNum = 1;
 		for (HamburgerVO hvo : hlist) {
-			System.out.println(HamburgerNum + " " + hvo);
+			System.out.println(HamburgerNum++ + " " + hvo);
 		}
 
-		System.out.print("버거를 선택해주세요 (숫자) >. ");
-		String pickburger = sc.nextLine();
+		System.out.print("버거를 선택해주세요 (숫자) : ");
+		int pickburger = Integer.parseInt(sc.nextLine());
 
-		HamburgerVO hvo = hlist.get(HamburgerNum);
+		HamburgerVO hvo = hlist.get(pickburger - 1);
 
 		System.out.println("1.단품 \t2.세트");
 		String setTF = sc.nextLine();
@@ -56,15 +58,13 @@ public class MCUI {
 		int setCnt = 1;
 
 		if (setTF.equals("1")) {
-			System.out.println("수량을 입력하세요");
-
+			System.out.print("수량을 입력하세요 : ");
 			setCnt = Integer.parseInt(sc.nextLine());
-
 		}
 
 		String size = "m";
 		if (setTF.equals("2")) {
-			System.out.println("미디엄(M) / 라지(L)");
+			System.out.print("미디엄(M) / 라지(L) : ");
 			size = sc.nextLine().toLowerCase();
 
 			if (size.equals("미디엄"))
