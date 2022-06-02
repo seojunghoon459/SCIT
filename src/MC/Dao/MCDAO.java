@@ -94,7 +94,7 @@ public class MCDAO {
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		List<SnacksAndSideVO> result = mapper.getLSnaksandSides();
+		List<SnacksAndSideVO> result = mapper.getMSnaksandSides();
 		return result;
 	}
 
@@ -103,7 +103,7 @@ public class MCDAO {
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		List<SnacksAndSideVO> result = mapper.getMSnaksandSides();
+		List<SnacksAndSideVO> result = mapper.getLSnaksandSides();
 		return result;
 	}
 
@@ -121,7 +121,7 @@ public class MCDAO {
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		List<DrinkVO> result = mapper.getSDrink();
+		List<DrinkVO> result = mapper.getMDrink();
 		return result;
 	}
 
@@ -130,7 +130,7 @@ public class MCDAO {
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		List<DrinkVO> result = mapper.getSDrink();
+		List<DrinkVO> result = mapper.getLDrink();
 		return result;
 	}
 
