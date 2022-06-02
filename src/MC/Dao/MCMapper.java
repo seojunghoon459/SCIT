@@ -10,10 +10,10 @@ import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
 public interface MCMapper {
-	//세트만들기
+	// 세트만들기
 	public SetVO BugerSet(HamburgerVO Hamburger, String str);
-	
-	//해피밀
+
+	// 해피밀
 	public SetVO HappyMeal();
 
 	// 주문하기
@@ -24,7 +24,7 @@ public interface MCMapper {
 
 	// 취소
 	public void cancel();
-	
+
 	public DessertVO SearchDDessert(String str);
 
 	public DrinkVO SearchDrink(String str);
@@ -46,7 +46,7 @@ public interface MCMapper {
 	public List<DrinkVO> getLDrink();
 
 	public List<SauceVO> getSauce();
-	
+
 	public List<DessertVO> getDessert();
 
 }

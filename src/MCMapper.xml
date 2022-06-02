@@ -5,8 +5,6 @@
 
 <mapper namespace="MC.Dao.MCMapper.java">
 
-	<!--/////////////////////////////////////////검색///////////////////////////////////// -->
-	<!-- 디저트 -->
 	<select id="SearchDDessert" resultType="DessertVO"
 		parameterType="String">
 		SELECT
@@ -20,7 +18,6 @@
 		dessert_name
 	</select>
 
-	<!-- 음료 -->
 	<select id="SearchDrink" resultType="DrinkVO"
 		parameterType="String">
 		SELECT
@@ -34,7 +31,6 @@
 		drink_name
 	</select>
 
-	<!-- 햄버거 -->
 	<select id="SearchHamburger" resultType="HamburgerVO"
 		parameterType="String">
 		SELECT
@@ -48,7 +44,7 @@
 		hamburger_name
 	</select>
 
-	<!-- 스낵앤사이드 -->
+
 	<select id="SearchSnacksAndSide" resultType="SnacksAndSideVO"
 		parameterType="String">
 		select
@@ -62,9 +58,6 @@
 		snacksandside_name
 	</select>
 
-
-	<!--/////////////////////////////////////////조회///////////////////////////////////// -->
-	<!-- 햄버거 -->
 	<select id="getHamburger" resultType="HamburgerVO">
 		select
 		*
@@ -75,7 +68,6 @@
 		hamburger_name
 	</select>
 
-	<!-- 스낵앤사이드 -->
 	<select id="getMSnaksandSides" resultType="SnacksAndSideVO">
 		SELECT
 		*
@@ -86,7 +78,6 @@
 		ORDER BY
 		snacksandside_name
 	</select>
-
 
 	<select id="getLSnaksandSides" resultType="SnacksAndSideVO">
 		SELECT
@@ -99,8 +90,6 @@
 		snacksandside_name
 	</select>
 
-
-	<!-- 음료 -->
 	<select id="getSDrink" resultType="DrinkVO">
 		SELECT
 		*
@@ -111,7 +100,6 @@
 		ORDER BY
 		drink_name
 	</select>
-
 
 	<select id="getMDrink" resultType="DrinkVO">
 		SELECT
@@ -124,7 +112,6 @@
 		drink_name
 	</select>
 
-
 	<select id="getLDrink" resultType="DrinkVO">
 		SELECT
 		*
@@ -136,8 +123,6 @@
 		drink_name
 	</select>
 
-
-	<!-- 소스 -->
 	<select id="getSauce" resultType="SauceVO">
 		SELECT
 		*
@@ -147,7 +132,6 @@
 		sauce_name
 	</select>
 
-	<!-- 디저트 -->
 	<select id="getDessert" resultType="DessertVO">
 		SELECT
 		*

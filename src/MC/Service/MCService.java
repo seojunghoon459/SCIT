@@ -62,10 +62,18 @@ public class MCService {
 		return null;
 	}
 
-	public HamburgerVO pickHamburge() {
-
-		return null;
-	}
+//	public HamburgerVO pickHamburge() {
+//		List<HamburgerVO> hlist = getHamburger();
+//		int Hamburgernum = 0;
+//
+//		for (HamburgerVO hvo : hlist) {
+//			System.out.println(Hamburgernum + " " + hvo);
+//		}
+//		
+//		System.out.println("");
+//		
+//		return null;
+//	}
 
 	public List<HamburgerVO> getHamburger() {
 		List<HamburgerVO> hlist = mdao.getHamburger();
