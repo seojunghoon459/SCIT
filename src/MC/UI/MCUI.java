@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Scanner;
 
 import MC.Service.MCService;
+import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.SetVO;
+import MC.VO.SnacksAndSideVO;
 
 public class MCUI {
 	// Scanner 변수 예약어 sc
@@ -44,7 +47,7 @@ public class MCUI {
 
 		int HamburgerNum = 1;
 		for (HamburgerVO hvo : hlist) {
-			System.out.println(HamburgerNum++ + " " + hvo);
+			System.out.println(HamburgerNum++ + "." + hvo);
 		}
 
 		System.out.print("버거를 선택해주세요 (숫자) : ");
@@ -78,7 +81,7 @@ public class MCUI {
 			mcs.shopping_basket(hvo, setCnt);
 			break;
 		case "2":
-			mcs.BugerSet(hvo, size);
+			BugerSet(hvo, size);
 			break;
 		default:
 			return;
@@ -97,6 +100,84 @@ public class MCUI {
 		System.out.println("	  7 > 주 문 하 기");
 		System.out.println("	  0 > 취      소");
 		System.out.println("=============================");
+	}
+
+	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
+		System.out.println(Hamburger.getHamburger_name() + "세트");
+
+		SnacksAndSideVO ssvo = selectSnacksAndSide(str);
+		DrinkVO dvo = selectDrink(str);
+
+		SetVO setVO = new SetVO(Hamburger, ssvo, dvo);
+		return setVO;
+	}
+
+	private SnacksAndSideVO selectSnacksAndSide(String str) {
+		int sNum = 1;
+		int pickSnacksAndSideNum;
+		SnacksAndSideVO pickSnacksAndSide = null;
+
+		switch (str) {
+		case "m":
+			List<SnacksAndSideVO> sMlist = mcs.getMSnaksandSides();
+			for (SnacksAndSideVO svo : sMlist) {
+				System.out.println(sNum++ + "." + svo);
+			}
+
+			System.out.print("사이드 선택 : ");
+			pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
+			pickSnacksAndSide = sMlist.get(pickSnacksAndSideNum - 1);
+			break;
+
+		case "l":
+			List<SnacksAndSideVO> sLlist = mcs.getMSnaksandSides();
+			for (SnacksAndSideVO svo : sLlist) {
+				System.out.println(sNum++ + "." + svo);
+			}
+
+			System.out.print("사이드 선택 : ");
+			pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
+			pickSnacksAndSide = sLlist.get(pickSnacksAndSideNum - 1);
+			break;
+
+		default:
+			return null;
+		}
+		return pickSnacksAndSide;
+	}
+
+	private DrinkVO selectDrink(String str) {
+		int dNum = 1;
+		int pickDrinkNum;
+		DrinkVO pickDrink = null;
+
+		switch (str) {
+		case "m":
+			List<DrinkVO> dMlist = mcs.getMDrink();
+			for (DrinkVO svo : dMlist) {
+				System.out.println(dNum++ + "." + svo);
+			}
+
+			System.out.print("드링크 선택 : ");
+			pickDrinkNum = Integer.parseInt(sc.nextLine());
+			pickDrink = dMlist.get(pickDrinkNum - 1);
+			break;
+
+		case "l":
+			List<DrinkVO> dLlist = mcs.getLDrink();
+			for (DrinkVO svo : dLlist) {
+				System.out.println(dNum++ + "." + svo);
+			}
+
+			System.out.print("드링크 선택 : ");
+			pickDrinkNum = Integer.parseInt(sc.nextLine());
+			pickDrink = dLlist.get(pickDrinkNum - 1);
+			break;
+
+		default:
+			return null;
+		}
+		return pickDrink;
 	}
 
 }
