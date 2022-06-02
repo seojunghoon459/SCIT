@@ -58,7 +58,7 @@ public class MCUI {
 		System.out.print("디저트를 선택해 주세요 : ");
 		int SnacksAndSideNum = Integer.parseInt(sc.nextLine());
 
-		SnacksAndSideVO pickSnacksAndSide = slist.get(SnacksAndSideNum);
+		SnacksAndSideVO pickSnacksAndSide = slist.get(SnacksAndSideNum - 1);
 
 		System.out.print("수량 입력해 주세요 : ");
 		int SnacksAndSideCnt = Integer.parseInt(sc.nextLine());
@@ -77,7 +77,7 @@ public class MCUI {
 		System.out.print("디저트를 선택해 주세요 : ");
 		int DessertNum = Integer.parseInt(sc.nextLine());
 
-		DessertVO pickDessert = dist.get(DessertNum);
+		DessertVO pickDessert = dist.get(DessertNum - 1);
 
 		System.out.print("수량 입력해 주세요 : ");
 		int DessertCnt = Integer.parseInt(sc.nextLine());
@@ -97,7 +97,7 @@ public class MCUI {
 		System.out.print("디저트를 선택해 주세요 : ");
 		int DrinkNum = Integer.parseInt(sc.nextLine());
 
-		DrinkVO pickDrink = dist.get(DrinkNum);
+		DrinkVO pickDrink = dist.get(DrinkNum - 1);
 
 		System.out.print("수량 입력해 주세요 : ");
 		int DrinkCnt = Integer.parseInt(sc.nextLine());

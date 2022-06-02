@@ -25,40 +25,32 @@ public class MCService {
 	}
 
 	public SetVO HappyMeal() {
+		// 해야함
 		return null;
 	}
 
-	// 주문하기
 	public List<SetVO> order() {
-		// 장바구니에 있는 내역들 주문 -> sql있는 키오스크 bill에 스트링으로 변환 저장후 sql로 보내기
+		// 키오스크 주문창
 		return null;
 	}
 
 	public Object order(Object obj, int setNum) {
-		System.out.println(obj + " 주문창입니다. " + setNum);
+		// 단품 주문창
 		return null;
 	}
 
-	// 장바구니
 	public List<SetVO> shopping_basket(Object obj, int count) {
 		// 총 얼마냐
 		return null;
 	}
 
-	// 전체 출력
 	public List<SetVO> shopping_basket() {
-		// 총 얼마냐
+		// 장바구니 전체 출력
 		return null;
 	}
 
-	// 취소
 	public void cancel() {
 		// 장바구니 비워주기
-	}
-
-	public DessertVO SearchDDessert(int i) {
-		// 객체 받아와서 장바구니에 추가 가능 (수량선택후)
-		return null;
 	}
 
 	public List<HamburgerVO> getHamburger() {
