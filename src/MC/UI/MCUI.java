@@ -78,7 +78,7 @@ public class MCUI {
 
 		switch (setTF) {
 		case "1":
-			//수정필요
+			// 수정필요
 			mcs.shopping_basket(hvo, setCnt);
 			break;
 		case "2":
