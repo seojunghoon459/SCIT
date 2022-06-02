@@ -18,7 +18,8 @@
 		FROM
 		dessert
 		WHERE
-		dessert_name like '%' ||#{dessert_name}|| '%'
+		dessert_name like '%'
+		||#{dessert_name}|| '%'
 		ORDER BY
 		dessert_name
 	</select>
@@ -31,7 +32,8 @@
 		FROM
 		drink
 		WHERE
-		drink_name like '%' ||#{drink_name}|| '%'
+		drink_name like '%'
+		||#{drink_name}|| '%'
 		ORDER BY
 		drink_name
 	</select>
@@ -44,7 +46,8 @@
 		FROM
 		hamburger
 		WHERE
-		hamburger_name like '%' ||#{hamburger_name}|| '%'
+		hamburger_name like '%'
+		||#{hamburger_name}|| '%'
 		ORDER BY
 		hamburger_name
 	</select>
@@ -57,7 +60,8 @@
 		from
 		snacksandside
 		where
-		snacksandside_name like '%' ||#{snacksandside_name}|| '%'
+		snacksandside_name like '%'
+		||#{snacksandside_name}|| '%'
 		order by
 		snacksandside_name
 	</select>
@@ -70,7 +74,8 @@
 		*
 		from
 		hamburger
-		order by
+		order
+		by
 		hamburger_name
 	</select>
 
