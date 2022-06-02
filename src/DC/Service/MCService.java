@@ -67,7 +67,7 @@ public class MCService {
 	}
 
 	public List<HamburgerVO> getHamburger() {
-		List<HamburgerVO> hlist = dao.getHamburger
+		List<HamburgerVO> hlist = mdao.getHamburger();
 		
 		
 		return hlist;
