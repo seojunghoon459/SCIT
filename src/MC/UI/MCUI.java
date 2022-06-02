@@ -2,7 +2,7 @@ package MC.UI;
 
 import java.util.Scanner;
 
-import DC.Service.MCService;
+import MC.Service.MCService;
 
 public class MCUI {
 	// Scanner 변수 예약어 sc

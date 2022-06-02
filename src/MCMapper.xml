@@ -5,10 +5,6 @@
 
 <mapper namespace="MC.Dao.MCMapper.java">
 
-
-
-
-
 	<!--/////////////////////////////////////////검색///////////////////////////////////// -->
 	<!-- 디저트 -->
 	<select id="SearchDDessert" resultType="DessertVO"
