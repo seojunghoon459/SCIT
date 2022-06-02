@@ -47,24 +47,23 @@
 
 	<select id="SearchSnacksAndSide" resultType="SnacksAndSideVO"
 		parameterType="String">
-		select
+		SELECT
 		*
-		from
+		FROM
 		snacksandside
-		where
+		WHERE
 		snacksandside_name like '%'
 		||#{snacksandside_name}|| '%'
-		order by
+		ORDER BY
 		snacksandside_name
 	</select>
 
 	<select id="getHamburger" resultType="HamburgerVO">
-		select
+		SELECt
 		*
-		from
+		FROM
 		hamburger
-		order
-		by
+		ORDER BY
 		hamburger_name
 	</select>
 
@@ -74,7 +73,7 @@
 		FROM
 		snacksandside
 		WHERE
-		ssize = 2
+		ssize = 2 and price != 0
 		ORDER BY
 		snacksandside_name
 	</select>
@@ -85,7 +84,7 @@
 		FROM
 		snacksandside
 		WHERE
-		ssize = 3
+		ssize = 3 and price != 0
 		ORDER BY
 		snacksandside_name
 	</select>
@@ -96,7 +95,7 @@
 		FROM
 		drink
 		WHERE
-		ssize = 1
+		ssize = 1 and price != 0
 		ORDER BY
 		drink_name
 	</select>
@@ -107,7 +106,7 @@
 		FROM
 		drink
 		WHERE
-		ssize = 2
+		ssize = 2 and price != 0
 		ORDER BY
 		drink_name
 	</select>
@@ -118,7 +117,7 @@
 		FROM
 		drink
 		WHERE
-		ssize = 3
+		ssize = 3 and price != 0
 		ORDER BY
 		drink_name
 	</select>
