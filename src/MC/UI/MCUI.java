@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import MC.Service.MCService;
+import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.SetVO;
@@ -49,18 +50,61 @@ public class MCUI {
 	}
 
 	private void SnacksAndSideMenu() {
-		// TODO Auto-generated method stub
+		List<SnacksAndSideVO> slist = mcs.getSnacksAndSide();
+		int cnt = 1;
+		for (SnacksAndSideVO ssvo : slist) {
+			System.out.println(cnt++ + "." + ssvo);
+		}
+		System.out.print("디저트를 선택해 주세요 : ");
+		int SnacksAndSideNum = Integer.parseInt(sc.nextLine());
 
+		SnacksAndSideVO pickSnacksAndSide = slist.get(SnacksAndSideNum);
+
+		System.out.print("수량 입력해 주세요 : ");
+		int SnacksAndSideCnt = Integer.parseInt(sc.nextLine());
+
+		System.out.print("1.장바구니 / 2.주문하기 : ");
+		int shoppingNum = Integer.parseInt(sc.nextLine());
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickSnacksAndSide, SnacksAndSideCnt);
 	}
 
 	private void DessertMenu() {
-		// TODO Auto-generated method stub
+		List<DessertVO> dist = mcs.getDessert();
+		int cnt = 1;
+		for (DessertVO dvo : dist) {
+			System.out.println(cnt++ + "." + dvo);
+		}
+		System.out.print("디저트를 선택해 주세요 : ");
+		int DessertNum = Integer.parseInt(sc.nextLine());
+
+		DessertVO pickDessert = dist.get(DessertNum);
+
+		System.out.print("수량 입력해 주세요 : ");
+		int DessertCnt = Integer.parseInt(sc.nextLine());
+
+		System.out.print("1.장바구니 / 2.주문하기 : ");
+		int shoppingNum = Integer.parseInt(sc.nextLine());
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDessert, DessertCnt);
 
 	}
 
 	private void DrinkMenu() {
-		// TODO Auto-generated method stub
+		List<DrinkVO> dist = mcs.getDrink();
+		int cnt = 1;
+		for (DrinkVO dvo : dist) {
+			System.out.println(cnt++ + "." + dvo);
+		}
+		System.out.print("디저트를 선택해 주세요 : ");
+		int DrinkNum = Integer.parseInt(sc.nextLine());
 
+		DrinkVO pickDrink = dist.get(DrinkNum);
+
+		System.out.print("수량 입력해 주세요 : ");
+		int DrinkCnt = Integer.parseInt(sc.nextLine());
+
+		System.out.print("1.장바구니 / 2.주문하기 : ");
+		int shoppingNum = Integer.parseInt(sc.nextLine());
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDrink, DrinkCnt);
 	}
 
 	private void HamburgerMenu() {
@@ -103,14 +147,7 @@ public class MCUI {
 			System.out.println("1.장바구니 / 2.주문하기");
 			int shoppingNum = Integer.parseInt(sc.nextLine());
 
-			switch (shoppingNum) {
-			case 1:
-				mcs.shopping_basket(hvo, setCnt);
-				break;
-			case 2:
-				mcs.order(hvo, setCnt);
-				break;
-			}
+			mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo, setCnt);
 			break;
 		case "2":
 			BugerSet(hvo, size);
@@ -119,19 +156,6 @@ public class MCUI {
 			return;
 		}
 
-	}
-
-	public void menu() {
-		System.out.println("==========MCdonalds==========");
-		System.out.println("	  1 > 햄  버  거");
-		System.out.println("	  2 > 스낵&사이드");
-		System.out.println("	  3 > 디  저  트");
-		System.out.println("	  4 > 음      료");
-		System.out.println("	  5 > 해  피  밀");
-		System.out.println("	  6 > 장 바 구 니");
-		System.out.println("	  7 > 주 문 하 기");
-		System.out.println("	  0 > 취      소");
-		System.out.println("=============================");
 	}
 
 	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
@@ -147,14 +171,7 @@ public class MCUI {
 		System.out.println("1.장바구니 / 2.주문하기");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
 
-		switch (shoppingNum) {
-		case 1:
-			mcs.shopping_basket(setVO, setNum);
-			break;
-		case 2:
-			mcs.order(setVO, setNum);
-			break;
-		}
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO, setNum);
 
 		return setVO;
 	}
@@ -225,6 +242,19 @@ public class MCUI {
 			return null;
 		}
 		return pickDrink;
+	}
+
+	public void menu() {
+		System.out.println("==========MCdonalds==========");
+		System.out.println("	  1 > 햄  버  거");
+		System.out.println("	  2 > 스낵&사이드");
+		System.out.println("	  3 > 디  저  트");
+		System.out.println("	  4 > 음      료");
+		System.out.println("	  5 > 해  피  밀");
+		System.out.println("	  6 > 장 바 구 니");
+		System.out.println("	  7 > 주 문 하 기");
+		System.out.println("	  0 > 취      소");
+		System.out.println("=============================");
 	}
 
 }

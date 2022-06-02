@@ -89,6 +89,11 @@ public class MCDAO {
 		return result;
 	}
 
+	// 추가필요
+	public List<SnacksAndSideVO> getSnacksAndSide() {
+		return null;
+	}
+
 	public List<SnacksAndSideVO> getMSnaksandSides() {
 		SqlSession session = null;
 		session = factory.openSession();

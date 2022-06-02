@@ -13,6 +13,17 @@ import MC.VO.SnacksAndSideVO;
 public class MCService {
 	MCDAO mdao = new MCDAO();
 
+	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
+		switch (shoppingNum) {
+		case 1:
+			shopping_basket(obj, ordercnt);
+			break;
+		case 2:
+			order(obj, ordercnt);
+			break;
+		}
+	}
+
 	public SetVO HappyMeal() {
 		return null;
 	}
@@ -45,26 +56,20 @@ public class MCService {
 		// 장바구니 비워주기
 	}
 
-	public DessertVO SearchDDessert(String str) {
+	public DessertVO SearchDDessert(int i) {
 		// 객체 받아와서 장바구니에 추가 가능 (수량선택후)
-		return null;
-	}
-
-	public DrinkVO SearchDrink(String str) {
-		return null;
-	}
-
-	public HamburgerVO SearchHamburger(String str) {
-		return null;
-	}
-
-	public SnacksAndSideVO SearchSnacksAndSideVO(String str) {
 		return null;
 	}
 
 	public List<HamburgerVO> getHamburger() {
 		List<HamburgerVO> hlist = mdao.getHamburger();
 		return hlist;
+	}
+
+	public List<SnacksAndSideVO> getSnaksandSides() {
+//		List<SnacksAndSideVO> slist = mdao.getSnaksandSides();
+//		return slist;
+		return null;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
