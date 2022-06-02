@@ -2,6 +2,7 @@ package DC.Service;
 
 import java.util.List;
 
+import MC.Dao.MCDAO;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
@@ -10,6 +11,8 @@ import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
 public class MCService {
+	MCDAO mdao = new MCDAO();
+
 	// 햄버거 세트 만들기
 	// str = m l
 	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
@@ -58,46 +61,49 @@ public class MCService {
 	public SnacksAndSideVO SearchSnacksAndSideVO(String str) {
 		return null;
 	}
-	
+
 	public HamburgerVO pickHamburge() {
-		
-		
-		
+
 		return null;
 	}
 
 	public List<HamburgerVO> getHamburger() {
 		List<HamburgerVO> hlist = mdao.getHamburger();
-		
-		
 		return hlist;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
-		return null;
+		List<SnacksAndSideVO> slist = mdao.getMSnaksandSides();
+		return slist;
 	}
 
 	public List<SnacksAndSideVO> getLSnaksandSides() {
-		return null;
+		List<SnacksAndSideVO> slist = mdao.getMSnaksandSides();
+		return slist;
 	}
 
 	public List<DrinkVO> getSDrink() {
-		return null;
+		List<DrinkVO> dlist = mdao.getSDrink();
+		return dlist;
 	}
 
 	public List<DrinkVO> getMDrink() {
-		return null;
+		List<DrinkVO> dlist = mdao.getMDrink();
+		return dlist;
 	}
 
 	public List<DrinkVO> getLDrink() {
-		return null;
+		List<DrinkVO> dlist = mdao.getLDrink();
+		return dlist;
 	}
 
 	public List<SauceVO> getSauce() {
-		return null;
+		List<SauceVO> slist = mdao.getSauce();
+		return slist;
 	}
 
 	public List<DessertVO> getDessert() {
-		return null;
+		List<DessertVO> dlist = mdao.getDessert();
+		return dlist;
 	}
 }
