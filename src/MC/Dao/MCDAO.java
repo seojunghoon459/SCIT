@@ -15,11 +15,11 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-	// 세트만들기
-	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
-
-		return null;
-	}
+//	// 세트만들기
+//	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
+//
+//		return null;
+//	}
 
 	// 해피밀
 	public SetVO HappyMeal() {

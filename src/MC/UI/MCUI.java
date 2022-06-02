@@ -25,20 +25,42 @@ public class MCUI {
 			HamburgerMenu();
 			break;
 		case "2":
+			SnacksAndSideMenu();
 			break;
 		case "3":
+			DessertMenu();
 			break;
 		case "4":
+			DrinkMenu();
 			break;
 		case "5":
+			mcs.HappyMeal();
 			break;
 		case "6":
+			mcs.shopping_basket();
 			break;
 		case "7":
+			mcs.order();
 			break;
 		case "0":
+			mcs.cancel();
 			break;
 		}
+	}
+
+	private void SnacksAndSideMenu() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private void DessertMenu() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private void DrinkMenu() {
+		// TODO Auto-generated method stub
+
 	}
 
 	private void HamburgerMenu() {
@@ -78,8 +100,17 @@ public class MCUI {
 
 		switch (setTF) {
 		case "1":
-			// 수정필요
-			mcs.shopping_basket(hvo, setCnt);
+			System.out.println("1.장바구니 / 2.주문하기");
+			int shoppingNum = Integer.parseInt(sc.nextLine());
+
+			switch (shoppingNum) {
+			case 1:
+				mcs.shopping_basket(hvo, setCnt);
+				break;
+			case 2:
+				mcs.order(hvo, setCnt);
+				break;
+			}
 			break;
 		case "2":
 			BugerSet(hvo, size);
@@ -121,10 +152,8 @@ public class MCUI {
 			mcs.shopping_basket(setVO, setNum);
 			break;
 		case 2:
-			mcs.order(setVO);
+			mcs.order(setVO, setNum);
 			break;
-		default:
-			return null;
 		}
 
 		return setVO;
