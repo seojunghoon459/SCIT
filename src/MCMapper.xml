@@ -213,7 +213,7 @@
 		hamburger
 		SET
 		price = #{price},
-		setprice = #{setprice],
+		setpirce = #{setpirce},
 		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
@@ -224,12 +224,10 @@
 		UPDATE
 		dessert
 		SET
-		price =
-		#{price},
-		setprice = #{setprice],
+		price = #{price},
+		setpirce = #{setpirce},
 		popularity = #{popularity},
-		reorder =
-		#{reorder}
+		reorder = #{reorder}
 		WHERE
 		dessert_name = #{dessert_name}
 	</update>
@@ -239,24 +237,20 @@
 		SnacksAndSide
 		SET
 		price = #{price},
-		setprice = #{setprice],
-		popularity =
-		#{popularity},
+		setpirce = #{setpirce},
+		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
-		SnacksAndSide_name =
-		#{SnacksAndSide_name}
+		SnacksAndSide_name = #{SnacksAndSide_name}
 	</update>
-
 
 	<update id="DrinkUpdate" parameterType="DrinkVO">
 		UPDATE
 		Drink
 		SET
 		price = #{price},
-		setprice = #{setprice],
-		popularity =
-		#{popularity},
+		setpirce = #{setpirce},
+		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
 		Drink_name = #{Drink_name}
@@ -267,9 +261,8 @@
 		Sauce
 		SET
 		price = #{price},
-		setprice = #{setprice],
-		popularity =
-		#{popularity},
+		setpirce = #{setpirce},
+		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
 		Sauce_name = #{Sauce_name}
@@ -309,4 +302,5 @@
 	WHERE
 		Saucename = #{Sauce_name}
 	</delete>
+	
 </mapper>
