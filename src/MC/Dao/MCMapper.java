@@ -44,13 +44,35 @@ public interface MCMapper {
 
 	public List<DessertVO> getDessert();
 
-	public int HamburgerAdd(String str); //
+	public int HamburgerAdd(HamburgerVO hamburger); //
 
-	public int DessertAdd(String str); //
+	public int DessertAdd(DessertVO dessert); //
 
-	public int SnacksAndSideAdd(String str);//
+	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSideAdd);//
 
-	public int DrinkAdd(String str); //
+	public int DrinkAdd(DrinkVO drink); //
 
-	public int SauceAdd(String str); //
+	public int SauceAdd(SauceVO sauce); //
+
+	public int HamburgerUpdate(HamburgerVO hamburger); //
+ 
+	public int DessertUpdate(DessertVO dessert); //
+
+	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSideAdd); //
+
+	public int DrinkUpdate(DrinkVO drink); //
+
+	public int SauceUpdate(SauceVO sauce); //
+	
+	public int HamburgerDelete(String str); //
+	 
+	public int DessertDelete(String str); //
+
+	public int SnacksAndSideDelete(String str); //
+
+	public int DrinkDelete(String str); //
+
+	public int SauceDeletee(String str); //
+
+
 }

@@ -175,28 +175,131 @@ public class MCDAO {
 		return result;
 	}
 
-	public void HamburgerAdd() {
-		// TODO Auto-generated method stub
-		
+	public int HamburgerAdd(HamburgerVO hamburger) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.HamburgerAdd(hamburger);
+		return result;
+
 	}
 
-	public void DessertAdd() {
-		// TODO Auto-generated method stub
-		
+	public int DessertAdd(DessertVO dessert) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DessertAdd(dessert);
+		return result;
 	}
 
-	public void SnacksAndSideAdd() {
-		// TODO Auto-generated method stub
-		
+	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSide) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SnacksAndSideAdd(snacksAndSide);
+		return result;
 	}
 
-	public void DrinkAdd() {
-		// TODO Auto-generated method stub
-		
+	public int DrinkAdd(DrinkVO drink) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DrinkAdd(drink);
+		return result;
 	}
 
-	public void SauceAdd() {
-		// TODO Auto-generated method stub
-		
+	public int SauceAdd(SauceVO sauce) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SauceAdd(sauce);
+		return result;
 	}
+
+	public int HamburgerUpdate(HamburgerVO hamburger) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.HamburgerUpdate(hamburger);
+		return result;
+	}
+
+	public int DessertUpdate(DessertVO dessert) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DessertUpdate(dessert);
+		return result;
+	}
+
+	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSide) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SnacksAndSideUpdate(snacksAndSide);
+		return result;
+	}
+
+	public int DrinkUpdate(DrinkVO drink) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DrinkUpdate(drink);
+		return result;
+
+	}
+
+	public int SauceUpdate(SauceVO sauce) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SauceUpdate(sauce);
+		return result;
+
+	}
+
+	public int HamburgerDelete(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.HamburgerDelete(str);
+		return result;
+
+	}
+
+	public int DessertDelete(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DessertDelete(str);
+		return result;
+
+	}
+
+	public int SnacksAndSideDelete(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SnacksAndSideDelete(str);
+		return result;
+
+	}
+
+	public int DrinkDelete(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.DrinkDelete(str);
+		return result;
+
+	}
+
+	public int SauceDeletee(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		int result = mapper.SauceDeletee(str);
+		return result;
+	}
+
 }

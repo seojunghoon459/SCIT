@@ -171,4 +171,142 @@
 		VALUES
 		(kiosk_seq.nextval,#{iosk_bill})
 	</insert>
+
+	<insert id="HamburgerAdd" parameterType="HamburgerVO">
+		INSERT INTO hamburger
+		(hamburger_name,price,setprice,ssize)
+		VALUES
+		(#{hamburger_name},#{price},#{setprice},#{ssize})
+	</insert>
+
+	<insert id="DessertAdd" parameterType="DessertVO">
+		INSERT INTO dessert
+		(dessert_name,price,setprice,ssize)
+		VALUES
+		(#{dessert_name},#{price},#{setprice},#{ssize})
+	</insert>
+
+	<insert id="SnacksAndSideAdd" parameterType="SnacksAndSideVO">
+		INSERT INTO
+		SnacksAndSidet
+		(SnacksAndSide_name,price,setprice,ssize)
+		VALUES
+		(#{SnacksAndSide_name},#{price},#{setprice},#{ssize})
+	</insert>
+
+	<insert id="DrinkAdd" parameterType="DrinkVO">
+		INSERT INTO Drink
+		(Drink_name,price,setprice,ssize)
+		VALUES
+		(#{Drink_name},#{price},#{setprice},#{ssize})
+	</insert>
+
+	<insert id="SauceAdd" parameterType="SauceVO">
+		INSERT INTO Sauce
+		(Sauce_name,price,setprice,ssize)
+		VALUES
+		(#{Sauce_name},#{price},#{setprice},#{ssize})
+	</insert>
+
+	<update id="HamburgerUpdate" parameterType="HamburgerVO">
+		UPDATE
+		hamburger
+		SET
+		price = #{price},
+		setprice = #{setprice],
+		popularity = #{popularity},
+		reorder = #{reorder}
+		WHERE
+		hamburger_name = #{hamburger_name}
+	</update>
+
+	<update id="DessertUpdate" parameterType="DessertVO">
+		UPDATE
+		dessert
+		SET
+		price =
+		#{price},
+		setprice = #{setprice],
+		popularity = #{popularity},
+		reorder =
+		#{reorder}
+		WHERE
+		dessert_name = #{dessert_name}
+	</update>
+
+	<update id="SnacksAndSideUpdate" parameterType="SnacksAndSideVO">
+		UPDATE
+		SnacksAndSide
+		SET
+		price = #{price},
+		setprice = #{setprice],
+		popularity =
+		#{popularity},
+		reorder = #{reorder}
+		WHERE
+		SnacksAndSide_name =
+		#{SnacksAndSide_name}
+	</update>
+
+
+	<update id="DrinkUpdate" parameterType="DrinkVO">
+		UPDATE
+		Drink
+		SET
+		price = #{price},
+		setprice = #{setprice],
+		popularity =
+		#{popularity},
+		reorder = #{reorder}
+		WHERE
+		Drink_name = #{Drink_name}
+	</update>
+
+	<update id="SauceUpdate" parameterType="SauceVO">
+		UPDATE
+		Sauce
+		SET
+		price = #{price},
+		setprice = #{setprice],
+		popularity =
+		#{popularity},
+		reorder = #{reorder}
+		WHERE
+		Sauce_name = #{Sauce_name}
+	</update>
+
+	<delete id="HamburgerDelete" parameterType="String">
+	DELETE
+		hamburger
+	WHERE
+		hamburger_name = #{hamburger_name}
+	</delete>
+
+	<delete id="DessertDelete" parameterType="String">
+	DELETE
+		Dessert
+	WHERE
+		Dessert_name = #{Dessert_name}
+	</delete>
+
+	<delete id="SnacksAndSideDelete" parameterType="String">
+	DELETE
+		SnacksAndSide
+	WHERE
+		SnacksAndSide_name = #{SnacksAndSide_name}
+	</delete>
+
+	<delete id="DrinkDelete" parameterType="String">
+	DELETE
+		Drink
+	WHERE
+		Drink_name = #{Drink_name}
+	</delete>
+
+	<delete id="SauceDeletee" parameterType="String">
+	DELETE
+		Sauce
+	WHERE
+		Saucename = #{Sauce_name}
+	</delete>
 </mapper>
