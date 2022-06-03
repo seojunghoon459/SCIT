@@ -58,7 +58,7 @@ public class MCService {
 
 	public void shopping_basket(Object product, int ordercnt) {
 		if (product instanceof HamburgerVO) {
-			
+
 		}
 		if (product instanceof SnacksAndSideVO) {
 

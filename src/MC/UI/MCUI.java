@@ -266,7 +266,7 @@ public class MCUI {
 		System.out.print("5. AdministrateMode Exit");
 	}
 
-	//수정필요
+	// 수정필요
 	private void shopping_basket() {
 		List<ShoppingBasketVO> slist = mcs.shopping_basket();
 		for (ShoppingBasketVO sbVO : slist) {
@@ -507,7 +507,7 @@ public class MCUI {
 				pickSauce = slist.get(pickSauceNum - 1);
 				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
 				System.out.println();
-				HappyMeal = new HappyMealVO(saslist.get(4), pickDrink, pickSauce, "해피밀 랜덤 토이", 5100,1);
+				HappyMeal = new HappyMealVO(saslist.get(4), pickDrink, pickSauce, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 				System.out.print("1.장바구니 / 2.주문하기");
@@ -528,7 +528,7 @@ public class MCUI {
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
 				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100,1);
+				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 				System.out.print("1.장바구니 / 2.주문하기");
@@ -549,7 +549,7 @@ public class MCUI {
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
 				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100,1);
+				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 				System.out.print("1.장바구니 / 2.주문하기");
@@ -570,7 +570,7 @@ public class MCUI {
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
 				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100,1);
+				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 				System.out.print("1.장바구니 / 2.주문하기");
