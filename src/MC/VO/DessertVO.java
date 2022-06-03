@@ -7,6 +7,7 @@ public class DessertVO {
 	private int ssize;
 	private int popularity;
 	private int reorder;
+	private int count;
 
 	public DessertVO() {
 		super();
@@ -70,6 +71,13 @@ public class DessertVO {
 		this.reorder = reorder;
 	}
 
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		String tmp1, tmp2;

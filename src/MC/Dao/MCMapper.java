@@ -20,6 +20,10 @@ public interface MCMapper {
 
 	public SnacksAndSideVO SearchSnacksAndSide(String str);
 
+	public KioskVO ShoppingBasketorder(); // 厘官备聪 林巩
+
+	public KioskVO order(Object obj, int orderCnt); // 窜前 流立 林巩
+
 	public List<HamburgerVO> getHamburger();
 
 	public List<SnacksAndSideVO> getMSnaksandSides();
@@ -40,6 +44,13 @@ public interface MCMapper {
 
 	public List<DessertVO> getDessert();
 
-	public int SaveOrder(KioskVO kioskvo);
+	public int HamburgerAdd(String str); //
 
+	public int DessertAdd(String str); //
+
+	public int SnacksAndSideAdd(String str);//
+
+	public int DrinkAdd(String str); //
+
+	public int SauceAdd(String str); //
 }

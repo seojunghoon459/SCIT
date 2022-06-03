@@ -7,7 +7,7 @@ public class DrinkVO {
 	private int ssize;
 	private int popularity;
 	private int reorder;
-
+	private int count;
 	public DrinkVO() {
 		super();
 	}
@@ -68,6 +68,13 @@ public class DrinkVO {
 
 	public void setReorder(int reorder) {
 		this.reorder = reorder;
+	}
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	public String setOutPut() {

@@ -8,6 +8,7 @@ import MC.Dao.MCDAO;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.HappyMealVO;
 import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
@@ -16,9 +17,15 @@ import MC.VO.SnacksAndSideVO;
 
 public class MCService {
 	MCDAO mdao = new MCDAO();
-	List<ShoppingBasketVO> sblist = new ArrayList<ShoppingBasketVO>();
-	int kioskNum = 0;
 	Scanner sc = new Scanner(System.in);
+	int kioskNum = 0;
+
+	List<HamburgerVO> HamburgerVOlist = new ArrayList<HamburgerVO>();
+	List<SnacksAndSideVO> SnacksAndSideVOlist = new ArrayList<SnacksAndSideVO>();
+	List<DrinkVO> DDrinkVOlist = new ArrayList<DrinkVO>();
+	List<DessertVO> DessertVOlist = new ArrayList<DessertVO>();
+	List<SetVO> SetVOlist = new ArrayList<SetVO>();
+	List<HappyMealVO> HappyMealVOlist = new ArrayList<HappyMealVO>();
 
 	public String SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
 		switch (shoppingNum) {
@@ -28,11 +35,6 @@ public class MCService {
 		case 2:
 			return order(obj, ordercnt).toString();
 		}
-		return null;
-	}
-
-	public SetVO HappyMeal() {
-		// 해야함
 		return null;
 	}
 
@@ -54,10 +56,26 @@ public class MCService {
 		return k;
 	}
 
-	public List<ShoppingBasketVO> shopping_basket(Object product, int ordercnt) {
-		sblist.add(sblist.size(), new ShoppingBasketVO(product, ordercnt));
+	public void shopping_basket(Object product, int ordercnt) {
+		if (product instanceof HamburgerVO) {
+			
+		}
+		if (product instanceof SnacksAndSideVO) {
 
-		return sblist;
+		}
+		if (product instanceof DrinkVO) {
+
+		}
+		if (product instanceof DessertVO) {
+
+		}
+		if (product instanceof SetVO) {
+
+		}
+		if (product instanceof HappyMealVO) {
+
+		}
+
 	}
 
 	public List<ShoppingBasketVO> shopping_basket() {
@@ -77,6 +95,11 @@ public class MCService {
 	public List<SnacksAndSideVO> getSnaksandSides() {
 		List<SnacksAndSideVO> slist = mdao.getSnaksandSides();
 		return slist;
+	}
+
+	// 작업 필요
+	public List<SnacksAndSideVO> getSSnaksandSides() {
+		return null;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
@@ -119,32 +142,28 @@ public class MCService {
 		return dlist;
 	}
 
-	public List<SnacksAndSideVO> getSSnaksandSides() {
-		return null;
-	}
-
 	public void HamburgerAdd(String hamburger_name) {
-		mdao.HamburgerAdd();
+		mdao.HamburgerAdd(hamburger_name);
 
 	}
 
 	public void DessertAdd(String dessert_name) {
-		mdao.DessertAdd();
+		mdao.DessertAdd(dessert_name);
 
 	}
 
 	public void SnacksAndSideAdd(String snacksandside_name) {
-		mdao.SnacksAndSideAdd();
+		mdao.SnacksAndSideAdd(snacksandside_name);
 
 	}
 
 	public void DrinkAdd(String drink_name) {
-		mdao.DrinkAdd();
+		mdao.DrinkAdd(drink_name);
 
 	}
 
 	public void SauceAdd(String sauce_name) {
-		mdao.SauceAdd();
+		mdao.SauceAdd(sauce_name);
 
 	}
 

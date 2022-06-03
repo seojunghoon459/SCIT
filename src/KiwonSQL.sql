@@ -11,7 +11,8 @@ create table drink
     setprice number not null,
     ssize number default 2 check (ssize in (1,2,3)),
     popularity number(1) default 0 check (popularity in (0,1)),
-    reorder number(1)	default 0 check (reorder in (0,1))
+    reorder number(1)	default 0 check (reorder in (0,1)),
+    count number default 1
 );
 create table sauce
 (
@@ -20,7 +21,8 @@ create table sauce
     setprice number not null,
     ssize number default 2 check (ssize in (1,2,3)),
     popularity number(1) default 0 check (popularity in (0,1)),
-    reorder number(1)	default 0 check (reorder in (0,1))
+    reorder number(1)	default 0 check (reorder in (0,1)),
+    count number default 1
 );
 create table snacksandside
 (
@@ -29,7 +31,8 @@ create table snacksandside
     setprice number not null,
     ssize number default 2 check (ssize in (1,2,3)),
     popularity number(1) default 0 check (popularity in (0,1)),
-    reorder number(1)	default 0 check (reorder in (0,1))
+    reorder number(1)	default 0 check (reorder in (0,1)),
+    count number default 1
 );
 
 create table kiosk
@@ -93,7 +96,7 @@ insert into sauce (sauce_name,price,setprice) values ('디핑 소스 케이준',300,0);
 
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('코울슬로',2700,200,2,0,0);
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('소시지 스낵랩',3200,0,2,0,1);
-insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('골든 모짜렐라 치즈스틱 2조각',3100,0,2,0,0);
+insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('골든 모짜렐라 치즈스틱 2조각',3100,600,2,0,0);
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('골든 모짜렐라 치즈스틱 4조각',4800,0,3,0,1);
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('맥너겟 4조각',2800,0,1,0,1);
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('맥너겟 6조각',3800,0,2,0,0);
@@ -107,6 +110,315 @@ insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,re
 insert into snacksandside (snacksandside_name,price,setprice,ssize,popularity,reorder) values ('스트링 치즈',2400,0,2,0,0);
 
 
-select * 
-from drink,sauce
-where drink_name like '%콜라%';
+DROP TABLE hamburger;
+
+CREATE TABLE hamburger (
+    hamburger_name  VARCHAR2(100) PRIMARY KEY,
+    price           NUMBER NOT NULL,
+    setprice        NUMBER NOT NULL,
+    ssize           NUMBER(1) DEFAULT 2 CHECK ( ssize IN (
+        1,
+        2,
+        3
+    ) ),
+    popularity      NUMBER(1) DEFAULT 0 CHECK ( popularity IN (
+        0,
+        1
+    ) ),
+    reorder         NUMBER(1) DEFAULT 0 CHECK ( reorder IN (
+        0,
+        1
+    ) ),
+    count number default 1
+);
+
+
+
+DROP TABLE dessert;
+
+CREATE TABLE dessert (
+    dessert_name  VARCHAR2(100) PRIMARY KEY,
+    price         NUMBER NOT NULL,
+    setprice      NUMBER NOT NULL,
+    ssize         NUMBER(1) DEFAULT 2 CHECK ( ssize IN (
+        1,
+        2,
+        3
+    ) ),
+    popularity    NUMBER(1) DEFAULT 0 CHECK ( popularity IN (
+        0,
+        1
+    ) ),
+    reorder       NUMBER(1) DEFAULT 0 CHECK ( reorder IN (
+        0,
+        1
+    ) ),
+    count number default 1
+);
+
+DROP TABLE mcmorning;
+
+CREATE TABLE mcmorning (
+    mcmorning_name  VARCHAR2(100) PRIMARY KEY,
+    price           NUMBER NOT NULL,
+    setprice        NUMBER NOT NULL,
+    ssize           NUMBER(1) DEFAULT 2 CHECK ( ssize IN (
+        1,
+        2,
+        3
+    ) ),
+    popularity      NUMBER(1) DEFAULT 0 CHECK ( popularity IN (
+        0,
+        1
+    ) ),
+    reorder         NUMBER(1) DEFAULT 0 CHECK ( reorder IN (
+        0,
+        1
+    ) ),
+    count number default 1
+);
+
+------------------------------------------------------------------
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '맥크리스피 디럭스 버거',
+    7200,
+    7200
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '맥크리스피 클래식 버거',
+    6400,
+    6400
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '필레 오 피쉬버거',
+    4300,
+    4300
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '트리플 치즈버거',
+    6400,
+    6400
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '더블 필레 오 피쉬버거',
+    5800,
+    5800
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '슈비버거',
+    6300,
+    6300
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '슈슈버거',
+    5300,
+    5300
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '1955 버거',
+    6500,
+    6500
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice,
+    reorder
+) VALUES (
+    '맥치킨',
+    4100,
+    4100,
+    1
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '맥치킨 모짜렐라',
+    5600,
+    5600
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice,
+    reorder
+) VALUES (
+    '빅맥',
+    5400,
+    5400,
+    1
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '맥스파이시 상하이버거',
+    5600,
+    5600
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '더블 불고기 버거',
+    5200,
+    5200
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '에그 불고기 버거',
+    4000,
+    4000
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice,
+    reorder
+) VALUES (
+    '불고기버거',
+    3100,
+    3100,
+    1
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '베이컨 토마토 디럭스',
+    6300,
+    6300
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '더블 쿼터파운더 치즈',
+    7800,
+    7800
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice,
+    reorder
+) VALUES (
+    '치즈버거',
+    3100,
+    3100,
+    1
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '더블 치즈 버거',
+    5200,
+    5200
+);
+
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '쿼터파운드 치즈 버거',
+    5200,
+    5200
+);
+
+-------------------------------------------------------------
+
+INSERT INTO dessert 
+(dessert_name,price,setprice) 
+VALUES 
+('애플파이',1900,1900);
+
+INSERT INTO dessert 
+(dessert_name,price,setprice) 
+VALUES 
+('허쉬 프레첼 맥플러리',3600,3600);
+
+INSERT INTO dessert 
+(dessert_name,price,setprice) 
+VALUES 
+('딸기 선데이 아이스크림',2400,2400);
+
+INSERT INTO dessert 
+(dessert_name,price,setprice,reorder)
+VALUES 
+('오레오 맥플러리',3200,3200, 1);
+
+INSERT INTO dessert 
+(dessert_name,price,setprice,reorder)
+VALUES 
+('초코 선데이 아이스크림',2400,2400, 1);
+
+INSERT INTO dessert 
+(dessert_name,price,setprice,reorder)
+VALUES 
+('바닐라 선데이 아이스크림',2400,2400, 1);
+
+commit;
+

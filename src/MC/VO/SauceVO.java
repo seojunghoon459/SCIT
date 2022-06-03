@@ -7,6 +7,7 @@ public class SauceVO {
 	private int ssize;
 	private int popularity;
 	private int reorder;
+	private int count;
 
 	public SauceVO() {
 		super();
@@ -68,6 +69,13 @@ public class SauceVO {
 
 	public void setReorder(int reorder) {
 		this.reorder = reorder;
+	}
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	@Override

@@ -8,12 +8,12 @@ public class HappyMealVO {
 	private SauceVO Sauce;
 	private String Toy;
 	private int Price;
-
+	private int count;
 	public HappyMealVO() {
 		super();
 	}
 
-	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide, DrinkVO drink, String toy, int price) {
+	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide, DrinkVO drink, String toy, int price, int count) {
 		super();
 		Hamburger = hamburger;
 		Toy = toy;
@@ -22,7 +22,7 @@ public class HappyMealVO {
 		Price = price;
 	}
 
-	public HappyMealVO(SnacksAndSideVO snacksAndSide,DrinkVO drink, SauceVO sauce, String toy,  int price) {
+	public HappyMealVO(SnacksAndSideVO snacksAndSide,DrinkVO drink, SauceVO sauce, String toy,  int price, int count) {
 		super();
 		Toy = toy;
 		SnacksAndSide = snacksAndSide;
@@ -79,6 +79,13 @@ public class HappyMealVO {
 		Sauce = sauce;
 	}
 
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		if(Hamburger==null) {

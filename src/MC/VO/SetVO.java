@@ -4,6 +4,7 @@ public class SetVO {
 	private HamburgerVO Hamburger;
 	private SnacksAndSideVO SnacksAndSide;
 	private DrinkVO Drink;
+	private int count;
 
 	public SetVO() {
 		super();
@@ -38,6 +39,13 @@ public class SetVO {
 
 	public void setDrink(DrinkVO drink) {
 		Drink = drink;
+	}
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	@Override
