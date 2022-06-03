@@ -179,6 +179,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.HamburgerAdd(hamburger);
 		return result;
 
@@ -188,6 +189,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DessertAdd(dessert);
 		return result;
 	}
@@ -196,6 +198,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SnacksAndSideAdd(snacksAndSide);
 		return result;
 	}
@@ -204,6 +207,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DrinkAdd(drink);
 		return result;
 	}
@@ -212,6 +216,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SauceAdd(sauce);
 		return result;
 	}
@@ -220,6 +225,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.HamburgerUpdate(hamburger);
 		return result;
 	}
@@ -228,6 +234,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DessertUpdate(dessert);
 		return result;
 	}
@@ -236,6 +243,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SnacksAndSideUpdate(snacksAndSide);
 		return result;
 	}
@@ -244,6 +252,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DrinkUpdate(drink);
 		return result;
 
@@ -253,6 +262,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SauceUpdate(sauce);
 		return result;
 
@@ -262,6 +272,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.HamburgerDelete(str);
 		return result;
 
@@ -271,6 +282,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DessertDelete(str);
 		return result;
 
@@ -280,6 +292,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SnacksAndSideDelete(str);
 		return result;
 
@@ -289,6 +302,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.DrinkDelete(str);
 		return result;
 
@@ -298,6 +312,7 @@ public class MCDAO {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
+
 		int result = mapper.SauceDeletee(str);
 		return result;
 	}

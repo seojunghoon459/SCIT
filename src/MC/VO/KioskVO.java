@@ -3,7 +3,6 @@ package MC.VO;
 public class KioskVO {
 	private int knum;
 	private String kiosk_bill;
-	private int count;
 
 	public KioskVO() {
 		super();
@@ -13,7 +12,6 @@ public class KioskVO {
 		super();
 		this.knum = knum;
 		this.kiosk_bill = kiosk_bill;
-		this.count = count;
 	}
 
 	public int getKnum() {
@@ -32,17 +30,9 @@ public class KioskVO {
 		this.kiosk_bill = kiosk_bill;
 	}
 
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
 	@Override
 	public String toString() {
-		return "주문번호 : " + knum + "\n" + kiosk_bill + "\t" + count + "개";
+		return "주문번호 : " + knum + "\n" + kiosk_bill;
 	}
 
 }
