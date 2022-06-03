@@ -165,9 +165,10 @@
 		ORDER BY
 		dessert_name
 	</select>
-	
+
 	<insert id="SaveOrder" parameterType="KioskVO">
 		INSERT INTO kiosk
-		VALUES (kiosk_seq.nextval,#{iosk_bill})
+		VALUES
+		(kiosk_seq.nextval,#{iosk_bill})
 	</insert>
 </mapper>
