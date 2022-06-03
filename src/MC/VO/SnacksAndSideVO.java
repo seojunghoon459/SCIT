@@ -61,6 +61,20 @@ public class SnacksAndSideVO {
 		this.reorder = reorder;
 	}
 
+	public String setOutPut() {
+		String tmp1, tmp2;
+		if (popularity == 1) {
+			tmp1 = "¢¾";
+		} else
+			tmp1 = " ";
+
+		if (reorder == 1) {
+			tmp2 = "R";
+		} else
+			tmp2 = " ";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t\t" + setprice + "¿ø";
+	}
+
 	@Override
 	public String toString() {
 		String tmp1, tmp2;

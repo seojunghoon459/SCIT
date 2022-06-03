@@ -185,7 +185,7 @@ public class MCUI {
 		case "m":
 			List<SnacksAndSideVO> sMlist = mcs.getMSnaksandSides();
 			for (SnacksAndSideVO svo : sMlist) {
-				System.out.println(sNum++ + "." + svo);
+				System.out.println(sNum++ + "." + svo.setOutPut());
 			}
 
 			System.out.print("사이드 선택 : ");
@@ -196,7 +196,7 @@ public class MCUI {
 		case "l":
 			List<SnacksAndSideVO> sLlist = mcs.getMSnaksandSides();
 			for (SnacksAndSideVO svo : sLlist) {
-				System.out.println(sNum++ + "." + svo);
+				System.out.println(sNum++ + "." + svo.setOutPut());
 			}
 
 			System.out.print("사이드 선택 : ");
@@ -219,7 +219,7 @@ public class MCUI {
 		case "m":
 			List<DrinkVO> dMlist = mcs.getMDrink();
 			for (DrinkVO svo : dMlist) {
-				System.out.println(dNum++ + "." + svo);
+				System.out.println(dNum++ + "." + svo.setOutPut());
 			}
 
 			System.out.print("드링크 선택 : ");
@@ -230,7 +230,7 @@ public class MCUI {
 		case "l":
 			List<DrinkVO> dLlist = mcs.getLDrink();
 			for (DrinkVO svo : dLlist) {
-				System.out.println(dNum++ + "." + svo);
+				System.out.println(dNum++ + "." + svo.setOutPut());
 			}
 
 			System.out.print("드링크 선택 : ");
