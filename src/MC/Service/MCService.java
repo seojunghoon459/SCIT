@@ -8,10 +8,12 @@ import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
+import MC.VO.ShoppingBasketVO;
 import MC.VO.SnacksAndSideVO;
 
 public class MCService {
 	MCDAO mdao = new MCDAO();
+	private List<ShoppingBasketVO> sblist;
 
 	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
 		switch (shoppingNum) {
@@ -39,14 +41,15 @@ public class MCService {
 		return null;
 	}
 
-	public List<SetVO> shopping_basket(Object obj, int count) {
-		// 총 얼마냐
-		return null;
+	public List<ShoppingBasketVO> shopping_basket(Object product, int ordercnt) {
+		sblist.add(new ShoppingBasketVO(product, ordercnt));
+
+		return sblist;
 	}
 
-	public List<SetVO> shopping_basket() {
-		// 장바구니 전체 출력
-		return null;
+	public List<ShoppingBasketVO> shopping_basket() {
+		
+		return sblist;
 	}
 
 	public void cancel() {
