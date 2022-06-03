@@ -29,13 +29,7 @@ public class MCService {
 		return null;
 	}
 
-	public SetVO HappyMeal() {
-		// ÇØ¾ßÇÔ
-		return null;
-	}
-
 	public List<Object> order() {
-		
 
 		return null;
 	}

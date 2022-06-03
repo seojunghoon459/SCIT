@@ -15,33 +15,13 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-//	// 세트만들기
-//	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
-//
-//		return null;
-//	}
+	public int SaveOrder(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
 
-	// 해피밀
-	public SetVO HappyMeal() {
-
-		return null;
-	}
-
-	// 주문하기
-	public List<SetVO> order() {
-
-		return null;
-	}
-
-	// 장바구니
-	public List<SetVO> shopping_basket(Object obj, int count) {
-
-		return null;
-	}
-
-	// 취소
-	public void cancel() {
-
+		int result = mapper.SaveOrder(str);
+		return result;
 	}
 
 	public DessertVO SearchDDessert(String str) {
