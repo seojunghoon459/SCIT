@@ -48,7 +48,7 @@ public interface MCMapper {
 
 	public int DessertAdd(DessertVO dessert); //
 
-	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSideAdd);//
+	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSide);//
 
 	public int DrinkAdd(DrinkVO drink); //
 
@@ -58,7 +58,7 @@ public interface MCMapper {
  
 	public int DessertUpdate(DessertVO dessert); //
 
-	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSideAdd); //
+	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSide); //
 
 	public int DrinkUpdate(DrinkVO drink); //
 
@@ -73,6 +73,5 @@ public interface MCMapper {
 	public int DrinkDelete(String str); //
 
 	public int SauceDeletee(String str); //
-
 
 }
