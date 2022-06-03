@@ -44,7 +44,5 @@ public class KioskVO {
 	public String toString() {
 		return "주문번호 : " + knum + "\n" + kiosk_bill + "\t" + count + "개";
 	}
-	
-	
 
 }

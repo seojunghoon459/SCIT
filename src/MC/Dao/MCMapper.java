@@ -40,6 +40,6 @@ public interface MCMapper {
 
 	public List<DessertVO> getDessert();
 
-	public int SaveOrder(String str);
+	public int SaveOrder(KioskVO str);
 
 }

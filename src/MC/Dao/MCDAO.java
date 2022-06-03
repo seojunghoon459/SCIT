@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
@@ -15,12 +16,12 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-	public int SaveOrder(String str) {
+	public int SaveOrder(KioskVO kvo) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SaveOrder(str);
+		int result = mapper.SaveOrder(kvo);
 		return result;
 	}
 
@@ -71,6 +72,7 @@ public class MCDAO {
 
 	// 추가필요
 	public List<SnacksAndSideVO> getSnacksAndSide() {
+		
 		return null;
 	}
 
@@ -154,4 +156,5 @@ public class MCDAO {
 		List<DrinkVO> result = mapper.getDrink();
 		return result;
 	}
+
 }
