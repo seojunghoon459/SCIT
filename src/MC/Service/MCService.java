@@ -1,5 +1,6 @@
 package MC.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import MC.Dao.MCDAO;
@@ -13,7 +14,7 @@ import MC.VO.SnacksAndSideVO;
 
 public class MCService {
 	MCDAO mdao = new MCDAO();
-	private List<ShoppingBasketVO> sblist;
+	List<ShoppingBasketVO> sblist = new ArrayList<ShoppingBasketVO>();
 
 	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
 		switch (shoppingNum) {
@@ -42,18 +43,18 @@ public class MCService {
 	}
 
 	public List<ShoppingBasketVO> shopping_basket(Object product, int ordercnt) {
-		sblist.add(new ShoppingBasketVO(product, ordercnt));
+		sblist.add(sblist.size(), new ShoppingBasketVO(product, ordercnt));
 
 		return sblist;
 	}
 
 	public List<ShoppingBasketVO> shopping_basket() {
-		
+
 		return sblist;
 	}
 
 	public void cancel() {
-		// 장바구니 비워주기
+		sblist = new ArrayList<ShoppingBasketVO>();
 	}
 
 	public List<HamburgerVO> getHamburger() {

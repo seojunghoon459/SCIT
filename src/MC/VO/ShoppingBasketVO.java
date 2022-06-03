@@ -42,27 +42,31 @@ public class ShoppingBasketVO {
 		clac();
 	}
 
+	public String kioskOutPut() {
+		return product.toString() + "\t" + ordercount + "°³";
+	}
+
 	@Override
 	public String toString() {
 		return "ShoppingBasketVO [product=" + product + ", ordercount=" + ordercount + ", sumprice=" + sumprice + "]";
 	}
 
 	private int clac() {
-		if (this.product instanceof SetVO) {
+		if (product instanceof SetVO) {
 			int hprice = ((SetVO) product).getHamburger().getPrice();
 			int dsprice = ((SetVO) product).getDrink().getSetprice();
 			int ssprice = ((SetVO) product).getSnacksAndSide().getPrice();
 			sumprice = hprice + dsprice + ssprice;
 		}
-		if (this.product instanceof HamburgerVO) {
+		if (product instanceof HamburgerVO) {
 
 			sumprice = ((HamburgerVO) product).getPrice();
 		}
-		if (this.product instanceof DrinkVO) {
+		if (product instanceof DrinkVO) {
 
 			sumprice = ((DrinkVO) product).getPrice();
 		}
-		if (this.product instanceof SnacksAndSideVO) {
+		if (product instanceof SnacksAndSideVO) {
 
 			sumprice = ((SnacksAndSideVO) product).getPrice();
 		}

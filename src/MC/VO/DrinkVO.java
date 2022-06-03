@@ -69,7 +69,7 @@ public class DrinkVO {
 	public void setReorder(int reorder) {
 		this.reorder = reorder;
 	}
-	
+
 	public String setOutPut() {
 		String tmp1, tmp2;
 		if (popularity == 1) {

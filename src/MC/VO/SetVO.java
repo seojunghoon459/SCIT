@@ -40,4 +40,11 @@ public class SetVO {
 		Drink = drink;
 	}
 
+	@Override
+	public String toString() {
+		int sum = Hamburger.getPrice() + SnacksAndSide.getSetprice() + Drink.getSetprice();
+		return Hamburger.getHamburger_name() + "¼¼Æ® " + SnacksAndSide.getSnacksandside_name() + ""
+				+ Drink.getDrink_name() + sum + "\t¿ø\n";
+	}
+
 }

@@ -8,6 +8,7 @@ import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.SetVO;
+import MC.VO.ShoppingBasketVO;
 import MC.VO.SnacksAndSideVO;
 
 public class MCUI {
@@ -17,36 +18,46 @@ public class MCUI {
 	MCService mcs = new MCService();
 
 	public MCUI() {
-		menu();
-		System.out.print("> 메뉴를 선택해 주세요 : ");
-		String firstChoice = sc.nextLine();
+		while (true) {
+			menu();
+			System.out.print("> 메뉴를 선택해 주세요 : ");
+			String firstChoice = sc.nextLine();
 
-		switch (firstChoice) {
-		case "1":
-			HamburgerMenu();
-			break;
-		case "2":
-			SnacksAndSideMenu();
-			break;
-		case "3":
-			DessertMenu();
-			break;
-		case "4":
-			DrinkMenu();
-			break;
-		case "5":
-			mcs.HappyMeal();
-			break;
-		case "6":
-			mcs.shopping_basket();
-			break;
-		case "7":
-			mcs.order();
-			break;
-		case "0":
-			mcs.cancel();
-			break;
+			switch (firstChoice) {
+			case "1":
+				HamburgerMenu();
+				break;
+			case "2":
+				SnacksAndSideMenu();
+				break;
+			case "3":
+				DessertMenu();
+				break;
+			case "4":
+				DrinkMenu();
+				break;
+			case "5":
+				mcs.HappyMeal();
+				break;
+			case "6":
+				shopping_basket();
+				break;
+			case "7":
+				mcs.order();
+				break;
+			case "0":
+				mcs.cancel();
+				break;
+			}
 		}
+	}
+
+	private void shopping_basket() {
+		List<ShoppingBasketVO> slist = mcs.shopping_basket();
+		for (ShoppingBasketVO sbVO : slist) {
+			System.out.println(sbVO.kioskOutPut());
+		}
+
 	}
 
 	private void SnacksAndSideMenu() {
@@ -148,10 +159,10 @@ public class MCUI {
 			int shoppingNum = Integer.parseInt(sc.nextLine());
 
 			mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo, setCnt);
-			break;
+			return;
 		case "2":
 			BugerSet(hvo, size);
-			break;
+			return;
 		default:
 			return;
 		}
