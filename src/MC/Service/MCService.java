@@ -89,12 +89,12 @@ public class MCService {
 			for (SetVO vo : Setlist) {
 
 				str += vo.getHamburger().getHamburger_name() + "세트";
-				System.out.println(vo.getSnacksAndSide().getSnacksandside_name() + "," + vo.getDrink().getDrink_name());
+				str += vo.getSnacksAndSide().getSnacksandside_name() + "," + vo.getDrink().getDrink_name();
 
 				int setPrice = (vo.getHamburger().getPrice() + vo.getSnacksAndSide().getSetprice()
 						+ vo.getDrink().getSetprice()) * vo.getCount();
 
-				str += setPrice + "\t\t\t" + vo.getCount() + "개";
+				str += setPrice + "\t\t\t" + vo.getCount() + "개 \n";
 
 				totPrice += setPrice;
 			}
@@ -142,29 +142,29 @@ public class MCService {
 		if (obj instanceof HamburgerVO) {
 			k.setKnum(kioskNum++);
 			HamburgerVO tmp = (HamburgerVO) obj;
-			k.setKiosk_bill(tmp.getHamburger_name() + "*" + tmp.getCount() + "개");
+			k.setKiosk_bill(tmp.getHamburger_name() + " *" + tmp.getCount() + " 개");
 		}
 		if (obj instanceof DrinkVO) {
 			k.setKnum(kioskNum++);
 			DrinkVO tmp = (DrinkVO) obj;
-			k.setKiosk_bill(tmp.getDrink_name() + "*" + tmp.getCount() + "개");
+			k.setKiosk_bill(tmp.getDrink_name() + " *" + tmp.getCount() + " 개");
 		}
 		if (obj instanceof DessertVO) {
 			k.setKnum(kioskNum++);
 			DessertVO tmp = (DessertVO) obj;
-			k.setKiosk_bill(tmp.getDessert_name() + "*" + tmp.getCount() + "개");
+			k.setKiosk_bill(tmp.getDessert_name() + " *" + tmp.getCount() + " 개");
 		}
 		if (obj instanceof SetVO) {
 			k.setKnum(kioskNum++);
 			SetVO tmp = (SetVO) obj;
 			k.setKiosk_bill(tmp.getHamburger().getHamburger_name() + tmp.getSnacksAndSide().getSnacksandside_name()
-					+ tmp.getDrink().getDrink_name() + "*" + tmp.getCount() + "개");
+					+ tmp.getDrink().getDrink_name() + " *" + tmp.getCount() + " 개");
 
 		}
 		if (obj instanceof SnacksAndSideVO) {
 			k.setKnum(kioskNum++);
 			SnacksAndSideVO tmp = (SnacksAndSideVO) obj;
-			k.setKiosk_bill(tmp.getSnacksandside_name() + "*" + tmp.getCount() + "개");
+			k.setKiosk_bill(tmp.getSnacksandside_name() + " *" + tmp.getCount() + " 개");
 		}
 		if (obj instanceof HappyMealVO) {
 			k.setKnum(kioskNum++);
@@ -185,8 +185,10 @@ public class MCService {
 
 			k.setKiosk_bill(str);
 		}
+		cancel();
 
 		return k;
+
 	}
 
 	public void shopping_basket(Object product) {

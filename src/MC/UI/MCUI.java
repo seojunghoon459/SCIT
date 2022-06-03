@@ -63,6 +63,7 @@ public class MCUI {
 	// 추가필요
 	private void order() {
 		mcs.ShoppingBasketorder();
+		System.out.println(mcs.ShoppingBasketorder());
 
 	}
 
