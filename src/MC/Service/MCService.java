@@ -7,6 +7,7 @@ import MC.Dao.MCDAO;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.ShoppingBasketVO;
@@ -15,16 +16,17 @@ import MC.VO.SnacksAndSideVO;
 public class MCService {
 	MCDAO mdao = new MCDAO();
 	List<ShoppingBasketVO> sblist = new ArrayList<ShoppingBasketVO>();
+	int kioskNum = 0;
 
-	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
+	public String SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
 		switch (shoppingNum) {
 		case 1:
 			shopping_basket(obj, ordercnt);
-			break;
+			return "장바구니에 담았습니다.";
 		case 2:
-			order(obj, ordercnt);
-			break;
+			return order(obj, ordercnt).toString();
 		}
+		return null;
 	}
 
 	public SetVO HappyMeal() {
@@ -32,14 +34,17 @@ public class MCService {
 		return null;
 	}
 
-	public List<SetVO> order() {
-		// 키오스크 주문창
+	public List<Object> order() {
+		
+
 		return null;
 	}
 
-	public Object order(Object obj, int setNum) {
-		// 단품 주문창
-		return null;
+	public KioskVO order(Object obj, int orderCnt) {
+		String str = String.format("%s %d개", obj, orderCnt);
+		KioskVO k = new KioskVO(kioskNum++, str, orderCnt);
+
+		return k;
 	}
 
 	public List<ShoppingBasketVO> shopping_basket(Object product, int ordercnt) {

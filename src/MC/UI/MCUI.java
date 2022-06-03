@@ -43,13 +43,17 @@ public class MCUI {
 				shopping_basket();
 				break;
 			case "7":
-				mcs.order();
+				order();
 				break;
 			case "0":
 				mcs.cancel();
 				break;
 			}
 		}
+	}
+
+	private void order() {
+
 	}
 
 	private void shopping_basket() {
@@ -76,7 +80,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickSnacksAndSide, SnacksAndSideCnt);
+		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickSnacksAndSide, SnacksAndSideCnt));
 	}
 
 	private void DessertMenu() {
@@ -95,8 +99,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDessert, DessertCnt);
-
+		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDessert, DessertCnt));
 	}
 
 	private void DrinkMenu() {
@@ -115,7 +118,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDrink, DrinkCnt);
+		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDrink, DrinkCnt));
 	}
 
 	private void HamburgerMenu() {
@@ -158,7 +161,7 @@ public class MCUI {
 			System.out.println("1.장바구니 / 2.주문하기");
 			int shoppingNum = Integer.parseInt(sc.nextLine());
 
-			mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo, setCnt);
+			System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo, setCnt));
 			return;
 		case "2":
 			BugerSet(hvo, size);
@@ -182,8 +185,7 @@ public class MCUI {
 		System.out.print("1.장바구니 / 2.주문하기");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
 
-		mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO, setNum);
-
+		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO, setNum));
 		return setVO;
 	}
 
