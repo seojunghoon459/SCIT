@@ -27,13 +27,13 @@ public class MCService {
 	List<SetVO> SetVOlist = new ArrayList<SetVO>();
 	List<HappyMealVO> HappyMealVOlist = new ArrayList<HappyMealVO>();
 
-	public String SDDOrderORHhoppingBasket(int shoppingNum, Object obj, int ordercnt) {
+	public String SDDOrderORHhoppingBasket(int shoppingNum, Object obj) {
 		switch (shoppingNum) {
 		case 1:
-			shopping_basket(obj, ordercnt);
+			shopping_basket(obj);
 			return "장바구니에 담았습니다.";
 		case 2:
-			return order(obj, ordercnt).toString();
+			return order(obj).toString();
 		}
 		return null;
 	}
@@ -84,7 +84,12 @@ public class MCService {
 	}
 
 	public void cancel() {
-		sblist = new ArrayList<ShoppingBasketVO>();
+		HamburgerVOlist = new ArrayList<HamburgerVO>();
+		SnacksAndSideVOlist = new ArrayList<SnacksAndSideVO>();
+		DDrinkVOlist = new ArrayList<DrinkVO>();
+		DessertVOlist = new ArrayList<DessertVO>();
+		SetVOlist = new ArrayList<SetVO>();
+		HappyMealVOlist = new ArrayList<HappyMealVO>();
 	}
 
 	public List<HamburgerVO> getHamburger() {
