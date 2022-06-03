@@ -36,10 +36,15 @@ public class MCService {
 		return null;
 	}
 
-	public List<Object> order() {
-		
+	public KioskVO ShoppingBasketorder() {
+		KioskVO k = new KioskVO();
+		k.setKnum(kioskNum++);
+		String str = "";
+		for (ShoppingBasketVO sbVO : sblist) {
+			str += String.format("%s %d°³ , ", sbVO.getProduct(), sbVO.getSumprice());
+		}
 
-		return null;
+		return k;
 	}
 
 	public KioskVO order(Object obj, int orderCnt) {
@@ -120,28 +125,27 @@ public class MCService {
 
 	public void HamburgerAdd(String hamburger_name) {
 		mdao.HamburgerAdd();
-		
+
 	}
 
 	public void DessertAdd(String dessert_name) {
 		mdao.DessertAdd();
-		
+
 	}
 
 	public void SnacksAndSideAdd(String snacksandside_name) {
 		mdao.SnacksAndSideAdd();
-		
+
 	}
 
 	public void DrinkAdd(String drink_name) {
 		mdao.DrinkAdd();
-		
+
 	}
 
 	public void SauceAdd(String sauce_name) {
 		mdao.SauceAdd();
-		
-	}
 
+	}
 
 }
