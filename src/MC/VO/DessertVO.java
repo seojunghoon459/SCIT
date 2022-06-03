@@ -22,11 +22,11 @@ public class DessertVO {
 		this.reorder = reorder;
 	}
 
-	public String getHamburger_name() {
+	public String getDessert_name() {
 		return Dessert_name;
 	}
 
-	public void setHamburger_name(String Dessert_name) {
+	public void setDessert_name(String Dessert_name) {
 		this.Dessert_name = Dessert_name;
 	}
 

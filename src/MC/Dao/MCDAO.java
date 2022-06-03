@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
-import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
@@ -16,13 +15,33 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-	public int SaveOrder(KioskVO kvo) {
-		SqlSession session = null;
-		session = factory.openSession();
-		MCMapper mapper = session.getMapper(MCMapper.class);
+//	// 세트만들기
+//	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
+//
+//		return null;
+//	}
 
-		int result = mapper.SaveOrder(kvo);
-		return result;
+	// 해피밀
+	public SetVO HappyMeal() {
+
+		return null;
+	}
+
+	// 주문하기
+	public List<SetVO> order() {
+
+		return null;
+	}
+
+	// 장바구니
+	public List<SetVO> shopping_basket(Object obj, int count) {
+
+		return null;
+	}
+
+	// 취소
+	public void cancel() {
+
 	}
 
 	public DessertVO SearchDDessert(String str) {
@@ -72,7 +91,6 @@ public class MCDAO {
 
 	// 추가필요
 	public List<SnacksAndSideVO> getSnacksAndSide() {
-		
 		return null;
 	}
 
@@ -157,4 +175,28 @@ public class MCDAO {
 		return result;
 	}
 
+	public void HamburgerAdd() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void DessertAdd() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void SnacksAndSideAdd() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void DrinkAdd() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void SauceAdd() {
+		// TODO Auto-generated method stub
+		
+	}
 }
