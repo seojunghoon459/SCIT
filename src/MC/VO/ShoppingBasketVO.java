@@ -43,7 +43,7 @@ public class ShoppingBasketVO {
 	}
 
 	public String kioskOutPut() {
-		return product.toString() + "\t" + ordercount + "°³";
+		return product + "\t" + ordercount + "°³";
 	}
 
 	@Override

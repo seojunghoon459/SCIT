@@ -43,8 +43,8 @@ public class SetVO {
 	@Override
 	public String toString() {
 		int sum = Hamburger.getPrice() + SnacksAndSide.getSetprice() + Drink.getSetprice();
-		return Hamburger.getHamburger_name() + "세트 " + SnacksAndSide.getSnacksandside_name() + ""
-				+ Drink.getDrink_name() + sum + "\t원\n";
+		return Hamburger.getHamburger_name() + "세트/" + SnacksAndSide.getSnacksandside_name() + "/"
+				+ Drink.getDrink_name() + "\t" + sum + "원";
 	}
 
 }

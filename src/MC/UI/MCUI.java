@@ -176,10 +176,10 @@ public class MCUI {
 		DrinkVO dvo = selectDrink(str);
 
 		SetVO setVO = new SetVO(Hamburger, ssvo, dvo);
-		System.out.println("수량 : ");
+		System.out.print("수량 : ");
 		int setNum = Integer.parseInt(sc.nextLine());
 
-		System.out.println("1.장바구니 / 2.주문하기");
+		System.out.print("1.장바구니 / 2.주문하기");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
 
 		mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO, setNum);
