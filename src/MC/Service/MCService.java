@@ -133,8 +133,6 @@ public class MCService {
 
 		}
 
-		str += "\nรั" + totPrice;
-
 		k.setKiosk_bill(str);
 		mdao.order(k);
 
@@ -327,5 +325,15 @@ public class MCService {
 
 	public void SauceUpdate(SauceVO sacvo) {
 		mdao.SauceUpdate(sacvo);
+	}
+
+	public SnacksAndSideVO oneSnacksAndSide(String tmp) {
+		SnacksAndSideVO svo = mdao.oneSnacksAndSide(tmp);
+		return svo;
+	}
+
+	public HamburgerVO oneHamburger(String tmp) {
+		HamburgerVO hvo = mdao.oneoneHamburger(tmp);
+		return hvo;
 	}
 }

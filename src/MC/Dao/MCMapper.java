@@ -7,7 +7,6 @@ import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.KioskVO;
 import MC.VO.SauceVO;
-import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
 public interface MCMapper {
@@ -75,7 +74,10 @@ public interface MCMapper {
 	public int DrinkDelete(String str); //
 
 	public int SauceDeletee(String str); //
-	
+
 	public int getKioskCnt();
 
+	public SnacksAndSideVO oneSnacksAndSide(String str);
+
+	public HamburgerVO oneoneHamburger(String str);
 }

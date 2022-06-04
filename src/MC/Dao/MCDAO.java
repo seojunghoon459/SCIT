@@ -10,7 +10,6 @@ import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.KioskVO;
 import MC.VO.SauceVO;
-import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
 
 public class MCDAO {
@@ -335,6 +334,24 @@ public class MCDAO {
 
 		int result = mapper.getKioskCnt();
 		return result;
+	}
+
+	public SnacksAndSideVO oneSnacksAndSide(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		SnacksAndSideVO svo = mapper.oneSnacksAndSide(str);
+		return svo;
+	}
+
+	public HamburgerVO oneoneHamburger(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		HamburgerVO hvo = mapper.oneoneHamburger(str);
+		return hvo;
 	}
 
 }
