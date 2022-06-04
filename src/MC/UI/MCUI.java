@@ -416,7 +416,6 @@ public class MCUI {
 	private void shopping_basket() {
 		int totPrice = 0;
 		int sbNum = 1;
-		String shoppingchoice;
 
 		List<HamburgerVO> Hamburgerlist = mcs.getHamburgerlist();
 		List<SnacksAndSideVO> SnacksAndSidelist = mcs.getSnacksAndSidelist();

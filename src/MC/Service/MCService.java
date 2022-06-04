@@ -30,8 +30,10 @@ public class MCService {
 		switch (shoppingNum) {
 		case 1:
 			shopping_basket(obj);
+			break;
 		case 2:
 			order(obj);
+			break;
 		}
 	}
 
