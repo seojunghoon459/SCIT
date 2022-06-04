@@ -62,7 +62,6 @@ public class MCUI {
 
 	private void order() {
 		mcs.ShoppingBasketorder();
-		System.out.print(mcs.ShoppingBasketorder());
 
 	}
 
@@ -417,6 +416,10 @@ public class MCUI {
 	private void shopping_basket() {
 		int totPrice = 0;
 		int sbNum = 1;
+		int cNum = 0;
+		int result = 0;
+		int changeNum = 1;
+		String shoppingchoice;
 
 		List<HamburgerVO> Hamburgerlist = mcs.getHamburgerlist();
 		List<SnacksAndSideVO> SnacksAndSidelist = mcs.getSnacksAndSidelist();
@@ -432,6 +435,7 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
+				cNum = sbNum - cNum;
 			}
 		}
 
@@ -442,6 +446,7 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
+				cNum = sbNum - cNum;
 			}
 		}
 
@@ -452,6 +457,7 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
+				cNum = sbNum - cNum;
 			}
 		}
 
@@ -462,6 +468,7 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
+				cNum = sbNum - cNum;
 			}
 		}
 
@@ -477,6 +484,7 @@ public class MCUI {
 				System.out.println(setPrice + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += setPrice;
+				cNum = sbNum - cNum;
 			}
 		}
 
@@ -495,6 +503,7 @@ public class MCUI {
 					System.out.println(HappyMealPrice + "\t\t\t" + vo.getCount() + "개");
 
 					totPrice += HappyMealPrice;
+					cNum = sbNum - cNum;
 				}
 
 				if (vo.getHamburger() == null) {
@@ -508,6 +517,7 @@ public class MCUI {
 					System.out.println(HappyMealPrice + "\t\t\t" + vo.getCount() + "개");
 
 					totPrice += HappyMealPrice;
+					cNum = sbNum - cNum;
 				}
 
 			}
@@ -515,9 +525,58 @@ public class MCUI {
 
 		if (totPrice == 0) {
 			System.out.println("장바구니에 상품이 없습니다.");
+			return;
+		}
+
+		System.out.println();
+
+		if (totPrice == 0) {
+			System.out.println("장바구니에 상품이 없습니다.");
 		}
 
 		System.out.println("총합 : " + totPrice);
+
+		System.out.println("1) 상품수량 변경 2) 전체취소");
+		System.out.print("> ");
+		shoppingchoice = sc.nextLine();
+		switch (shoppingchoice) {
+		case "1":
+			System.out.print("바꾸고 싶으신 메뉴를 선택해주세요 : ");
+			changeNum = sc.nextInt();
+			sc.nextLine();
+			if (changeNum <= sbNum) {
+				if (!Hamburgerlist.isEmpty()) {
+					
+					
+				}
+				if (!SnacksAndSidelist.isEmpty()) {
+					
+				}
+				if(!Drinklist.isEmpty()) {
+					
+				}
+				if(!Dessertlist.isEmpty()) {
+					
+				}
+				if(!Setlist.isEmpty()) {
+					
+				}
+				if(!HappyMeallist.isEmpty()) {
+					
+				}
+			}
+			break;
+		case "2":
+			Hamburgerlist.clear();
+			SnacksAndSidelist.clear();
+			Drinklist.clear();
+			Dessertlist.clear();
+			Setlist.clear();
+			HappyMeallist.clear();
+			System.out.println("전체 취소 되었습니다.");
+			break;
+
+		}
 
 	}
 
@@ -539,7 +598,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickSnacksAndSide));
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickSnacksAndSide);
 	}
 
 	private void DessertMenu() {
@@ -560,7 +619,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDessert));
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDessert);
 	}
 
 	private void DrinkMenu() {
@@ -581,7 +640,7 @@ public class MCUI {
 
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
-		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDrink));
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, pickDrink);
 	}
 
 	private void HamburgerMenu() {
@@ -625,7 +684,7 @@ public class MCUI {
 			System.out.println("1.장바구니 / 2.주문하기");
 			int shoppingNum = Integer.parseInt(sc.nextLine());
 
-			System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo));
+			mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo);
 			return;
 		case "2":
 			BugerSet(hvo, size);
@@ -651,7 +710,7 @@ public class MCUI {
 		System.out.print("1.장바구니 / 2.주문하기 : ");
 		int shoppingNum = Integer.parseInt(sc.nextLine());
 
-		System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO));
+		mcs.SDDOrderORHhoppingBasket(shoppingNum, setVO);
 		return setVO;
 	}
 
@@ -726,13 +785,14 @@ public class MCUI {
 	private HappyMealVO HappyMeal() {
 		HappyMealVO HappyMeal = null;
 		String HappyMealChoice = null;
+		HamburgerVO Hamburger = null;
 		DrinkVO pickDrink = null;
 		SauceVO pickSauce = null;
 		SnacksAndSideVO pickSnacksAndSide = null;
 		SnacksAndSideVO pickSnacksAndSide2 = null;
 		int dNum = 1, sNum = 1, cNum = 1, HappyMealCnt = 1, shoppingNum;
 		int pickDrinkNum, pickSauceNum, pickSnacksAndSideNum;
-		List<SnacksAndSideVO> saslist = mcs.getMSnaksandSides();
+		List<SnacksAndSideVO> saslist = mcs.getSnaksandSides();
 		List<SnacksAndSideVO> sslist = mcs.gethappySnaksandSides();
 		List<DrinkVO> dslist = mcs.getSDrink();
 		List<HamburgerVO> hlist = mcs.getHamburger();
@@ -751,7 +811,7 @@ public class MCUI {
 				}
 				System.out.print("사이드 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
+				pickSnacksAndSide2 = sslist.get(pickSnacksAndSideNum - 1);
 				for (DrinkVO svo : dslist) {
 					System.out.println(dNum++ + "." + svo);
 				}
@@ -776,7 +836,7 @@ public class MCUI {
 
 				System.out.print("1.장바구니 / 2.주문하기");
 				shoppingNum = Integer.parseInt(sc.nextLine());
-				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
+				mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal);
 				return HappyMeal;
 			case "2":
 				for (SnacksAndSideVO ssvo : sslist) {
@@ -802,7 +862,7 @@ public class MCUI {
 
 				System.out.print("1.장바구니 / 2.주문하기");
 				shoppingNum = Integer.parseInt(sc.nextLine());
-				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
+				mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal);
 				return HappyMeal;
 			case "3":
 				for (SnacksAndSideVO ssvo : sslist) {
@@ -827,7 +887,7 @@ public class MCUI {
 
 				System.out.print("1.장바구니 / 2.주문하기");
 				shoppingNum = Integer.parseInt(sc.nextLine());
-				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
+				mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal);
 				return HappyMeal;
 			case "4":
 				for (SnacksAndSideVO ssvo : sslist) {
@@ -855,7 +915,7 @@ public class MCUI {
 
 				System.out.print("1.장바구니 / 2.주문하기");
 				shoppingNum = Integer.parseInt(sc.nextLine());
-				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
+				mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal);
 				return HappyMeal;
 
 			}
