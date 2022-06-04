@@ -37,7 +37,7 @@ public class MCService {
 		return null;
 	}
 
-	public KioskVO ShoppingBasketorder() {
+	public void ShoppingBasketorder() {
 		KioskVO k = new KioskVO();
 
 		k.setKnum(kioskNum++);
@@ -48,7 +48,7 @@ public class MCService {
 			for (HamburgerVO vo : Hamburgerlist) {
 
 				str += vo.getHamburger_name() + "\n";
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개]\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -58,7 +58,7 @@ public class MCService {
 			for (SnacksAndSideVO vo : SnacksAndSidelist) {
 
 				str += vo.getSnacksandside_name() + "\n";
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + "[" + vo.getCount() + "개]\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -68,7 +68,7 @@ public class MCService {
 			for (DrinkVO vo : Drinklist) {
 
 				str += vo.getDrink_name() + "\n";
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + "[" + +vo.getCount() + "개]\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -78,7 +78,7 @@ public class MCService {
 			for (DessertVO vo : Dessertlist) {
 
 				str += vo.getDessert_name() + "\n";
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + "[" + +vo.getCount() + "개]\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -93,7 +93,7 @@ public class MCService {
 				int setPrice = (vo.getHamburger().getPrice() + vo.getSnacksAndSide().getSetprice()
 						+ vo.getDrink().getSetprice()) * vo.getCount();
 
-				str += setPrice + "\t\t\t" + vo.getCount() + "개\n";
+				str += setPrice + "\t\t\t" + "[" + +vo.getCount() + "개]\n";
 
 				totPrice += setPrice;
 			}
@@ -111,7 +111,7 @@ public class MCService {
 
 					int HappyMealPrice = (vo.getHamburger().getPrice() + vo.getDrink().getPrice()) * vo.getCount();
 
-					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개\n";
+					str += HappyMealPrice + "\t\t\t" + "[" + +vo.getCount() + "개]\n";
 
 					totPrice += HappyMealPrice;
 				}
@@ -124,7 +124,7 @@ public class MCService {
 					int HappyMealPrice = (vo.getSnacksAndSide().getPrice() + vo.getSnacksAndSide2().getSetprice()
 							+ vo.getSauce().getSetprice() + vo.getDrink().getSetprice()) * vo.getCount();
 
-					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개\n";
+					str += HappyMealPrice + "\t\t\t" + "[" + +vo.getCount() + "개]\n";
 
 					totPrice += HappyMealPrice;
 				}
@@ -134,7 +134,7 @@ public class MCService {
 		}
 
 		k.setKiosk_bill(str);
-		return k;
+		mdao.order(k);
 	}
 
 	public KioskVO order(Object obj) {

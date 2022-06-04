@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
+import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
@@ -15,33 +16,15 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-//	// 세트만들기
-//	public SetVO BugerSet(HamburgerVO Hamburger, String str) {
-//
-//		return null;
-//	}
-
-	// 해피밀
-	public SetVO HappyMeal() {
-
-		return null;
-	}
-
 	// 주문하기
-	public List<SetVO> order() {
+	public int order(KioskVO kVO) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		return null;
-	}
-
-	// 장바구니
-	public List<SetVO> shopping_basket(Object obj, int count) {
-
-		return null;
-	}
-
-	// 취소
-	public void cancel() {
-
+		int result = mapper.order(kVO);
+		session.commit();
+		return result;
 	}
 
 	public HamburgerVO SearchHamburger(String str) {
@@ -88,6 +71,7 @@ public class MCDAO {
 		SauceVO result = mapper.SearchSauceVO(str);
 		return result;
 	}
+
 	public List<HamburgerVO> getHamburger() {
 		SqlSession session = null;
 		session = factory.openSession();
@@ -95,11 +79,6 @@ public class MCDAO {
 
 		List<HamburgerVO> result = mapper.getHamburger();
 		return result;
-	}
-
-	// 추가필요
-	public List<SnacksAndSideVO> getSnacksAndSide() {
-		return null;
 	}
 
 	public List<SnacksAndSideVO> getMSnaksandSides() {
@@ -349,7 +328,5 @@ public class MCDAO {
 		session.commit();
 		return result;
 	}
-
-	
 
 }

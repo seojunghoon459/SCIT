@@ -22,9 +22,7 @@ public interface MCMapper {
 
 	public SauceVO SearchSauceVO(String str);
 
-	public KioskVO ShoppingBasketorder(); // 장바구니 주문
-
-	public KioskVO order(Object obj, int orderCnt); // 단품 직접 주문
+	public int order(KioskVO kVO); // 장바구니 주문
 
 	public List<HamburgerVO> getHamburger();
 
@@ -33,6 +31,8 @@ public interface MCMapper {
 	public List<SnacksAndSideVO> getLSnaksandSides();
 
 	public List<SnacksAndSideVO> getSnaksandSides();
+
+	public List<SnacksAndSideVO> getHappySnacksAndSides();
 
 	public List<DrinkVO> getDrink();
 
@@ -75,7 +75,5 @@ public interface MCMapper {
 	public int DrinkDelete(String str); //
 
 	public int SauceDeletee(String str); //
-
-	public List<SnacksAndSideVO> getHappySnacksAndSides();
 
 }

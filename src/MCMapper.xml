@@ -334,5 +334,12 @@
 		= '후렌치 후라이 스몰'
 	</select>
 
+	<insert id="order" parameterType="KioskVO">
+		INSERT INTO kiosk
+		(knum,kiosk_bill)
+		VALUES
+		(#{knum},#{kiosk_bill})
+	</insert>
+
 
 </mapper>

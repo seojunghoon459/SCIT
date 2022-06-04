@@ -8,7 +8,7 @@ public class KioskVO {
 		super();
 	}
 
-	public KioskVO(int knum, String kiosk_bill, int count) {
+	public KioskVO(int knum, String kiosk_bill) {
 		super();
 		this.knum = knum;
 		this.kiosk_bill = kiosk_bill;
