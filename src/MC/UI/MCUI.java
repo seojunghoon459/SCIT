@@ -60,10 +60,9 @@ public class MCUI {
 		}
 	}
 
-	// 추가필요
 	private void order() {
 		mcs.ShoppingBasketorder();
-		System.out.println(mcs.ShoppingBasketorder());
+		System.out.print(mcs.ShoppingBasketorder());
 
 	}
 
@@ -86,14 +85,12 @@ public class MCUI {
 			deletemenu();
 			adminchoice = sc.nextLine();
 			deletemenu(adminchoice);
-			//break;
-			return;
+			break;
 		case "4":
 			systemMacmorning();
 			adminchoice = sc.nextLine();
 			systemMacmoring(adminchoice);
-			//break;
-			return;
+			break;
 		case "5":
 			System.out.println("**관리자 모드를 종료합니다.");
 			return;
@@ -102,11 +99,12 @@ public class MCUI {
 	}
 
 	private void systemMacmoring(String adminchoice) {
-
+		// TODO Auto-generated method stub
 
 	}
 
 	private void deletemenu(String adminchoice) {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -763,7 +761,7 @@ public class MCUI {
 				pickDrink = dslist.get(pickDrinkNum - 1);
 				List<SauceVO> slist = mcs.getSauce();
 				for (SauceVO sacucevo : slist) {
-					System.out.println(sNum++ + "." + sacucevo);
+					System.out.println(cNum++ + "." + sacucevo);
 				}
 				System.out.print("소스 선택 : ");
 				pickSauceNum = Integer.parseInt(sc.nextLine());
@@ -820,12 +818,6 @@ public class MCUI {
 				System.out.print("드링크 선택 : ");
 				pickDrinkNum = Integer.parseInt(sc.nextLine());
 				pickDrink = dslist.get(pickDrinkNum - 1);
-				for (SnacksAndSideVO ssvo : saslist) {
-					System.out.println(sNum++ + "." + ssvo);
-				}
-				System.out.print("소스 선택 : ");
-				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
 				System.out.println();
 				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
@@ -854,9 +846,6 @@ public class MCUI {
 				for (SnacksAndSideVO ssvo : saslist) {
 					System.out.println(sNum++ + "." + ssvo);
 				}
-				System.out.print("소스 선택 : ");
-				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
 				System.out.println();
 				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);

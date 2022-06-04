@@ -12,7 +12,6 @@ import MC.VO.HappyMealVO;
 import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
-import MC.VO.ShoppingBasketVO;
 import MC.VO.SnacksAndSideVO;
 
 public class MCService {
@@ -48,8 +47,8 @@ public class MCService {
 		if (Hamburgerlist.size() > 0) {
 			for (HamburgerVO vo : Hamburgerlist) {
 
-				str += vo.getHamburger_name();
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개";
+				str += vo.getHamburger_name() + "\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -58,8 +57,8 @@ public class MCService {
 		if (SnacksAndSidelist.size() > 0) {
 			for (SnacksAndSideVO vo : SnacksAndSidelist) {
 
-				str += vo.getSnacksandside_name();
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개";
+				str += vo.getSnacksandside_name() + "\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -68,8 +67,8 @@ public class MCService {
 		if (Drinklist.size() > 0) {
 			for (DrinkVO vo : Drinklist) {
 
-				str += vo.getDrink_name();
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개";
+				str += vo.getDrink_name() + "\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -78,8 +77,8 @@ public class MCService {
 		if (Dessertlist.size() > 0) {
 			for (DessertVO vo : Dessertlist) {
 
-				str += vo.getDessert_name();
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개";
+				str += vo.getDessert_name() + "\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
@@ -88,13 +87,13 @@ public class MCService {
 		if (Setlist.size() > 0) {
 			for (SetVO vo : Setlist) {
 
-				str += vo.getHamburger().getHamburger_name() + "세트";
+				str += vo.getHamburger().getHamburger_name() + "세트\n";
 				str += vo.getSnacksAndSide().getSnacksandside_name() + "," + vo.getDrink().getDrink_name();
 
 				int setPrice = (vo.getHamburger().getPrice() + vo.getSnacksAndSide().getSetprice()
 						+ vo.getDrink().getSetprice()) * vo.getCount();
 
-				str += setPrice + "\t\t\t" + vo.getCount() + "개 \n";
+				str += setPrice + "\t\t\t" + vo.getCount() + "개\n";
 
 				totPrice += setPrice;
 			}
@@ -103,28 +102,29 @@ public class MCService {
 		if (HappyMeallist.size() > 0) {
 			for (HappyMealVO vo : HappyMeallist) {
 
-				str += "해피밀 ";
+				str += "해피밀\n";
 
 				if (vo.getHamburger() != null) {
 					str += vo.getHamburger().getHamburger_name();
-					str += vo.getSnacksAndSide().getSnacksandside_name() + ",해피밀 랜덤 토이" + vo.getDrink().getDrink_name();
+					str += vo.getSnacksAndSide2().getSnacksandside_name() + ",해피밀 랜덤 토이"
+							+ vo.getDrink().getDrink_name();
 
 					int HappyMealPrice = (vo.getHamburger().getPrice() + vo.getDrink().getPrice()) * vo.getCount();
 
-					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개";
+					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개\n";
 
 					totPrice += HappyMealPrice;
 				}
 
 				if (vo.getHamburger() == null) {
-					str += vo.getSnacksAndSide().getSnacksandside_name();
+					str += vo.getSnacksAndSide().getSnacksandside_name() + "\n";
 					str += vo.getSnacksAndSide2().getSnacksandside_name() + "," + vo.getSauce().getSauce_name() + ','
 							+ "해피밀 랜덤 토이" + vo.getDrink().getDrink_name();
 
 					int HappyMealPrice = (vo.getSnacksAndSide().getPrice() + vo.getSnacksAndSide2().getSetprice()
 							+ vo.getSauce().getSetprice() + vo.getDrink().getSetprice()) * vo.getCount();
 
-					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개";
+					str += HappyMealPrice + "\t\t\t" + vo.getCount() + "개\n";
 
 					totPrice += HappyMealPrice;
 				}
@@ -243,7 +243,6 @@ public class MCService {
 
 	public List<DrinkVO> getDrink() {
 		List<DrinkVO> dlist = mdao.getDrink();
-		System.out.println(dlist);
 		return dlist;
 	}
 
