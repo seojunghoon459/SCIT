@@ -59,7 +59,7 @@ public class MCUI {
 
 	private void order() {
 		KioskVO kvo = mcs.ShoppingBasketorder();
-		System.out.println(kvo.getKiosk_bill());
+		System.out.println("주문번호" + kvo.getKnum() + "\n" + kvo.getKiosk_bill());
 	}
 
 	private void Administrate() {

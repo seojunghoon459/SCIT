@@ -26,7 +26,7 @@ public class MCService {
 	List<SetVO> Setlist = new ArrayList<SetVO>();
 	List<HappyMealVO> HappyMeallist = new ArrayList<HappyMealVO>();
 
-	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj) {
+	public KioskVO SDDOrderORHhoppingBasket(int shoppingNum, Object obj) {
 		switch (shoppingNum) {
 		case 1:
 			shopping_basket(obj);
@@ -35,6 +35,7 @@ public class MCService {
 			order(obj);
 			break;
 		}
+		return null;
 	}
 
 	public KioskVO ShoppingBasketorder() {
