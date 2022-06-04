@@ -99,7 +99,21 @@ public class SauceVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Sauce_name + "\t" + price + "¿ø";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Sauce_name + tapForPrice(Sauce_name) + price + "¿ø";
+	}
+
+	public String tapForPrice(String str) {
+		String tap = "";
+		if (str.length() <= 5) {
+			tap = "\t\t\t\t";
+		} else if (str.length() <= 9) {
+			tap = "\t\t\t";
+		} else if (str.length() <= 13) {
+			tap = "\t\t";
+		} else if (str.length() <= 16) {
+			tap = "\t";
+		}
+		return tap;
 	}
 
 }

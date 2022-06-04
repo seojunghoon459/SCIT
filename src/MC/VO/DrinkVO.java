@@ -8,6 +8,7 @@ public class DrinkVO {
 	private int popularity;
 	private int reorder;
 	private int count;
+
 	public DrinkVO() {
 		super();
 	}
@@ -77,6 +78,7 @@ public class DrinkVO {
 	public void setReorder(int reorder) {
 		this.reorder = reorder;
 	}
+
 	public int getCount() {
 		return count;
 	}
@@ -96,7 +98,7 @@ public class DrinkVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t" + setprice + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + setprice + "원";
 	}
 
 	@Override
@@ -111,7 +113,21 @@ public class DrinkVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t" + price + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + price + "원";
+	}
+
+	public String tapForPrice(String str) {
+		String tap = "";
+		if (str.length() <= 5) {
+			tap = "\t\t\t\t";
+		} else if (str.length() <= 9) {
+			tap = "\t\t\t";
+		} else if (str.length() <= 13) {
+			tap = "\t\t";
+		} else if (str.length() <= 16) {
+			tap = "\t";
+		}
+		return tap;
 	}
 
 }

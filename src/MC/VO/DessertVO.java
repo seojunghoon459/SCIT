@@ -86,6 +86,7 @@ public class DessertVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
+
 	@Override
 	public String toString() {
 		String tmp1, tmp2;
@@ -98,7 +99,22 @@ public class DessertVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Dessert_name + "\t" + price + "¿ø";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Dessert_name + tapForPrice(Dessert_name) + price + "¿ø";
+	}
+
+	public String tapForPrice(String str) {
+		String tap = "";
+		if (str.length() <= 5) {
+			tap = "\t\t\t\t";
+		} else if (str.length() <= 9) {
+			tap = "\t\t\t";
+		} else if (str.length() <= 13) {
+			tap = "\t\t";
+		} else if (str.length() <= 16) {
+			tap = "\t";
+		}
+
+		return tap;
 	}
 
 }

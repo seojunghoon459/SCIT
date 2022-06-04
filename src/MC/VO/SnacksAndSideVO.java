@@ -9,6 +9,7 @@ public class SnacksAndSideVO {
 	private int popularity;
 	private int reorder;
 	private int count;
+
 	public SnacksAndSideVO() {
 		super();
 	}
@@ -68,6 +69,7 @@ public class SnacksAndSideVO {
 	public void setReorder(int reorder) {
 		this.reorder = reorder;
 	}
+
 	public int getCount() {
 		return count;
 	}
@@ -75,7 +77,6 @@ public class SnacksAndSideVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
 
 	public String setOutPut() {
 		String tmp1, tmp2;
@@ -103,7 +104,23 @@ public class SnacksAndSideVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t" + price + "¿ø";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + tapForPrice(snacksandside_name) + price
+				+ "¿ø";
+	}
+
+	public String tapForPrice(String str) {
+		String tap = "";
+		if (str.length() <= 5) {
+			tap = "\t\t\t";
+		} else if (str.length() <= 9) {
+			tap = "\t\t\t";
+		} else if (str.length() <= 13) {
+			tap = "\t\t";
+		} else if (str.length() <= 16) {
+			tap = "\t";
+		}
+
+		return tap;
 	}
 
 }
