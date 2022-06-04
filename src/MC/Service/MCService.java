@@ -26,7 +26,7 @@ public class MCService {
 	List<SetVO> Setlist = new ArrayList<SetVO>();
 	List<HappyMealVO> HappyMeallist = new ArrayList<HappyMealVO>();
 
-	public KioskVO SDDOrderORHhoppingBasket(int shoppingNum, Object obj) {
+	public void SDDOrderORHhoppingBasket(int shoppingNum, Object obj) {
 		switch (shoppingNum) {
 		case 1:
 			shopping_basket(obj);
@@ -35,10 +35,9 @@ public class MCService {
 			order(obj);
 			break;
 		}
-		return null;
 	}
 
-	public KioskVO ShoppingBasketorder() {
+	public void ShoppingBasketorder() {
 		KioskVO k = new KioskVO();
 
 		k.setKnum(kioskNum++);
@@ -137,14 +136,14 @@ public class MCService {
 		k.setKiosk_bill(str);
 		mdao.order(k);
 
+		System.out.println("주문번호" + k.getKnum() + "\n" + k.getKiosk_bill());
+
 		Hamburgerlist.clear();
 		SnacksAndSidelist.clear();
 		Drinklist.clear();
 		Dessertlist.clear();
 		Setlist.clear();
 		HappyMeallist.clear();
-
-		return k;
 	}
 
 	public void order(Object obj) {
