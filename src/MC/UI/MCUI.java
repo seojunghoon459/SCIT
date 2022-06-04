@@ -556,10 +556,10 @@ public class MCUI {
 		List<DessertVO> Dessertlist = mcs.getDessertlist();
 		List<SetVO> Setlist = mcs.getSetlist();
 		List<HappyMealVO> HappyMeallist = mcs.getHappyMeallist();
-		
+
 		if (Hamburgerlist.size() > 0) {
 			for (HamburgerVO vo : Hamburgerlist) {
-				
+
 				System.out.println("[" + sbNum++ + "]" + vo.getHamburger_name());
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
@@ -698,17 +698,17 @@ public class MCUI {
 		int cNum = 0;
 		if (changeNum <= sbNum) {
 			if (changeNum <= result1) {
-				changeNum = result1 - 1;
+				changeNum = result1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Hamburgerlist.get(changeNum).setCount(cNum);
+				Hamburgerlist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
-				changeNum = (changeNum - result1) - result2 - 1;
+				changeNum = result2;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				SnacksAndSidelist.get(changeNum).setCount(cNum);
+				SnacksAndSidelist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
@@ -720,25 +720,24 @@ public class MCUI {
 			}
 
 			if (changeNum - result1 - result2 - result3 <= result4) {
-				changeNum = (changeNum - result1 - result2 - result3) - result4 - 1;
+				changeNum = result4;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				System.out.println(Setlist.get(changeNum - 1));
-				Dessertlist.get(changeNum).setCount(cNum);
+				Dessertlist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 <= result5) {
-				changeNum = (changeNum - result1 - result2 - result3 - result4) - result5 - 1;
+				changeNum = result5;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Setlist.get(changeNum).setCount(cNum);
+				Setlist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
-				changeNum = (changeNum - result1 - result2 - result3 - result4 - result5) - result6 - 1;
+				changeNum = result6;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				HappyMeallist.get(changeNum).setCount(cNum);
+				HappyMeallist.get(changeNum - 1).setCount(cNum);
 				return;
 
 			}
