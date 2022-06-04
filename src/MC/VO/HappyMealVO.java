@@ -27,13 +27,12 @@ public class HappyMealVO {
 		this.count = count;
 	}
 
-	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide, DrinkVO drink, SauceVO sauce, String toy,
+	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide2, DrinkVO drink, String toy,
 			int price, int count) {
 		super();
 		Hamburger = hamburger;
-		SnacksAndSide = snacksAndSide;
+		SnacksAndSide2 = snacksAndSide2;
 		Drink = drink;
-		Sauce = sauce;
 		Toy = toy;
 		Price = price;
 		this.count = count;

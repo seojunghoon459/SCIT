@@ -22,6 +22,14 @@ public class DrinkVO {
 		this.reorder = reorder;
 	}
 
+	public DrinkVO(String drink_name, int price, int setprice, int ssize) {
+		super();
+		this.Drink_name = drink_name;
+		this.price = price;
+		this.setprice = setprice;
+		this.ssize = ssize;
+	}
+
 	public String getDrink_name() {
 		return Drink_name;
 	}

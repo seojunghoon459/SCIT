@@ -248,6 +248,7 @@ public class MCService {
 
 	public List<DrinkVO> getDrink() {
 		List<DrinkVO> dlist = mdao.getDrink();
+		System.out.println(dlist);
 		return dlist;
 	}
 
@@ -322,6 +323,11 @@ public class MCService {
 
 	public List<HappyMealVO> getHappyMeallist() {
 		return HappyMeallist;
+	}
+
+	public List<SnacksAndSideVO> gethappySnaksandSides() {
+		List<SnacksAndSideVO> happysnacklist = mdao.getHappySnacksAndSides();
+		return happysnacklist;
 	}
 
 }

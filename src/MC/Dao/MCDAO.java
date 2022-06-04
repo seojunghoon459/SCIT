@@ -317,4 +317,13 @@ public class MCDAO {
 		return result;
 	}
 
+	public List<SnacksAndSideVO> getHappySnacksAndSides() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+		
+		List<SnacksAndSideVO> result = mapper.getHappySnacksAndSides();
+		return result;
+	}
+
 }

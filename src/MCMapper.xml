@@ -59,7 +59,7 @@
 	</select>
 
 	<select id="getHamburger" resultType="HamburgerVO">
-		SELECt
+		SELECT
 		*
 		FROM
 		hamburger
@@ -107,8 +107,7 @@
 		FROM
 		drink
 		WHERE
-		ssize = 1
-		and price != 0
+		price = 0 and setprice = 0
 		ORDER BY
 		drink_name
 	</select>
@@ -188,17 +187,17 @@
 
 	<insert id="SnacksAndSideAdd" parameterType="SnacksAndSideVO">
 		INSERT INTO
-		SnacksAndSidet
-		(SnacksAndSide_name,price,setprice,ssize)
+		snacksAndSidet
+		(snacksAndSide_name,price,setprice,ssize)
 		VALUES
-		(#{SnacksAndSide_name},#{price},#{setprice},#{ssize})
+		(#{snacksAndSide_name},#{price},#{setprice},#{ssize})
 	</insert>
 
 	<insert id="DrinkAdd" parameterType="DrinkVO">
 		INSERT INTO Drink
-		(Drink_name,price,setprice,ssize)
+		(drink_name,price,setprice,ssize)
 		VALUES
-		(#{Drink_name},#{price},#{setprice},#{ssize})
+		(#{drink_name},#{price},#{setprice},#{ssize})
 	</insert>
 
 	<insert id="SauceAdd" parameterType="SauceVO">
@@ -224,10 +223,12 @@
 		UPDATE
 		dessert
 		SET
-		price = #{price},
+		price =
+		#{price},
 		setpirce = #{setpirce},
 		popularity = #{popularity},
-		reorder = #{reorder}
+		reorder =
+		#{reorder}
 		WHERE
 		dessert_name = #{dessert_name}
 	</update>
@@ -238,20 +239,24 @@
 		SET
 		price = #{price},
 		setpirce = #{setpirce},
-		popularity = #{popularity},
+		popularity =
+		#{popularity},
 		reorder = #{reorder}
 		WHERE
-		SnacksAndSide_name = #{SnacksAndSide_name}
+		SnacksAndSide_name =
+		#{SnacksAndSide_name}
 	</update>
 
 	<update id="DrinkUpdate" parameterType="DrinkVO">
 		UPDATE
 		Drink
 		SET
-		price = #{price},
+		price =
+		#{price},
 		setpirce = #{setpirce},
 		popularity = #{popularity},
-		reorder = #{reorder}
+		reorder =
+		#{reorder}
 		WHERE
 		Drink_name = #{Drink_name}
 	</update>
@@ -260,47 +265,60 @@
 		UPDATE
 		Sauce
 		SET
-		price = #{price},
+		price =
+		#{price},
 		setpirce = #{setpirce},
 		popularity = #{popularity},
-		reorder = #{reorder}
+		reorder =
+		#{reorder}
 		WHERE
 		Sauce_name = #{Sauce_name}
 	</update>
 
 	<delete id="HamburgerDelete" parameterType="String">
-	DELETE
+		DELETE
 		hamburger
-	WHERE
+		WHERE
 		hamburger_name = #{hamburger_name}
 	</delete>
 
 	<delete id="DessertDelete" parameterType="String">
-	DELETE
+		DELETE
 		Dessert
-	WHERE
+		WHERE
 		Dessert_name = #{Dessert_name}
 	</delete>
 
 	<delete id="SnacksAndSideDelete" parameterType="String">
-	DELETE
+		DELETE
 		SnacksAndSide
-	WHERE
+		WHERE
 		SnacksAndSide_name = #{SnacksAndSide_name}
 	</delete>
 
 	<delete id="DrinkDelete" parameterType="String">
-	DELETE
+		DELETE
 		Drink
-	WHERE
+		WHERE
 		Drink_name = #{Drink_name}
 	</delete>
 
 	<delete id="SauceDeletee" parameterType="String">
-	DELETE
+		DELETE
 		Sauce
-	WHERE
+		WHERE
 		Saucename = #{Sauce_name}
 	</delete>
-	
+
+	<select id="getHappySnacksAndSides" resultType="SnacksAndSideVO">
+		SELECT
+		*
+		FROM
+		SnacksAndSide
+		WHERE
+		SnacksAndSide_name = '스트링 치즈' or SnacksAndSide_name
+		= '후렌치 후라이 스몰'
+	</select>
+
+
 </mapper>

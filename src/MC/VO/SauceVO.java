@@ -15,12 +15,20 @@ public class SauceVO {
 
 	public SauceVO(String sauce_name, int price, int setprice, int ssize, int popularity, int reorder) {
 		super();
-		Sauce_name = sauce_name;
+		this.Sauce_name = sauce_name;
 		this.price = price;
 		this.setprice = setprice;
 		this.ssize = ssize;
 		this.popularity = popularity;
 		this.reorder = reorder;
+	}
+
+	public SauceVO(String sauce_name, int price, int setprice, int ssize) {
+		super();
+		this.Sauce_name = sauce_name;
+		this.price = price;
+		this.setprice = setprice;
+		this.ssize = ssize;
 	}
 
 	public String getSauce_name() {

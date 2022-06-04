@@ -23,6 +23,14 @@ public class DessertVO {
 		this.reorder = reorder;
 	}
 
+	public DessertVO(String Dessert_name, int price, int setprice, int ssize) {
+		super();
+		this.Dessert_name = Dessert_name;
+		this.price = price;
+		this.setprice = setprice;
+		this.ssize = ssize;
+	}
+
 	public String getDessert_name() {
 		return Dessert_name;
 	}
