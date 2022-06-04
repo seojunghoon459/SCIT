@@ -134,7 +134,7 @@ public class MCService {
 		k.setKiosk_bill(str);
 		mdao.order(k);
 
-		System.out.println("주문번호" + k.getKnum() + "\n" + k.getKiosk_bill());
+		System.out.print("주문번호" + k.getKnum() + "\n" + k.getKiosk_bill());
 
 		Hamburgerlist.clear();
 		SnacksAndSidelist.clear();
