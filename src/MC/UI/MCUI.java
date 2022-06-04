@@ -511,7 +511,6 @@ public class MCUI {
 			}
 		}
 
-
 		if (totPrice == 0) {
 			System.out.println("장바구니에 상품이 없습니다.");
 		}

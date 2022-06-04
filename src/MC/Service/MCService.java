@@ -135,60 +135,6 @@ public class MCService {
 		mdao.order(k);
 	}
 
-//	public KioskVO order(Object obj) {
-//		KioskVO k = new KioskVO();
-//		if (obj instanceof HamburgerVO) {
-//			k.setKnum(kioskNum++);
-//			HamburgerVO tmp = (HamburgerVO) obj;
-//			k.setKiosk_bill(tmp.getHamburger_name() + " *" + tmp.getCount() + " 개");
-//		}
-//		if (obj instanceof DrinkVO) {
-//			k.setKnum(kioskNum++);
-//			DrinkVO tmp = (DrinkVO) obj;
-//			k.setKiosk_bill(tmp.getDrink_name() + " *" + tmp.getCount() + " 개");
-//		}
-//		if (obj instanceof DessertVO) {
-//			k.setKnum(kioskNum++);
-//			DessertVO tmp = (DessertVO) obj;
-//			k.setKiosk_bill(tmp.getDessert_name() + " *" + tmp.getCount() + " 개");
-//		}
-//		if (obj instanceof SetVO) {
-//			k.setKnum(kioskNum++);
-//			SetVO tmp = (SetVO) obj;
-//			k.setKiosk_bill(tmp.getHamburger().getHamburger_name() + tmp.getSnacksAndSide().getSnacksandside_name()
-//					+ tmp.getDrink().getDrink_name() + " *" + tmp.getCount() + " 개");
-//
-//		}
-//		if (obj instanceof SnacksAndSideVO) {
-//			k.setKnum(kioskNum++);
-//			SnacksAndSideVO tmp = (SnacksAndSideVO) obj;
-//			k.setKiosk_bill(tmp.getSnacksandside_name() + " *" + tmp.getCount() + " 개");
-//		}
-//		if (obj instanceof HappyMealVO) {
-//			k.setKnum(kioskNum++);
-//			HappyMealVO tmp = (HappyMealVO) obj;
-//			String str = "";
-//
-//			if (tmp.getHamburger() != null) {
-//				str = tmp.getHamburger().getHamburger_name() + "," + tmp.getSnacksAndSide().getSnacksandside_name()
-//						+ ",해피밀 랜덤 토이" + tmp.getDrink().getDrink_name();
-//			}
-//
-//			if (tmp.getHamburger() != null) {
-//				str = tmp.getSnacksAndSide().getSnacksandside_name() + ","
-//						+ tmp.getSnacksAndSide2().getSnacksandside_name() + ","
-//						+ tmp.getSnacksAndSide().getSnacksandside_name() + ",해피밀 랜덤 토이"
-//						+ tmp.getDrink().getDrink_name();
-//			}
-//
-//			k.setKiosk_bill(str);
-//		}
-//		cancel();
-//
-//		return k;
-//
-//	}
-
 	public void order(Object obj) {
 		shopping_basket(obj);
 		ShoppingBasketorder();
