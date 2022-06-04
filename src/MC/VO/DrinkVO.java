@@ -1,133 +1,131 @@
 package MC.VO;
 
 public class DrinkVO {
-	private String Drink_name;
-	private int price;
-	private int setprice;
-	private int ssize;
-	private int popularity;
-	private int reorder;
-	private int count;
+   private String Drink_name;
+   private int price;
+   private int setprice;
+   private int ssize;
+   private int popularity;
+   private int reorder;
+   private int count;
 
-	public DrinkVO() {
-		super();
-	}
+   public DrinkVO() {
+      super();
+   }
 
-	public DrinkVO(String drink_name, int price, int setprice, int ssize, int popularity, int reorder) {
-		super();
-		Drink_name = drink_name;
-		this.price = price;
-		this.setprice = setprice;
-		this.ssize = ssize;
-		this.popularity = popularity;
-		this.reorder = reorder;
-	}
+   public DrinkVO(String drink_name, int price, int setprice, int ssize, int popularity, int reorder) {
+      super();
+      Drink_name = drink_name;
+      this.price = price;
+      this.setprice = setprice;
+      this.ssize = ssize;
+      this.popularity = popularity;
+      this.reorder = reorder;
+   }
 
-	public DrinkVO(String drink_name, int price, int setprice, int ssize) {
-		super();
-		this.Drink_name = drink_name;
-		this.price = price;
-		this.setprice = setprice;
-		this.ssize = ssize;
-	}
+   public DrinkVO(String drink_name, int price, int setprice, int ssize) {
+      super();
+      this.Drink_name = drink_name;
+      this.price = price;
+      this.setprice = setprice;
+      this.ssize = ssize;
+   }
 
-	public String getDrink_name() {
-		return Drink_name;
-	}
+   public String getDrink_name() {
+      return Drink_name;
+   }
 
-	public void setDrink_name(String drink_name) {
-		Drink_name = drink_name;
-	}
+   public void setDrink_name(String drink_name) {
+      Drink_name = drink_name;
+   }
 
-	public int getPrice() {
-		return price;
-	}
+   public int getPrice() {
+      return price;
+   }
 
-	public void setPrice(int price) {
-		this.price = price;
-	}
+   public void setPrice(int price) {
+      this.price = price;
+   }
 
-	public int getSetprice() {
-		return setprice;
-	}
+   public int getSetprice() {
+      return setprice;
+   }
 
-	public void setSetprice(int setprice) {
-		this.setprice = setprice;
-	}
+   public void setSetprice(int setprice) {
+      this.setprice = setprice;
+   }
 
-	public int getSsize() {
-		return ssize;
-	}
+   public int getSsize() {
+      return ssize;
+   }
 
-	public void setSsize(int ssize) {
-		this.ssize = ssize;
-	}
+   public void setSsize(int ssize) {
+      this.ssize = ssize;
+   }
 
-	public int getPopularity() {
-		return popularity;
-	}
+   public int getPopularity() {
+      return popularity;
+   }
 
-	public void setPopularity(int popularity) {
-		this.popularity = popularity;
-	}
+   public void setPopularity(int popularity) {
+      this.popularity = popularity;
+   }
 
-	public int getReorder() {
-		return reorder;
-	}
+   public int getReorder() {
+      return reorder;
+   }
 
-	public void setReorder(int reorder) {
-		this.reorder = reorder;
-	}
+   public void setReorder(int reorder) {
+      this.reorder = reorder;
+   }
 
-	public int getCount() {
-		return count;
-	}
+   public int getCount() {
+      return count;
+   }
 
-	public void setCount(int count) {
-		this.count = count;
-	}
+   public void setCount(int count) {
+      this.count = count;
+   }
 
-	public String setOutPut() {
-		String tmp1, tmp2;
-		if (popularity == 1) {
-			tmp1 = "♥";
-		} else
-			tmp1 = " ";
+   public String setOutPut() {
+      String tmp1, tmp2;
+      if (popularity == 1) {
+         tmp1 = "♥";
+      } else
+         tmp1 = " ";
 
-		if (reorder == 1) {
-			tmp2 = "R";
-		} else
-			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + setprice + "원";
-	}
+      if (reorder == 1) {
+         tmp2 = "R";
+      } else
+         tmp2 = " ";
+      return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + setprice + "원";
+   }
 
-	@Override
-	public String toString() {
-		String tmp1, tmp2;
-		if (popularity == 1) {
-			tmp1 = "♥";
-		} else
-			tmp1 = " ";
+   @Override
+   public String toString() {
+      String tmp1, tmp2;
+      if (popularity == 1) {
+         tmp1 = "♥";
+      } else
+         tmp1 = " ";
 
-		if (reorder == 1) {
-			tmp2 = "R";
-		} else
-			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + price + "원";
-	}
+      if (reorder == 1) {
+         tmp2 = "R";
+      } else
+         tmp2 = " ";
+      return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + tapForPrice(Drink_name) + price + "원";
+   }
 
-	public String tapForPrice(String str) {
-		String tap = "";
-		if (str.length() <= 5) {
-			tap = "\t\t\t\t";
-		} else if (str.length() <= 9) {
-			tap = "\t\t\t";
-		} else if (str.length() <= 13) {
-			tap = "\t\t";
-		} else if (str.length() <= 16) {
-			tap = "\t";
-		}
-		return tap;
-	}
+   public String tapForPrice(String str) {
+      String tap = "";
+      if (str.length() <= 9) {
+         tap = "\t\t\t";
+      } else if (str.length() <= 13) {
+         tap = "\t\t";
+      } else if (str.length() <= 16) {
+         tap = "\t";
+      }
+      return tap;
+   }
 
 }
