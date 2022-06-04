@@ -98,7 +98,7 @@ public class DessertVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Dessert_name + "\t\t" + price + "¿ø";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Dessert_name + "\t" + price + "¿ø";
 	}
 
 }

@@ -96,7 +96,7 @@ public class DrinkVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t\t" + setprice + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t" + setprice + "원";
 	}
 
 	@Override
@@ -111,7 +111,7 @@ public class DrinkVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t\t" + price + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + Drink_name + "\t" + price + "원";
 	}
 
 }

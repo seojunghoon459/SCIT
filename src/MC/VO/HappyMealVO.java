@@ -27,8 +27,8 @@ public class HappyMealVO {
 		this.count = count;
 	}
 
-	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide2, DrinkVO drink, String toy,
-			int price, int count) {
+	public HappyMealVO(HamburgerVO hamburger, SnacksAndSideVO snacksAndSide2, DrinkVO drink, String toy, int price,
+			int count) {
 		super();
 		Hamburger = hamburger;
 		SnacksAndSide2 = snacksAndSide2;
@@ -108,13 +108,5 @@ public class HappyMealVO {
 				+ SnacksAndSide2 + ", Drink=" + Drink + ", Sauce=" + Sauce + ", Toy=" + Toy + ", Price=" + Price
 				+ ", count=" + count + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		if(Hamburger==null) {
-//			return "해피밀 맥너겟 4 조각" + "  "   + Price + "원";
-//		}
-//		return "해피밀 " + Hamburger + "  " + Price + "원";
-//	}
 
 }

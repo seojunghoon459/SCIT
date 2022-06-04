@@ -97,7 +97,7 @@ public class HamburgerVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + hamburger_name + "\t\t" + price + "¿ø";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + hamburger_name + "\t" + price + "¿ø";
 	}
 
 }

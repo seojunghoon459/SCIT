@@ -88,7 +88,7 @@ public class SnacksAndSideVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t\t" + setprice + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t" + setprice + "원";
 	}
 
 	@Override
@@ -103,7 +103,7 @@ public class SnacksAndSideVO {
 			tmp2 = "R";
 		} else
 			tmp2 = " ";
-		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t\t" + price + "원";
+		return "[" + tmp1 + "]" + "[" + tmp2 + "] " + snacksandside_name + "\t" + price + "원";
 	}
 
 }
