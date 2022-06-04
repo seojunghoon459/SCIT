@@ -416,9 +416,6 @@ public class MCUI {
 	private void shopping_basket() {
 		int totPrice = 0;
 		int sbNum = 1;
-		int cNum = 0;
-		int result = 0;
-		int changeNum = 1;
 		String shoppingchoice;
 
 		List<HamburgerVO> Hamburgerlist = mcs.getHamburgerlist();
@@ -435,10 +432,8 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
-				cNum = sbNum - cNum;
 			}
 		}
-
 		if (SnacksAndSidelist.size() > 0) {
 			for (SnacksAndSideVO vo : SnacksAndSidelist) {
 
@@ -446,10 +441,8 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
-				cNum = sbNum - cNum;
 			}
 		}
-
 		if (Drinklist.size() > 0) {
 			for (DrinkVO vo : Drinklist) {
 
@@ -457,7 +450,6 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
-				cNum = sbNum - cNum;
 			}
 		}
 
@@ -468,7 +460,6 @@ public class MCUI {
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += (vo.getPrice() * vo.getCount());
-				cNum = sbNum - cNum;
 			}
 		}
 
@@ -484,7 +475,6 @@ public class MCUI {
 				System.out.println(setPrice + "\t\t\t" + vo.getCount() + "개");
 
 				totPrice += setPrice;
-				cNum = sbNum - cNum;
 			}
 		}
 
@@ -503,7 +493,6 @@ public class MCUI {
 					System.out.println(HappyMealPrice + "\t\t\t" + vo.getCount() + "개");
 
 					totPrice += HappyMealPrice;
-					cNum = sbNum - cNum;
 				}
 
 				if (vo.getHamburger() == null) {
@@ -517,66 +506,17 @@ public class MCUI {
 					System.out.println(HappyMealPrice + "\t\t\t" + vo.getCount() + "개");
 
 					totPrice += HappyMealPrice;
-					cNum = sbNum - cNum;
 				}
 
 			}
 		}
 
-		if (totPrice == 0) {
-			System.out.println("장바구니에 상품이 없습니다.");
-			return;
-		}
-
-		System.out.println();
 
 		if (totPrice == 0) {
 			System.out.println("장바구니에 상품이 없습니다.");
 		}
 
 		System.out.println("총합 : " + totPrice);
-
-		System.out.println("1) 상품수량 변경 2) 전체취소");
-		System.out.print("> ");
-		shoppingchoice = sc.nextLine();
-		switch (shoppingchoice) {
-		case "1":
-			System.out.print("바꾸고 싶으신 메뉴를 선택해주세요 : ");
-			changeNum = sc.nextInt();
-			sc.nextLine();
-			if (changeNum <= sbNum) {
-				if (!Hamburgerlist.isEmpty()) {
-					
-					
-				}
-				if (!SnacksAndSidelist.isEmpty()) {
-					
-				}
-				if(!Drinklist.isEmpty()) {
-					
-				}
-				if(!Dessertlist.isEmpty()) {
-					
-				}
-				if(!Setlist.isEmpty()) {
-					
-				}
-				if(!HappyMeallist.isEmpty()) {
-					
-				}
-			}
-			break;
-		case "2":
-			Hamburgerlist.clear();
-			SnacksAndSidelist.clear();
-			Drinklist.clear();
-			Dessertlist.clear();
-			Setlist.clear();
-			HappyMeallist.clear();
-			System.out.println("전체 취소 되었습니다.");
-			break;
-
-		}
 
 	}
 
