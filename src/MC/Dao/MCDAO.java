@@ -16,7 +16,6 @@ import MC.VO.SnacksAndSideVO;
 public class MCDAO {
 	SqlSessionFactory factory = MybatisConfig.getSqlSessionFactory();
 
-	// 주문하기
 	public int order(KioskVO kVO) {
 		SqlSession session = null;
 		session = factory.openSession();
@@ -326,6 +325,15 @@ public class MCDAO {
 
 		List<SnacksAndSideVO> result = mapper.getHappySnacksAndSides();
 		session.commit();
+		return result;
+	}
+
+	public int getKioskCnt() {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		int result = mapper.getKioskCnt();
 		return result;
 	}
 

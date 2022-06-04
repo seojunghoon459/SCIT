@@ -17,7 +17,7 @@ import MC.VO.SnacksAndSideVO;
 public class MCService {
 	MCDAO mdao = new MCDAO();
 	Scanner sc = new Scanner(System.in);
-	int kioskNum = 1;
+	int kioskNum = mdao.getKioskCnt();
 
 	List<HamburgerVO> Hamburgerlist = new ArrayList<HamburgerVO>();
 	List<SnacksAndSideVO> SnacksAndSidelist = new ArrayList<SnacksAndSideVO>();
@@ -135,6 +135,13 @@ public class MCService {
 
 		k.setKiosk_bill(str);
 		mdao.order(k);
+
+		Hamburgerlist.clear();
+		SnacksAndSidelist.clear();
+		Drinklist.clear();
+		Dessertlist.clear();
+		Setlist.clear();
+		HappyMeallist.clear();
 	}
 
 	public void order(Object obj) {

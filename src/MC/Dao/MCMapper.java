@@ -75,5 +75,7 @@ public interface MCMapper {
 	public int DrinkDelete(String str); //
 
 	public int SauceDeletee(String str); //
+	
+	public int getKioskCnt();
 
 }

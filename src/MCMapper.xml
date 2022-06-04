@@ -341,5 +341,9 @@
 		(#{knum},#{kiosk_bill})
 	</insert>
 
+	<select id="getKioskCnt" resultType="int">
+		SELECT count(*)
+		FROM kiosk
+	</select>
 
 </mapper>
