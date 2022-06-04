@@ -128,9 +128,7 @@ public class MCService {
 
 					totPrice += HappyMealPrice;
 				}
-
 			}
-
 		}
 
 		k.setKiosk_bill(str);
