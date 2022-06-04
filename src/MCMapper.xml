@@ -226,7 +226,7 @@
 		hamburger
 		SET
 		price = #{price},
-		setpirce = #{setpirce},
+		setprice = #{setprice},
 		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
@@ -239,7 +239,7 @@
 		SET
 		price =
 		#{price},
-		setpirce = #{setpirce},
+		setprice = #{setprice},
 		popularity = #{popularity},
 		reorder =
 		#{reorder}
@@ -252,7 +252,7 @@
 		SnacksAndSide
 		SET
 		price = #{price},
-		setpirce = #{setpirce},
+		setprice = #{setprice},
 		popularity =
 		#{popularity},
 		reorder = #{reorder}
@@ -267,7 +267,7 @@
 		SET
 		price =
 		#{price},
-		setpirce = #{setpirce},
+		setprice = #{setprice},
 		popularity = #{popularity},
 		reorder =
 		#{reorder}
@@ -281,7 +281,7 @@
 		SET
 		price =
 		#{price},
-		setpirce = #{setpirce},
+		setprice = #{setprice},
 		popularity = #{popularity},
 		reorder =
 		#{reorder}
