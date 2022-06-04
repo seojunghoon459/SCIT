@@ -86,12 +86,14 @@ public class MCUI {
 			deletemenu();
 			adminchoice = sc.nextLine();
 			deletemenu(adminchoice);
-			break;
+			//break;
+			return;
 		case "4":
 			systemMacmorning();
 			adminchoice = sc.nextLine();
 			systemMacmoring(adminchoice);
-			break;
+			//break;
+			return;
 		case "5":
 			System.out.println("**관리자 모드를 종료합니다.");
 			return;
@@ -100,12 +102,11 @@ public class MCUI {
 	}
 
 	private void systemMacmoring(String adminchoice) {
-		// TODO Auto-generated method stub
+
 
 	}
 
 	private void deletemenu(String adminchoice) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -794,7 +795,8 @@ public class MCUI {
 				pickDrinkNum = Integer.parseInt(sc.nextLine());
 				pickDrink = dslist.get(pickDrinkNum - 1);
 
-				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
+				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
+				System.out.println();
 				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
@@ -824,7 +826,8 @@ public class MCUI {
 				System.out.print("소스 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
 				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
-				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
+				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
+				System.out.println();
 				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
@@ -854,7 +857,8 @@ public class MCUI {
 				System.out.print("소스 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
 				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
-				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
+				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
+				System.out.println();
 				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
