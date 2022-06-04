@@ -124,7 +124,7 @@ public class MCUI {
 				System.out.println("====Hamburger Menu====");
 				System.out.print("> 제품명을 입력하세요 : ");
 				hamburger_name = sc.nextLine();
-				hvo = mcs.SearchHamburger(hamburger_name);
+				hvo = mcs.searchHamburger(hamburger_name);
 				if (hvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -140,19 +140,18 @@ public class MCUI {
 				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
 				reorder = sc.nextInt();
 				sc.nextLine();
-				hvo.setHamburger_name(hamburger_name);
 				hvo.setPrice(price);
 				hvo.setSetprice(setprice);
 				hvo.setPopularity(popularity);
 				hvo.setReorder(reorder);
-				mcs.HamburgerUpdate(hvo);
+				mcs.updateHamburger(hvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "2":
 				System.out.println("====Dessert Menu====");
 				System.out.print("> 제품명을 입력하세요 : ");
 				Dessert_name = sc.nextLine();
-				dvo = mcs.SearchDessert(Dessert_name);
+				dvo = mcs.searchDessert(Dessert_name);
 				if (dvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -168,19 +167,18 @@ public class MCUI {
 				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
 				reorder = sc.nextInt();
 				sc.nextLine();
-				dvo.setDessert_name(Dessert_name);
 				dvo.setPrice(price);
 				dvo.setSetprice(setprice);
 				dvo.setPopularity(popularity);
 				dvo.setReorder(reorder);
-				mcs.DessertUpdate(dvo);
+				mcs.updateDessert(dvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "3":
 				System.out.println("====SnacksAndSide Menu====");
 				System.out.print("> 제품명을 입력하세요 : ");
 				snacksandside_name = sc.nextLine();
-				sasvo = mcs.SearchSnacksAndSide(snacksandside_name);
+				sasvo = mcs.searchSnacksAndSide(snacksandside_name);
 				if (sasvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -196,19 +194,18 @@ public class MCUI {
 				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
 				reorder = sc.nextInt();
 				sc.nextLine();
-				sasvo.setSnacksandside_name(snacksandside_name);
 				sasvo.setPrice(price);
 				sasvo.setSetprice(setprice);
 				sasvo.setPopularity(popularity);
 				sasvo.setReorder(reorder);
-				mcs.SnacksAndSideUpdate(sasvo);
+				mcs.updateSnacksAndSide(sasvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "4":
 				System.out.println("====Drink Menu====");
 				System.out.print("> 제품명을 입력하세요 : ");
 				Drink_name = sc.nextLine();
-				dkvo = mcs.SearchDrink(Drink_name);
+				dkvo = mcs.searchDrink(Drink_name);
 				if (dkvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -224,19 +221,18 @@ public class MCUI {
 				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
 				reorder = sc.nextInt();
 				sc.nextLine();
-				dkvo.setDrink_name(Drink_name);
 				dkvo.setPrice(price);
 				dkvo.setSetprice(setprice);
 				dkvo.setPopularity(popularity);
 				dkvo.setReorder(reorder);
-				mcs.DrinkUpdate(dkvo);
+				mcs.updateDrink(dkvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "5":
 				System.out.println("====Sauce Menu====");
 				System.out.print("> 제품명을 입력하세요 : ");
 				Sauce_name = sc.nextLine();
-				sacvo = mcs.SearchSauce(Sauce_name);
+				sacvo = mcs.searchSauce(Sauce_name);
 				if (sacvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -252,12 +248,11 @@ public class MCUI {
 				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
 				reorder = sc.nextInt();
 				sc.nextLine();
-				sacvo.setSauce_name(Sauce_name);
 				sacvo.setPrice(price);
 				sacvo.setSetprice(setprice);
 				sacvo.setPopularity(popularity);
 				sacvo.setReorder(reorder);
-				mcs.SauceUpdate(sacvo);
+				mcs.updateSauce(sacvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "6":
@@ -284,13 +279,8 @@ public class MCUI {
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
 				sc.nextLine();
-				System.out.println("> 사이즈를 고르시오 ");
-				System.out.println("1) S   2) M   3) L ");
-				System.out.print("> ");
-				ssize = sc.nextInt();
-				sc.nextLine();
-				HamburgerVO hvo = new HamburgerVO(hamburger_name, price, setprice, ssize);
-				mcs.HamburgerAdd(hvo);
+				HamburgerVO hvo = new HamburgerVO(hamburger_name, price, setprice);
+				mcs.addHamburger(hvo);
 				System.out.println("> 상품등록이 완료되었습니다.");
 				break;
 			case "2":
@@ -303,12 +293,8 @@ public class MCUI {
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
 				sc.nextLine();
-				System.out.println("> 사이즈를 고르시오 ");
-				System.out.println("1) S   2) M   3) L ");
-				ssize = sc.nextInt();
-				sc.nextLine();
-				DessertVO dvo = new DessertVO(Dessert_name, price, setprice, ssize);
-				mcs.DessertAdd(dvo);
+				DessertVO dvo = new DessertVO(Dessert_name, price, setprice);
+				mcs.addDessert(dvo);
 				break;
 			case "3":
 				System.out.println("====SnacksAndSide Menu====");
@@ -320,12 +306,8 @@ public class MCUI {
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
 				sc.nextLine();
-				System.out.println("> 사이즈를 고르시오 ");
-				System.out.println("1) S   2) M   3) L ");
-				ssize = sc.nextInt();
-				sc.nextLine();
-				SnacksAndSideVO sasvo = new SnacksAndSideVO(snacksandside_name, price, setprice, ssize);
-				mcs.SnacksAndSideAdd(sasvo);
+				SnacksAndSideVO sasvo = new SnacksAndSideVO(snacksandside_name, price, setprice);
+				mcs.addSnacksAndSide(sasvo);
 				break;
 			case "4":
 				System.out.println("====Drink Menu====");
@@ -342,7 +324,7 @@ public class MCUI {
 				ssize = sc.nextInt();
 				sc.nextLine();
 				DrinkVO dkvo = new DrinkVO(Drink_name, price, setprice, ssize);
-				mcs.DrinkAdd(dkvo);
+				mcs.addDrink(dkvo);
 				break;
 			case "5":
 				System.out.println("====Sauce Menu====");
@@ -352,14 +334,10 @@ public class MCUI {
 				price = sc.nextInt();
 				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
-				setprice = sc.nextInt();
+				setprice =sc.nextInt();
 				sc.nextLine();
-				System.out.println("> 사이즈를 고르시오 ");
-				System.out.println("1) S   2) M   3) L ");
-				ssize = sc.nextInt();
-				sc.nextLine();
-				SauceVO sacvo = new SauceVO(Sauce_name, price, setprice, ssize);
-				mcs.SauceAdd(sacvo);
+				SauceVO sacvo = new SauceVO(Sauce_name, price, setprice);
+				mcs.addSauce(sacvo);
 				break;
 			case "6":
 				return;
@@ -396,7 +374,7 @@ public class MCUI {
 		System.out.println("==========Add==========");
 		System.out.println("1. 햄버거 추가");
 		System.out.println("2. 디저트 추가");
-		System.out.println("3. 스낵앤사이드 추기");
+		System.out.println("3. 스낵앤사이드 추가");
 		System.out.println("4. 음료 추가");
 		System.out.println("5. 소스 추가");
 		System.out.println("6. 추가메뉴 나가기");
@@ -405,11 +383,11 @@ public class MCUI {
 
 	private void administrateMenu() {
 		System.out.println("========AdministrateMode========");
-		System.out.println("1. Menu Add");
-		System.out.println("2. Menu Update");
-		System.out.println("3. Menu Delete");
-		System.out.println("4. System Macmornig");
-		System.out.println("5. AdministrateMode Exit");
+		System.out.println("1. 메뉴 추가");
+		System.out.println("2. 메뉴 수정");
+		System.out.println("3. 메뉴 삭제");
+		System.out.println("4. 맥모닝 변경");
+		System.out.println("5. 관리메뉴 나가기");
 	}
 
 	// 수정필요
@@ -571,47 +549,47 @@ public class MCUI {
 		int cNum = 0;
 		if (changeNum <= sbNum) {
 			if (changeNum <= result1) {
-				changeNum = result1;
+				changeNum = result1-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Hamburgerlist.get(changeNum - 1).setCount(cNum);
+				Hamburgerlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
-				changeNum = result2;
+				changeNum = (changeNum - result1) - result2-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				SnacksAndSidelist.get(changeNum - 1).setCount(cNum);
+				SnacksAndSidelist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
-				changeNum = result3;
+				changeNum = (changeNum - result1 - result2) - result3-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Drinklist.get(changeNum - 1).setCount(cNum);
+				Drinklist.get(changeNum).setCount(cNum);
 				return;
 			}
 
 			if (changeNum - result1 - result2 - result3 <= result4) {
-				changeNum = result4;
+				changeNum = (changeNum - result1 - result2 - result3) - result4-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				System.out.println(Setlist.get(changeNum - 1));
-				Dessertlist.get(changeNum - 1).setCount(cNum);
+				Dessertlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 <= result5) {
-				changeNum = result5;
+				changeNum = (changeNum - result1 - result2 - result3 - result4) - result5-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Setlist.get(changeNum - 1).setCount(cNum);
+				Setlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
-				changeNum = result6;
+				changeNum = (changeNum - result1 - result2 - result3 - result4 - result5) - result6-1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				HappyMeallist.get(changeNum - 1).setCount(cNum);
+				HappyMeallist.get(changeNum).setCount(cNum);
 				return;
 
 			}

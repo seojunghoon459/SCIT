@@ -11,15 +11,15 @@ import MC.VO.SnacksAndSideVO;
 
 public interface MCMapper {
 
-	public HamburgerVO SearchHamburger(String str);
+	public HamburgerVO searchHamburger(String str);
 
-	public DessertVO SearchDessert(String str);
+	public DessertVO searchDessert(String str);
 
-	public SnacksAndSideVO SearchSnacksAndSide(String str);
+	public SnacksAndSideVO searchSnacksAndSide(String str);
 
-	public DrinkVO SearchDrink(String str);
+	public DrinkVO searchDrink(String str);
 
-	public SauceVO SearchSauceVO(String str);
+	public SauceVO searchSauce(String str);
 
 	public int order(KioskVO kVO); // 장바구니 주문
 
@@ -45,39 +45,39 @@ public interface MCMapper {
 
 	public List<DessertVO> getDessert();
 
-	public int HamburgerAdd(HamburgerVO hamburger); //
+	public int addHamburger(HamburgerVO hamburger); //
 
-	public int DessertAdd(DessertVO dessert); //
+	public int addDessert(DessertVO dessert); //
 
-	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSide);//
+	public int addSnacksAndSide(SnacksAndSideVO snacksAndSide);//
 
-	public int DrinkAdd(DrinkVO drink); //
+	public int addDrink(DrinkVO drink); //
 
-	public int SauceAdd(SauceVO sauce); //
+	public int addSauce(SauceVO sauce); //
 
-	public int HamburgerUpdate(HamburgerVO hamburger); //
+	public int updateHamburger(HamburgerVO hamburger); //
 
-	public int DessertUpdate(DessertVO dessert); //
+	public int updateDessert(DessertVO dessert); //
 
-	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSide); //
+	public int updateSnacksAndSide(SnacksAndSideVO snacksAndSide); //
 
-	public int DrinkUpdate(DrinkVO drink); //
+	public int updateDrink(DrinkVO drink); //
 
-	public int SauceUpdate(SauceVO sauce); //
+	public int updateSauce(SauceVO sauce); //
 
-	public int HamburgerDelete(String str); //
+	public int deleteHamburger(String str); //
 
-	public int DessertDelete(String str); //
+	public int deleteDessert(String str); //
 
-	public int SnacksAndSideDelete(String str); //
+	public int deleteSnacksAndSide(String str); //
 
-	public int DrinkDelete(String str); //
+	public int deleteDrink(String str); //
 
-	public int SauceDeletee(String str); //
+	public int deleteSauce(String str); //
 
 	public int getKioskCnt();
 
 	public SnacksAndSideVO oneSnacksAndSide(String str);
 
-	public HamburgerVO oneoneHamburger(String str);
+	public HamburgerVO oneHamburger(String str);
 }

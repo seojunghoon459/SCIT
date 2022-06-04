@@ -14,12 +14,11 @@ public class SnacksAndSideVO {
 		super();
 	}
 
-	public SnacksAndSideVO(String snacksandside_name, int price, int setprice, int ssize) {
+	public SnacksAndSideVO(String snacksandside_name, int price, int setprice) {
 		super();
 		this.snacksandside_name = snacksandside_name;
 		this.price = price;
 		this.setprice = setprice;
-		this.ssize = ssize;
 	}
 
 	public String getSnacksandside_name() {

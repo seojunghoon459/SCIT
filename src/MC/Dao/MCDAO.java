@@ -25,48 +25,48 @@ public class MCDAO {
 		return result;
 	}
 
-	public HamburgerVO SearchHamburger(String str) {
+	public HamburgerVO searchHamburger(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		HamburgerVO result = mapper.SearchHamburger(str);
+		HamburgerVO result = mapper.searchHamburger(str);
 		return result;
 	}
 
-	public DessertVO SearchDessert(String str) {
+	public DessertVO searchDessert(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		DessertVO result = mapper.SearchDessert(str);
+		DessertVO result = mapper.searchDessert(str);
 		return result;
 	}
 
-	public SnacksAndSideVO SearchSnacksAndSide(String str) {
+	public SnacksAndSideVO searchSnacksAndSide(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		SnacksAndSideVO result = mapper.SearchSnacksAndSide(str);
+		SnacksAndSideVO result = mapper.searchSnacksAndSide(str);
 		return result;
 	}
 
-	public DrinkVO SearchDrink(String str) {
+	public DrinkVO searchDrink(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		DrinkVO result = mapper.SearchDrink(str);
+		DrinkVO result = mapper.searchDrink(str);
 		return result;
 	}
 
-	public SauceVO SearchSauce(String str) {
+	public SauceVO searchSauce(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		SauceVO result = mapper.SearchSauceVO(str);
+		SauceVO result = mapper.searchSauce(str);
 		return result;
 	}
 
@@ -160,159 +160,159 @@ public class MCDAO {
 		return result;
 	}
 
-	public int HamburgerAdd(HamburgerVO hamburger) {
+	public int addHamburger(HamburgerVO hamburger) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.HamburgerAdd(hamburger);
+		int result = mapper.addHamburger(hamburger);
 		session.commit();
 		return result;
 
 	}
 
-	public int DessertAdd(DessertVO dessert) {
+	public int addDessert(DessertVO dessert) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DessertAdd(dessert);
+		int result = mapper.addDessert(dessert);
 		session.commit();
 		return result;
 	}
 
-	public int SnacksAndSideAdd(SnacksAndSideVO snacksAndSide) {
+	public int addSnacksAndSide(SnacksAndSideVO snacksAndSide) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SnacksAndSideAdd(snacksAndSide);
+		int result = mapper.addSnacksAndSide(snacksAndSide);
 		session.commit();
 		return result;
 	}
 
-	public int DrinkAdd(DrinkVO drink) {
+	public int addDrink(DrinkVO drink) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DrinkAdd(drink);
+		int result = mapper.addDrink(drink);
 		session.commit();
 		return result;
 	}
 
-	public int SauceAdd(SauceVO sauce) {
+	public int addSauce(SauceVO sauce) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SauceAdd(sauce);
+		int result = mapper.addSauce(sauce);
 		session.commit();
 		return result;
 	}
 
-	public int HamburgerUpdate(HamburgerVO hamburger) {
+	public int updateHamburger(HamburgerVO hamburger) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.HamburgerUpdate(hamburger);
+		int result = mapper.updateHamburger(hamburger);
 		session.commit();
 		return result;
 	}
 
-	public int DessertUpdate(DessertVO dessert) {
+	public int updateDessert(DessertVO dessert) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DessertUpdate(dessert);
+		int result = mapper.updateDessert(dessert);
 		session.commit();
 		return result;
 	}
 
-	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSide) {
+	public int updateSnacksAndSide(SnacksAndSideVO snacksAndSide) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SnacksAndSideUpdate(snacksAndSide);
+		int result = mapper.updateSnacksAndSide(snacksAndSide);
 		session.commit();
 		return result;
 	}
 
-	public int DrinkUpdate(DrinkVO drink) {
+	public int updateDrink(DrinkVO drink) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DrinkUpdate(drink);
-		session.commit();
-		return result;
-
-	}
-
-	public int SauceUpdate(SauceVO sauce) {
-		SqlSession session = null;
-		session = factory.openSession();
-		MCMapper mapper = session.getMapper(MCMapper.class);
-
-		int result = mapper.SauceUpdate(sauce);
+		int result = mapper.updateDrink(drink);
 		session.commit();
 		return result;
 
 	}
 
-	public int HamburgerDelete(String str) {
+	public int updateSauce(SauceVO sauce) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.HamburgerDelete(str);
+		int result = mapper.updateSauce(sauce);
 		session.commit();
 		return result;
 
 	}
 
-	public int DessertDelete(String str) {
+	public int deleteHamburger(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DessertDelete(str);
+		int result = mapper.deleteHamburger(str);
 		session.commit();
 		return result;
 
 	}
 
-	public int SnacksAndSideDelete(String str) {
+	public int deleteDessert(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SnacksAndSideDelete(str);
+		int result = mapper.deleteDessert(str);
 		session.commit();
 		return result;
 
 	}
 
-	public int DrinkDelete(String str) {
+	public int deleteSnacksAndSide(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.DrinkDelete(str);
+		int result = mapper.deleteSnacksAndSide(str);
 		session.commit();
 		return result;
 
 	}
 
-	public int SauceDeletee(String str) {
+	public int deleteDrink(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		int result = mapper.SauceDeletee(str);
+		int result = mapper.deleteDrink(str);
+		session.commit();
+		return result;
+
+	}
+
+	public int deleteSauce(String str) {
+		SqlSession session = null;
+		session = factory.openSession();
+		MCMapper mapper = session.getMapper(MCMapper.class);
+
+		int result = mapper.deleteSauce(str);
 		session.commit();
 		return result;
 	}
@@ -345,12 +345,12 @@ public class MCDAO {
 		return svo;
 	}
 
-	public HamburgerVO oneoneHamburger(String str) {
+	public HamburgerVO oneHamburger(String str) {
 		SqlSession session = null;
 		session = factory.openSession();
 		MCMapper mapper = session.getMapper(MCMapper.class);
 
-		HamburgerVO hvo = mapper.oneoneHamburger(str);
+		HamburgerVO hvo = mapper.oneHamburger(str);
 		return hvo;
 	}
 

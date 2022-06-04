@@ -23,7 +23,7 @@ public class SauceVO {
 		this.reorder = reorder;
 	}
 
-	public SauceVO(String sauce_name, int price, int setprice, int ssize) {
+	public SauceVO(String sauce_name, int price, int setprice) {
 		super();
 		this.Sauce_name = sauce_name;
 		this.price = price;

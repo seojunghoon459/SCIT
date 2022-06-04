@@ -23,12 +23,11 @@ public class HamburgerVO {
 		this.reorder = reorder;
 	}
 
-	public HamburgerVO(String hamburger_name, int price, int setprice, int ssize) {
+	public HamburgerVO(String hamburger_name, int price, int setprice) {
 		super();
 		this.hamburger_name = hamburger_name;
 		this.price = price;
 		this.setprice = setprice;
-		this.ssize = ssize;
 	}
 
 	public String getHamburger_name() {

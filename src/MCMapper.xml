@@ -5,7 +5,7 @@
 
 <mapper namespace="MC.Dao.MCMapper">
 
-	<select id="SearchDessert" resultType="DessertVO"
+	<select id="searchDessert" resultType="DessertVO"
 		parameterType="String">
 		SELECT
 		*
@@ -18,7 +18,7 @@
 		dessert_name
 	</select>
 
-	<select id="SearchDrink" resultType="DrinkVO"
+	<select id="searchDrink" resultType="DrinkVO"
 		parameterType="String">
 		SELECT
 		*
@@ -31,7 +31,7 @@
 		drink_name
 	</select>
 
-	<select id="SearchHamburger" resultType="HamburgerVO"
+	<select id="searchHamburger" resultType="HamburgerVO"
 		parameterType="String">
 		SELECT
 		*
@@ -45,7 +45,7 @@
 	</select>
 
 
-	<select id="SearchSnacksAndSide" resultType="SnacksAndSideVO"
+	<select id="searchSnacksAndSide" resultType="SnacksAndSideVO"
 		parameterType="String">
 		SELECT
 		*
@@ -58,7 +58,7 @@
 		snacksandside_name
 	</select>
 
-	<select id="SearchSauce" resultType="SauceVO"
+	<select id="searchSauce" resultType="SauceVO"
 		parameterType="String">
 		SELECT
 		*
@@ -185,21 +185,21 @@
 		(kiosk_seq.nextval,#{iosk_bill})
 	</insert>
 
-	<insert id="HamburgerAdd" parameterType="HamburgerVO">
+	<insert id="addHamburger" parameterType="HamburgerVO">
 		INSERT INTO hamburger
 		(hamburger_name,price,setprice,ssize)
 		VALUES
 		(#{hamburger_name},#{price},#{setprice},#{ssize})
 	</insert>
 
-	<insert id="DessertAdd" parameterType="DessertVO">
+	<insert id="addDessert" parameterType="DessertVO">
 		INSERT INTO dessert
 		(dessert_name,price,setprice,ssize)
 		VALUES
 		(#{dessert_name},#{price},#{setprice},#{ssize})
 	</insert>
 
-	<insert id="SnacksAndSideAdd" parameterType="SnacksAndSideVO">
+	<insert id="addSnacksAndSide" parameterType="SnacksAndSideVO">
 		INSERT INTO
 		snacksAndSidet
 		(snacksAndSide_name,price,setprice,ssize)
@@ -207,21 +207,21 @@
 		(#{snacksAndSide_name},#{price},#{setprice},#{ssize})
 	</insert>
 
-	<insert id="DrinkAdd" parameterType="DrinkVO">
+	<insert id="addDrink" parameterType="DrinkVO">
 		INSERT INTO Drink
 		(drink_name,price,setprice,ssize)
 		VALUES
 		(#{drink_name},#{price},#{setprice},#{ssize})
 	</insert>
 
-	<insert id="SauceAdd" parameterType="SauceVO">
+	<insert id="addSauce" parameterType="SauceVO">
 		INSERT INTO Sauce
 		(Sauce_name,price,setprice,ssize)
 		VALUES
 		(#{Sauce_name},#{price},#{setprice},#{ssize})
 	</insert>
 
-	<update id="HamburgerUpdate" parameterType="HamburgerVO">
+	<update id="updateHamburger" parameterType="HamburgerVO">
 		UPDATE
 		hamburger
 		SET
@@ -233,7 +233,7 @@
 		hamburger_name = #{hamburger_name}
 	</update>
 
-	<update id="DessertUpdate" parameterType="DessertVO">
+	<update id="updateDessert" parameterType="DessertVO">
 		UPDATE
 		dessert
 		SET
@@ -247,7 +247,7 @@
 		dessert_name = #{dessert_name}
 	</update>
 
-	<update id="SnacksAndSideUpdate" parameterType="SnacksAndSideVO">
+	<update id="updateSnacksAndSide" parameterType="SnacksAndSideVO">
 		UPDATE
 		SnacksAndSide
 		SET
@@ -261,7 +261,7 @@
 		#{SnacksAndSide_name}
 	</update>
 
-	<update id="DrinkUpdate" parameterType="DrinkVO">
+	<update id="updateDrink" parameterType="DrinkVO">
 		UPDATE
 		Drink
 		SET
@@ -275,7 +275,7 @@
 		Drink_name = #{Drink_name}
 	</update>
 
-	<update id="SauceUpdate" parameterType="SauceVO">
+	<update id="updateSauce" parameterType="SauceVO">
 		UPDATE
 		Sauce
 		SET
@@ -289,35 +289,35 @@
 		Sauce_name = #{Sauce_name}
 	</update>
 
-	<delete id="HamburgerDelete" parameterType="String">
+	<delete id="deleteHamburger" parameterType="String">
 		DELETE
 		hamburger
 		WHERE
 		hamburger_name = #{hamburger_name}
 	</delete>
 
-	<delete id="DessertDelete" parameterType="String">
+	<delete id="deleteDessert" parameterType="String">
 		DELETE
 		Dessert
 		WHERE
 		Dessert_name = #{Dessert_name}
 	</delete>
 
-	<delete id="SnacksAndSideDelete" parameterType="String">
+	<delete id="deleteSnacksAndSide" parameterType="String">
 		DELETE
 		SnacksAndSide
 		WHERE
 		SnacksAndSide_name = #{SnacksAndSide_name}
 	</delete>
 
-	<delete id="DrinkDelete" parameterType="String">
+	<delete id="deleteDrink" parameterType="String">
 		DELETE
 		Drink
 		WHERE
 		Drink_name = #{Drink_name}
 	</delete>
 
-	<delete id="SauceDeletee" parameterType="String">
+	<delete id="deleteSauce" parameterType="String">
 		DELETE
 		Sauce
 		WHERE
@@ -346,4 +346,22 @@
 		FROM kiosk
 	</select>
 
+	<select id="oneSnacksAndSide" resultType="SnacksAndSideVO" parameterType="String">
+	SELECT
+	*
+	FROM
+	SnacksAndSide
+	WHERE
+	SnacksAndSide_name = '맥너겟 4조각'
+	</select>
+	
+	<select id="oneHamburger" resultType="HamburgerVO" parameterType="String">
+	SELECT
+	*
+	FROM
+	hamburger
+	WHERE
+	hamburger_name = #{hamburger_name}
+	</select>
+	
 </mapper>

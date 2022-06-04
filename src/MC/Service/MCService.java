@@ -229,28 +229,28 @@ public class MCService {
 		return dlist;
 	}
 
-	public void HamburgerAdd(HamburgerVO hamburger) {
-		mdao.HamburgerAdd(hamburger);
+	public void addHamburger(HamburgerVO hamburger) {
+		mdao.addHamburger(hamburger);
 
 	}
 
-	public void DessertAdd(DessertVO dessert) {
-		mdao.DessertAdd(dessert);
+	public void addDessert(DessertVO dessert) {
+		mdao.addDessert(dessert);
 
 	}
 
-	public void SnacksAndSideAdd(SnacksAndSideVO snacksandside) {
-		mdao.SnacksAndSideAdd(snacksandside);
+	public void addSnacksAndSide(SnacksAndSideVO snacksandside) {
+		mdao.addSnacksAndSide(snacksandside);
 
 	}
 
-	public void DrinkAdd(DrinkVO drink) {
-		mdao.DrinkAdd(drink);
+	public void addDrink(DrinkVO drink) {
+		mdao.addDrink(drink);
 
 	}
 
-	public void SauceAdd(SauceVO sauce) {
-		mdao.SauceAdd(sauce);
+	public void addSauce(SauceVO sauce) {
+		mdao.addSauce(sauce);
 	}
 
 	public List<HamburgerVO> getHamburgerlist() {
@@ -282,49 +282,49 @@ public class MCService {
 		return happysnacklist;
 	}
 
-	public HamburgerVO SearchHamburger(String str) {
-		HamburgerVO hvo = mdao.SearchHamburger(str);
+	public HamburgerVO searchHamburger(String str) {
+		HamburgerVO hvo = mdao.searchHamburger(str);
 		return hvo;
 	}
 
-	public DessertVO SearchDessert(String str) {
-		DessertVO dvo = mdao.SearchDessert(str);
+	public DessertVO searchDessert(String str) {
+		DessertVO dvo = mdao.searchDessert(str);
 		return dvo;
 	}
 
-	public SnacksAndSideVO SearchSnacksAndSide(String str) {
-		SnacksAndSideVO svo = mdao.SearchSnacksAndSide(str);
+	public SnacksAndSideVO searchSnacksAndSide(String str) {
+		SnacksAndSideVO svo = mdao.searchSnacksAndSide(str);
 		return svo;
 	}
 
-	public DrinkVO SearchDrink(String str) {
-		DrinkVO dvo = mdao.SearchDrink(str);
+	public DrinkVO searchDrink(String str) {
+		DrinkVO dvo = mdao.searchDrink(str);
 		return dvo;
 	}
 
-	public SauceVO SearchSauce(String str) {
-		SauceVO svo = mdao.SearchSauce(str);
+	public SauceVO searchSauce(String str) {
+		SauceVO svo = mdao.searchSauce(str);
 		return svo;
 	}
 
-	public void HamburgerUpdate(HamburgerVO hvo) {
-		mdao.HamburgerUpdate(hvo);
+	public void updateHamburger(HamburgerVO hvo) {
+		mdao.updateHamburger(hvo);
 	}
 
-	public void DessertUpdate(DessertVO dvo) {
-		mdao.DessertUpdate(dvo);
+	public void updateDessert(DessertVO dvo) {
+		mdao.updateDessert(dvo);
 	}
 
-	public void SnacksAndSideUpdate(SnacksAndSideVO sasvo) {
-		mdao.SnacksAndSideUpdate(sasvo);
+	public void updateSnacksAndSide(SnacksAndSideVO sasvo) {
+		mdao.updateSnacksAndSide(sasvo);
 	}
 
-	public void DrinkUpdate(DrinkVO dkvo) {
-		mdao.DrinkUpdate(dkvo);
+	public void updateDrink(DrinkVO dkvo) {
+		mdao.updateDrink(dkvo);
 	}
 
-	public void SauceUpdate(SauceVO sacvo) {
-		mdao.SauceUpdate(sacvo);
+	public void updateSauce(SauceVO sacvo) {
+		mdao.updateSauce(sacvo);
 	}
 
 	public SnacksAndSideVO oneSnacksAndSide(String tmp) {
@@ -333,7 +333,7 @@ public class MCService {
 	}
 
 	public HamburgerVO oneHamburger(String tmp) {
-		HamburgerVO hvo = mdao.oneoneHamburger(tmp);
+		HamburgerVO hvo = mdao.oneHamburger(tmp);
 		return hvo;
 	}
 }
