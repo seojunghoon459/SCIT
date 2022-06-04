@@ -338,4 +338,24 @@ public class MCService {
 		HamburgerVO hvo = mdao.oneHamburger(tmp);
 		return hvo;
 	}
+
+	public void deleteHamburger(String hamburger_name) {
+		mdao.deleteHamburger(hamburger_name);
+	}
+
+	public void deleteDessert(String dessert_name) {
+		mdao.deleteDessert(dessert_name);
+	}
+
+	public void deleteSnacksAndSide(String snacksandside_name) {
+		mdao.deleteSnacksAndSide(snacksandside_name);
+	}
+
+	public void deleteDrink(String drink_name) {
+		mdao.deleteDrink(drink_name);
+	}
+
+	public void deleteSauce(String sauce_name) {
+		mdao.deleteSauce(sauce_name);
+	}
 }
