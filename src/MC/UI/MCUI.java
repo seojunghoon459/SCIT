@@ -78,6 +78,7 @@ public class MCUI {
 			break;
 		case "2":
 			updatemenu();
+			System.out.print("> 메뉴를 선택해 주세요 : ");
 			adminchoice = sc.nextLine();
 			updatemenu(adminchoice);
 			break;
@@ -109,124 +110,263 @@ public class MCUI {
 	}
 
 	private void updatemenu(String adminchoice) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void addmenu(String adminchoice) {
+		String hamburger_name, Dessert_name, snacksandside_name, Drink_name, Sauce_name;
+		int price;
+		int setprice;
+		int popularity;
+		int reorder;
 		HamburgerVO hvo = null;
 		DessertVO dvo = null;
 		SnacksAndSideVO sasvo = null;
 		DrinkVO dkvo = null;
 		SauceVO sacvo = null;
-		String hamburger_name, Drink_name, Sauce_name, snacksandside_name, Dessert_name;
+		while (true) {
+			switch (adminchoice) {
+			case "1":
+				System.out.println("====Hamburger Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				hamburger_name = sc.nextLine();
+				hvo = mcs.SearchHamburger(hamburger_name);
+				if (hvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 인기메뉴 표시를 하시겠습니까? 0) 표시안함  1) 표시  : ");
+				popularity = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
+				reorder = sc.nextInt();
+				sc.nextLine();
+				hvo.setHamburger_name(hamburger_name);
+				hvo.setPrice(price);
+				hvo.setSetprice(setprice);
+				hvo.setPopularity(popularity);
+				hvo.setReorder(reorder);
+				mcs.HamburgerUpdate(hvo);
+				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
+				break;
+			case "2":
+				System.out.println("====Dessert Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Dessert_name = sc.nextLine();
+				dvo = mcs.SearchDessert(Dessert_name);
+				if (dvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 인기메뉴 표시를 하시겠습니까? 0) 표시안함  1) 표시  : ");
+				popularity = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
+				reorder = sc.nextInt();
+				sc.nextLine();
+				dvo.setDessert_name(Dessert_name);
+				dvo.setPrice(price);
+				dvo.setSetprice(setprice);
+				dvo.setPopularity(popularity);
+				dvo.setReorder(reorder);
+				mcs.DessertUpdate(dvo);
+				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
+				break;
+			case "3":
+				System.out.println("====SnacksAndSide Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				snacksandside_name = sc.nextLine();
+				sasvo = mcs.SearchSnacksAndSide(snacksandside_name);
+				if (sasvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 인기메뉴 표시를 하시겠습니까? 0) 표시안함  1) 표시  : ");
+				popularity = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
+				reorder = sc.nextInt();
+				sc.nextLine();
+				sasvo.setSnacksandside_name(snacksandside_name);
+				sasvo.setPrice(price);
+				sasvo.setSetprice(setprice);
+				sasvo.setPopularity(popularity);
+				sasvo.setReorder(reorder);
+				mcs.SnacksAndSideUpdate(sasvo);
+				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
+				break;
+			case "4":
+				System.out.println("====Drink Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Drink_name = sc.nextLine();
+				dkvo = mcs.SearchDrink(Drink_name);
+				if (dkvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 인기메뉴 표시를 하시겠습니까? 0) 표시안함  1) 표시  : ");
+				popularity = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
+				reorder = sc.nextInt();
+				sc.nextLine();
+				dkvo.setDrink_name(Drink_name);
+				dkvo.setPrice(price);
+				dkvo.setSetprice(setprice);
+				dkvo.setPopularity(popularity);
+				dkvo.setReorder(reorder);
+				mcs.DrinkUpdate(dkvo);
+				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
+				break;
+			case "5":
+				System.out.println("====Sauce Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Sauce_name = sc.nextLine();
+				sacvo = mcs.SearchSauce(Sauce_name);
+				if (sacvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 인기메뉴 표시를 하시겠습니까? 0) 표시안함  1) 표시  : ");
+				popularity = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 재주문 표시를 하시겠습니까?  0) 표시안함  1) 표시  : ");
+				reorder = sc.nextInt();
+				sc.nextLine();
+				sacvo.setSauce_name(Sauce_name);
+				sacvo.setPrice(price);
+				sacvo.setSetprice(setprice);
+				sacvo.setPopularity(popularity);
+				sacvo.setReorder(reorder);
+				mcs.SauceUpdate(sacvo);
+				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
+				break;
+			case "6":
+				return;
+
+			}
+		}
+	}
+
+	public void addmenu(String adminchoice) {
+		String hamburger_name, Dessert_name, snacksandside_name, Drink_name, Sauce_name;
 		int price;
 		int setprice;
 		int ssize;
-		switch (adminchoice) {
-		case "1":
-			System.out.println("====Hamburger Menu====");
-			System.out.print("> 제품명을 입력하세요 : ");
-			hamburger_name = sc.nextLine();
-			System.out.print("> 제품가격을 입력하세요 : ");
-			price = sc.nextInt();
-			sc.nextLine();
-			System.out.print("> 제품 세트가격을 입력하세요 : ");
-			setprice = sc.nextInt();
-			sc.nextLine();
-			System.out.println("> 사이즈를 고르시오 ");
-			System.out.println("1) S   2) M   3) L ");
-			ssize = sc.nextInt();
-			sc.nextLine();
-			hvo.setHamburger_name(hamburger_name);
-			hvo.setPrice(price);
-			hvo.setSetprice(setprice);
-			hvo.setSsize(ssize);
-			mcs.HamburgerAdd(hamburger_name);
-			break;
-		case "2":
-			System.out.println("====Dessert Menu====");
-			System.out.print("> 제품명을 입력하세요 : ");
-			Dessert_name = sc.nextLine();
-			System.out.print("> 제품가격을 입력하세요 : ");
-			price = sc.nextInt();
-			sc.nextLine();
-			System.out.print("> 제품 세트가격을 입력하세요 : ");
-			setprice = sc.nextInt();
-			sc.nextLine();
-			System.out.println("> 사이즈를 고르시오 ");
-			System.out.println("1) S   2) M   3) L ");
-			ssize = sc.nextInt();
-			sc.nextLine();
-			dvo.setDessert_name(Dessert_name);
-			dvo.setPrice(price);
-			dvo.setSetprice(setprice);
-			dvo.setSsize(ssize);
-			mcs.DessertAdd(Dessert_name);
-			break;
-		case "3":
-			System.out.println("====SnacksAndSide Menu====");
-			System.out.print("> 제품명을 입력하세요 : ");
-			snacksandside_name = sc.nextLine();
-			System.out.print("> 제품가격을 입력하세요 : ");
-			price = sc.nextInt();
-			sc.nextLine();
-			System.out.print("> 제품 세트가격을 입력하세요 : ");
-			setprice = sc.nextInt();
-			sc.nextLine();
-			System.out.println("> 사이즈를 고르시오 ");
-			System.out.println("1) S   2) M   3) L ");
-			ssize = sc.nextInt();
-			sc.nextLine();
-			sasvo.setSnacksandside_name(snacksandside_name);
-			sasvo.setPrice(price);
-			sasvo.setSetprice(setprice);
-			sasvo.setSsize(ssize);
-			mcs.SnacksAndSideAdd(snacksandside_name);
-			break;
-		case "4":
-			System.out.println("====Drink Menu====");
-			System.out.print("> 제품명을 입력하세요 : ");
-			Drink_name = sc.nextLine();
-			System.out.print("> 제품가격을 입력하세요 : ");
-			price = sc.nextInt();
-			sc.nextLine();
-			System.out.print("> 제품 세트가격을 입력하세요 : ");
-			setprice = sc.nextInt();
-			sc.nextLine();
-			System.out.println("> 사이즈를 고르시오 ");
-			System.out.println("1) S   2) M   3) L ");
-			ssize = sc.nextInt();
-			sc.nextLine();
-			dkvo.setDrink_name(Drink_name);
-			dkvo.setPrice(price);
-			dkvo.setSetprice(setprice);
-			dkvo.setSsize(ssize);
-			mcs.DrinkAdd(Drink_name);
-			break;
-		case "5":
-			System.out.println("====Sauce Menu====");
-			System.out.print("> 제품명을 입력하세요 : ");
-			Sauce_name = sc.nextLine();
-			System.out.print("> 제품가격을 입력하세요 : ");
-			price = sc.nextInt();
-			sc.nextLine();
-			System.out.print("> 제품 세트가격을 입력하세요 : ");
-			setprice = sc.nextInt();
-			sc.nextLine();
-			System.out.println("> 사이즈를 고르시오 ");
-			System.out.println("1) S   2) M   3) L ");
-			ssize = sc.nextInt();
-			sc.nextLine();
-			sacvo.setSauce_name(Sauce_name);
-			sacvo.setPrice(price);
-			sacvo.setSetprice(setprice);
-			sacvo.setSsize(ssize);
-			mcs.SauceAdd(Sauce_name);
-			break;
-		case "6":
-			return;
+		while (true) {
+			switch (adminchoice) {
+			case "1":
+				System.out.println("====Hamburger Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				hamburger_name = sc.nextLine();
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("> 사이즈를 고르시오 ");
+				System.out.println("1) S   2) M   3) L ");
+				System.out.print("> ");
+				ssize = sc.nextInt();
+				sc.nextLine();
+				HamburgerVO hvo = new HamburgerVO(hamburger_name, price, setprice, ssize);
+				mcs.HamburgerAdd(hvo);
+				System.out.println("> 상품등록이 완료되었습니다.");
+				break;
+			case "2":
+				System.out.println("====Dessert Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Dessert_name = sc.nextLine();
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("> 사이즈를 고르시오 ");
+				System.out.println("1) S   2) M   3) L ");
+				ssize = sc.nextInt();
+				sc.nextLine();
+				DessertVO dvo = new DessertVO(Dessert_name, price, setprice, ssize);
+				mcs.DessertAdd(dvo);
+				break;
+			case "3":
+				System.out.println("====SnacksAndSide Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				snacksandside_name = sc.nextLine();
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("> 사이즈를 고르시오 ");
+				System.out.println("1) S   2) M   3) L ");
+				ssize = sc.nextInt();
+				sc.nextLine();
+				SnacksAndSideVO sasvo = new SnacksAndSideVO(snacksandside_name, price, setprice, ssize);
+				mcs.SnacksAndSideAdd(sasvo);
+				break;
+			case "4":
+				System.out.println("====Drink Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Drink_name = sc.nextLine();
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("> 사이즈를 고르시오 ");
+				System.out.println("1) S   2) M   3) L ");
+				ssize = sc.nextInt();
+				sc.nextLine();
+				DrinkVO dkvo = new DrinkVO(Drink_name, price, setprice, ssize);
+				mcs.DrinkAdd(dkvo);
+				break;
+			case "5":
+				System.out.println("====Sauce Menu====");
+				System.out.print("> 제품명을 입력하세요 : ");
+				Sauce_name = sc.nextLine();
+				System.out.print("> 제품가격을 입력하세요 : ");
+				price = sc.nextInt();
+				sc.nextLine();
+				System.out.print("> 제품 세트가격을 입력하세요 : ");
+				setprice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("> 사이즈를 고르시오 ");
+				System.out.println("1) S   2) M   3) L ");
+				ssize = sc.nextInt();
+				sc.nextLine();
+				SauceVO sacvo = new SauceVO(Sauce_name, price, setprice, ssize);
+				mcs.SauceAdd(sacvo);
+				break;
+			case "6":
+				return;
 
+			}
 		}
 	}
 
@@ -235,43 +375,43 @@ public class MCUI {
 	}
 
 	private void deletemenu() {
-		System.out.print("==========Delete==========");
-		System.out.print("1. Hamburger Menu");
-		System.out.print("2. Dessert Menu");
-		System.out.print("3. SnacksAndSide Menu");
-		System.out.print("4. Drink Menu");
-		System.out.print("5. Sauce Menu");
-		System.out.print("6. DeleteMode Exit");
+		System.out.println("==========Delete==========");
+		System.out.println("1. Hamburger Menu");
+		System.out.println("2. Dessert Menu");
+		System.out.println("3. SnacksAndSide Menu");
+		System.out.println("4. Drink Menu");
+		System.out.println("5. Sauce Menu");
+		System.out.println("6. DeleteMode Exit");
 	}
 
 	private void updatemenu() {
-		System.out.print("==========Update==========");
-		System.out.print("1. Hamburger Menu");
-		System.out.print("2. Dessert Menu");
-		System.out.print("3. SnacksAndSide Menu");
-		System.out.print("4. Drink Menu");
-		System.out.print("5. Sauce Menu");
-		System.out.print("6. UpdateMode Exit");
+		System.out.println("==========Update==========");
+		System.out.println("1. Hamburger Menu");
+		System.out.println("2. Dessert Menu");
+		System.out.println("3. SnacksAndSide Menu");
+		System.out.println("4. Drink Menu");
+		System.out.println("5. Sauce Menu");
+		System.out.println("6. UpdateMode Exit");
 	}
 
 	private void addmenu() {
-		System.out.print("==========Add==========");
-		System.out.print("1. Hamburger Menu");
-		System.out.print("2. Dessert Menu");
-		System.out.print("3. SnacksAndSide Menu");
-		System.out.print("4. Drink Menu");
-		System.out.print("5. Sauce Menu");
-		System.out.print("6. AddMode Exit");
+		System.out.println("==========Add==========");
+		System.out.println("1. Hamburger Menu");
+		System.out.println("2. Dessert Menu");
+		System.out.println("3. SnacksAndSide Menu");
+		System.out.println("4. Drink Menu");
+		System.out.println("5. Sauce Menu");
+		System.out.println("6. AddMode Exit");
 
 	}
 
 	private void administrateMenu() {
-		System.out.print("========AdministrateMode========");
-		System.out.print("1. Menu Add");
-		System.out.print("2. Menu Update");
-		System.out.print("3. Menu Delete");
-		System.out.print("4. System Macmornig");
-		System.out.print("5. AdministrateMode Exit");
+		System.out.println("========AdministrateMode========");
+		System.out.println("1. Menu Add");
+		System.out.println("2. Menu Update");
+		System.out.println("3. Menu Delete");
+		System.out.println("4. System Macmornig");
+		System.out.println("5. AdministrateMode Exit");
 	}
 
 	// 수정필요
@@ -388,7 +528,7 @@ public class MCUI {
 		for (SnacksAndSideVO ssvo : slist) {
 			System.out.println(cnt++ + "." + ssvo);
 		}
-		System.out.print("디저트를 선택해 주세요 : ");
+		System.out.print("스낵앤사이드를 선택해 주세요 : ");
 		int SnacksAndSideNum = Integer.parseInt(sc.nextLine());
 
 		SnacksAndSideVO pickSnacksAndSide = slist.get(SnacksAndSideNum - 1);
@@ -430,7 +570,7 @@ public class MCUI {
 		for (DrinkVO dvo : dist) {
 			System.out.println(cnt++ + "." + dvo);
 		}
-		System.out.print("디저트를 선택해 주세요 : ");
+		System.out.print("음료를 선택해 주세요 : ");
 		int DrinkNum = Integer.parseInt(sc.nextLine());
 
 		DrinkVO pickDrink = dist.get(DrinkNum - 1);
@@ -591,12 +731,12 @@ public class MCUI {
 		DrinkVO pickDrink = null;
 		SauceVO pickSauce = null;
 		SnacksAndSideVO pickSnacksAndSide = null;
+		SnacksAndSideVO pickSnacksAndSide2 = null;
 		int dNum = 1, sNum = 1, cNum = 1, HappyMealCnt = 1, shoppingNum;
-		;
 		int pickDrinkNum, pickSauceNum, pickSnacksAndSideNum;
 		List<SnacksAndSideVO> saslist = mcs.getMSnaksandSides();
-		List<SnacksAndSideVO> sslist = mcs.getSSnaksandSides();
-		List<DrinkVO> dSlist = mcs.getSDrink();
+		List<SnacksAndSideVO> sslist = mcs.gethappySnaksandSides();
+		List<DrinkVO> dslist = mcs.getSDrink();
 		List<HamburgerVO> hlist = mcs.getHamburger();
 		System.out.println("==========HappyMeal==========");
 		System.out.println("1. 해피밀 멧너겟 4조각" + " " + "5100원");
@@ -608,13 +748,18 @@ public class MCUI {
 		while (true) {
 			switch (HappyMealChoice) {
 			case "1":
-
-				for (DrinkVO svo : dSlist) {
-					System.out.println(dNum++ + "." + svo.setOutPut());
+				for (SnacksAndSideVO ssvo : sslist) {
+					System.out.println(sNum++ + "." + ssvo);
+				}
+				System.out.print("사이드 선택 : ");
+				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
+				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
+				for (DrinkVO svo : dslist) {
+					System.out.println(dNum++ + "." + svo);
 				}
 				System.out.print("드링크 선택 : ");
 				pickDrinkNum = Integer.parseInt(sc.nextLine());
-				pickDrink = dSlist.get(pickDrinkNum - 1);
+				pickDrink = dslist.get(pickDrinkNum - 1);
 				List<SauceVO> slist = mcs.getSauce();
 				for (SauceVO sacucevo : slist) {
 					System.out.println(sNum++ + "." + sacucevo);
@@ -624,7 +769,8 @@ public class MCUI {
 				pickSauce = slist.get(pickSauceNum - 1);
 				System.out.print("해피밀 토이 선택 : 해피밀 랜덤 토이");
 				System.out.println();
-				HappyMeal = new HappyMealVO(saslist.get(4) ,, pickDrink, pickSauce, "해피밀 랜덤 토이", 5100, 1); // 추가필요
+				HappyMeal = new HappyMealVO(saslist.get(4), pickSnacksAndSide2, pickDrink, pickSauce, "해피밀 랜덤 토이", 5100,
+						1); // 추가필요
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 
@@ -635,20 +781,21 @@ public class MCUI {
 				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
 				return HappyMeal;
 			case "2":
-				for (DrinkVO svo : dSlist) {
-					System.out.println(dNum++ + "." + svo.setOutPut());
-				}
-				System.out.print("드링크 선택 : ");
-				pickDrinkNum = Integer.parseInt(sc.nextLine());
-				pickDrink = dSlist.get(pickDrinkNum - 1);
-				for (SnacksAndSideVO ssvo : saslist) {
+				for (SnacksAndSideVO ssvo : sslist) {
 					System.out.println(sNum++ + "." + ssvo);
 				}
 				System.out.print("사이드 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
+				pickSnacksAndSide2 = sslist.get(pickSnacksAndSideNum - 1);
+				for (DrinkVO svo : dslist) {
+					System.out.println(dNum++ + "." + svo);
+				}
+				System.out.print("드링크 선택 : ");
+				pickDrinkNum = Integer.parseInt(sc.nextLine());
+				pickDrink = dslist.get(pickDrinkNum - 1);
+
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
+				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 
@@ -659,20 +806,26 @@ public class MCUI {
 				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
 				return HappyMeal;
 			case "3":
-				for (DrinkVO svo : dSlist) {
-					System.out.println(dNum++ + "." + svo.setOutPut());
+				for (SnacksAndSideVO ssvo : sslist) {
+					System.out.println(sNum++ + "." + ssvo);
+				}
+				System.out.print("사이드 선택 : ");
+				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
+				pickSnacksAndSide2 = sslist.get(pickSnacksAndSideNum - 1);
+				for (DrinkVO svo : dslist) {
+					System.out.println(dNum++ + "." + svo);
 				}
 				System.out.print("드링크 선택 : ");
 				pickDrinkNum = Integer.parseInt(sc.nextLine());
-				pickDrink = dSlist.get(pickDrinkNum - 1);
+				pickDrink = dslist.get(pickDrinkNum - 1);
 				for (SnacksAndSideVO ssvo : saslist) {
 					System.out.println(sNum++ + "." + ssvo);
 				}
 				System.out.print("소스 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
+				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
+				HappyMeal = new HappyMealVO(hlist.get(16), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 
@@ -683,20 +836,26 @@ public class MCUI {
 				System.out.println(mcs.SDDOrderORHhoppingBasket(shoppingNum, HappyMeal));
 				return HappyMeal;
 			case "4":
-				for (DrinkVO svo : dSlist) {
-					System.out.println(dNum++ + "." + svo.setOutPut());
+				for (SnacksAndSideVO ssvo : sslist) {
+					System.out.println(sNum++ + "." + ssvo);
+				}
+				System.out.print("사이드 선택 : ");
+				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
+				pickSnacksAndSide2 = sslist.get(pickSnacksAndSideNum - 1);
+				for (DrinkVO svo : dslist) {
+					System.out.println(dNum++ + "." + svo);
 				}
 				System.out.print("드링크 선택 : ");
 				pickDrinkNum = Integer.parseInt(sc.nextLine());
-				pickDrink = dSlist.get(pickDrinkNum - 1);
+				pickDrink = dslist.get(pickDrinkNum - 1);
 				for (SnacksAndSideVO ssvo : saslist) {
 					System.out.println(sNum++ + "." + ssvo);
 				}
 				System.out.print("소스 선택 : ");
 				pickSnacksAndSideNum = Integer.parseInt(sc.nextLine());
-				pickSnacksAndSide = saslist.get(pickSnacksAndSideNum - 1);
+				pickSnacksAndSide2 = saslist.get(pickSnacksAndSideNum - 1);
 				System.out.print("해피밀토이 선택 : 해피밀 랜덤 토이");
-				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide, pickDrink, "해피밀 랜덤 토이", 5100, 1);
+				HappyMeal = new HappyMealVO(hlist.get(11), pickSnacksAndSide2, pickDrink, "해피밀 랜덤 토이", 5100, 1);
 				System.out.print("수량을 입력하세요 : ");
 				HappyMealCnt = Integer.parseInt(sc.nextLine());
 
@@ -714,14 +873,14 @@ public class MCUI {
 
 	public void menu() {
 		System.out.println("==========MCdonalds==========");
-		System.out.println("	  1 > 햄  버  거");
-		System.out.println("	  2 > 스낵&사이드");
-		System.out.println("	  3 > 디  저  트");
-		System.out.println("	  4 > 음      료");
-		System.out.println("	  5 > 해  피  밀");
-		System.out.println("	  6 > 장 바 구 니");
-		System.out.println("	  7 > 주 문 하 기");
-		System.out.println("	  0 > 취      소");
+		System.out.println("     1 > 햄  버  거");
+		System.out.println("     2 > 스낵&사이드");
+		System.out.println("     3 > 디  저  트");
+		System.out.println("     4 > 음      료");
+		System.out.println("     5 > 해  피  밀");
+		System.out.println("     6 > 장 바 구 니");
+		System.out.println("     7 > 주 문 하 기");
+		System.out.println("     0 > 취      소");
 		System.out.println("=============================");
 	}
 

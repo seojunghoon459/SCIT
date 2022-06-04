@@ -231,11 +231,6 @@ public class MCService {
 		return slist;
 	}
 
-	// 작업 필요
-	public List<SnacksAndSideVO> getSSnaksandSides() {
-		return null;
-	}
-
 	public List<SnacksAndSideVO> getMSnaksandSides() {
 		List<SnacksAndSideVO> slist = mdao.getMSnaksandSides();
 		return slist;
@@ -328,24 +323,28 @@ public class MCService {
 	public List<SnacksAndSideVO> gethappySnaksandSides() {
 		List<SnacksAndSideVO> happysnacklist = mdao.getHappySnacksAndSides();
 		return happysnacklist;
-	} 
+	}
 
 	public HamburgerVO SearchHamburger(String str) {
 		HamburgerVO hvo = mdao.SearchHamburger(str);
 		return hvo;
 	}
+
 	public DessertVO SearchDessert(String str) {
 		DessertVO dvo = mdao.SearchDessert(str);
 		return dvo;
 	}
+
 	public SnacksAndSideVO SearchSnacksAndSide(String str) {
 		SnacksAndSideVO svo = mdao.SearchSnacksAndSide(str);
 		return svo;
 	}
+
 	public DrinkVO SearchDrink(String str) {
 		DrinkVO dvo = mdao.SearchDrink(str);
 		return dvo;
 	}
+
 	public SauceVO SearchSauce(String str) {
 		SauceVO svo = mdao.SearchSauce(str);
 		return svo;
