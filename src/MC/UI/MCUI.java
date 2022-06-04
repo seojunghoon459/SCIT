@@ -1,7 +1,9 @@
 package MC.UI;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import MC.Service.MCService;
@@ -555,11 +557,9 @@ public class MCUI {
 		List<SetVO> Setlist = mcs.getSetlist();
 		List<HappyMealVO> HappyMeallist = mcs.getHappyMeallist();
 		
-		Map<Integer,Object> SHMap = new HashMap<Integer,Object>();
-
 		if (Hamburgerlist.size() > 0) {
 			for (HamburgerVO vo : Hamburgerlist) {
-
+				
 				System.out.println("[" + sbNum++ + "]" + vo.getHamburger_name());
 				System.out.println(vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "°³");
 
