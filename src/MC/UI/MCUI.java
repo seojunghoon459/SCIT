@@ -87,7 +87,6 @@ public class MCUI {
 		List<DrinkVO> Drinklist = mcs.getDrink();
 		List<DessertVO> Dessertlist = mcs.getDessert();
 		List<SauceVO> Saucelist = mcs.getSauce();
-		int cnt = 1;
 		String answer;
 		HamburgerVO hvo = null;
 		DessertVO dvo = null;
@@ -100,6 +99,7 @@ public class MCUI {
 			String adminchoice = sc.nextLine();
 			switch (adminchoice) {
 			case "1":
+				int cnt = 1;
 				System.out.println("====햄버거 삭제====");
 				for (HamburgerVO hvos : Hamburgerlist) {
 					if (cnt < 10)
@@ -124,6 +124,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
 				break;
 			case "2":
+				cnt = 1;
 				System.out.println("====디저트 삭제====");
 				for (DessertVO dvos : Dessertlist) {
 					if (cnt < 10)
@@ -147,6 +148,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
 				break;
 			case "3":
+				cnt = 1;
 				System.out.println("====스낵앤사이드 삭제====");
 				for (SnacksAndSideVO sasvos : SnacksAndSidelist) {
 					if (cnt < 10)
@@ -154,7 +156,7 @@ public class MCUI {
 					else
 						System.out.println(cnt++ + "." + sasvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("스낵앤사이드를 선택해주세요 (숫자) : ");
 				int pickSnacksAndSide = Integer.parseInt(sc.nextLine());
 
 				sasvo = SnacksAndSidelist.get(pickSnacksAndSide - 1);
@@ -171,14 +173,15 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
 				break;
 			case "4":
-				System.out.println("====Drink Menu====");
+				cnt = 1;
+				System.out.println("====음료 삭제====");
 				for (DrinkVO dkvos : Drinklist) {
 					if (cnt < 10)
 						System.out.println("0" + "" + cnt++ + "." + dkvos);
 					else
 						System.out.println(cnt++ + "." + dkvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("음료를 선택해주세요 (숫자) : ");
 				int pickDrink = Integer.parseInt(sc.nextLine());
 
 				dkvo = Drinklist.get(pickDrink - 1);
@@ -195,6 +198,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
 				break;
 			case "5":
+				cnt = 1;
 				System.out.println("====소스 삭제====");
 				for (SauceVO sacvos : Saucelist) {
 					if (cnt < 10)
@@ -202,7 +206,7 @@ public class MCUI {
 					else
 						System.out.println(cnt++ + "." + sacvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("소스를 선택해주세요 (숫자) : ");
 				int pickSauce = Integer.parseInt(sc.nextLine());
 
 				sacvo = Saucelist.get(pickSauce - 1);
@@ -235,7 +239,6 @@ public class MCUI {
 		int setprice;
 		int popularity;
 		int reorder;
-		int cnt = 1;
 		HamburgerVO hvo = null;
 		DessertVO dvo = null;
 		SnacksAndSideVO sasvo = null;
@@ -247,6 +250,7 @@ public class MCUI {
 			String adminchoice = sc.nextLine();
 			switch (adminchoice) {
 			case "1":
+				int cnt = 1;
 				System.out.println("====햄버거 수정====");
 				for (HamburgerVO hvos : Hamburgerlist) {
 					if (cnt < 10)
@@ -281,6 +285,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "2":
+				cnt = 1;
 				System.out.println("====디저트 수정====");
 				for (DessertVO dvos : Dessertlist) {
 					if (cnt < 10)
@@ -314,6 +319,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "3":
+				cnt = 1;
 				System.out.println("====스낵앤사이드 수정====");
 				for (SnacksAndSideVO sasvos : SnacksAndSidelist) {
 					if (cnt < 10)
@@ -321,7 +327,7 @@ public class MCUI {
 					else
 						System.out.println(cnt++ + "." + sasvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("스낵앤사이드를 선택해주세요 (숫자) : ");
 				int pickSnacksAndSide = Integer.parseInt(sc.nextLine());
 
 				sasvo = SnacksAndSidelist.get(pickSnacksAndSide - 1);
@@ -348,6 +354,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "4":
+				cnt = 1;
 				System.out.println("====음료 수정====");
 				for (DrinkVO dkvos : Drinklist) {
 					if (cnt < 10)
@@ -355,7 +362,7 @@ public class MCUI {
 					else
 						System.out.println(cnt++ + "." + dkvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("음료를 선택해주세요 (숫자) : ");
 				int pickDrink = Integer.parseInt(sc.nextLine());
 
 				dkvo = Drinklist.get(pickDrink - 1);
@@ -382,6 +389,7 @@ public class MCUI {
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
 			case "5":
+				cnt = 1;
 				System.out.println("====소스 수정====");
 				for (SauceVO sacvos : Saucelist) {
 					if (cnt < 10)
@@ -389,7 +397,7 @@ public class MCUI {
 					else
 						System.out.println(cnt++ + "." + sacvos);
 				}
-				System.out.print("버거를 선택해주세요 (숫자) : ");
+				System.out.print("소스를 선택해주세요 (숫자) : ");
 				int pickSauce = Integer.parseInt(sc.nextLine());
 
 				sacvo = Saucelist.get(pickSauce - 1);

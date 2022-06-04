@@ -253,12 +253,10 @@
 		SET
 		price = #{price},
 		setprice = #{setprice},
-		popularity =
-		#{popularity},
+		popularity = #{popularity},
 		reorder = #{reorder}
 		WHERE
-		SnacksAndSide_name =
-		#{SnacksAndSide_name}
+		snacksandside_name = #{snacksandside_name}
 	</update>
 
 	<update id="updateDrink" parameterType="DrinkVO">
