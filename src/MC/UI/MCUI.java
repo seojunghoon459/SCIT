@@ -699,7 +699,7 @@ public class MCUI {
 		int cnt = 1;
 		for (HamburgerVO hvo : hlist) {
 			if (cnt < 10)
-				System.out.println("0" + cnt++ + "." + hvo);
+				System.out.println("0" +""+ cnt++ + "." + hvo);
 			else
 				System.out.println(cnt++ + "." + hvo);
 		}
