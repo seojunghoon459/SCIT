@@ -48,7 +48,7 @@ public class MCService {
 			for (HamburgerVO vo : Hamburgerlist) {
 
 				str += vo.getHamburger_name() + "\n";
-				str += vo.getPrice() * vo.getCount() + "\t\t\t" + vo.getCount() + "°³]\n";
+				str += vo.getPrice() * vo.getCount() + "\t\t\t" + "[" + vo.getCount() + "°³]\n";
 
 				totPrice += (vo.getPrice() * vo.getCount());
 			}
