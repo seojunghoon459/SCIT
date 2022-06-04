@@ -133,6 +133,8 @@ public class MCService {
 
 		}
 
+		str += "\nรั" + totPrice;
+
 		k.setKiosk_bill(str);
 		mdao.order(k);
 
