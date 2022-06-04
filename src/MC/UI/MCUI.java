@@ -1,9 +1,6 @@
 package MC.UI;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 import MC.Service.MCService;
@@ -11,7 +8,6 @@ import MC.VO.DessertVO;
 import MC.VO.DrinkVO;
 import MC.VO.HamburgerVO;
 import MC.VO.HappyMealVO;
-import MC.VO.KioskVO;
 import MC.VO.SauceVO;
 import MC.VO.SetVO;
 import MC.VO.SnacksAndSideVO;
@@ -698,17 +694,17 @@ public class MCUI {
 		int cNum = 0;
 		if (changeNum <= sbNum) {
 			if (changeNum <= result1) {
-				changeNum = result1;
+				changeNum = result1 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Hamburgerlist.get(changeNum - 1).setCount(cNum);
+				Hamburgerlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
-				changeNum = result2;
+				changeNum = (changeNum - result1) - result2 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				SnacksAndSidelist.get(changeNum - 1).setCount(cNum);
+				SnacksAndSidelist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
@@ -720,24 +716,25 @@ public class MCUI {
 			}
 
 			if (changeNum - result1 - result2 - result3 <= result4) {
-				changeNum = result4;
+				changeNum = (changeNum - result1 - result2 - result3) - result4 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Dessertlist.get(changeNum - 1).setCount(cNum);
+				System.out.println(Setlist.get(changeNum - 1));
+				Dessertlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 <= result5) {
-				changeNum = result5;
+				changeNum = (changeNum - result1 - result2 - result3 - result4) - result5 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Setlist.get(changeNum - 1).setCount(cNum);
+				Setlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
-				changeNum = result6;
+				changeNum = (changeNum - result1 - result2 - result3 - result4 - result5) - result6 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
-				HappyMeallist.get(changeNum - 1).setCount(cNum);
+				HappyMeallist.get(changeNum).setCount(cNum);
 				return;
 
 			}
@@ -835,7 +832,7 @@ public class MCUI {
 
 		HamburgerVO hvo = hlist.get(pickburger - 1);
 
-		System.out.println("1.단품 \t2.세트");
+		System.out.print("1.단품 \t2.세트 : ");
 		String setTF = sc.nextLine();
 
 		int setCnt = 1;
@@ -860,7 +857,7 @@ public class MCUI {
 
 		switch (setTF) {
 		case "1":
-			System.out.println("1.장바구니 / 2.주문하기");
+			System.out.print("1.장바구니 / 2.주문하기 : ");
 			int shoppingNum = Integer.parseInt(sc.nextLine());
 
 			mcs.SDDOrderORHhoppingBasket(shoppingNum, hvo);
