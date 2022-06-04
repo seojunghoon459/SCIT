@@ -328,6 +328,46 @@ public class MCService {
 	public List<SnacksAndSideVO> gethappySnaksandSides() {
 		List<SnacksAndSideVO> happysnacklist = mdao.getHappySnacksAndSides();
 		return happysnacklist;
+	} 
+
+	public HamburgerVO SearchHamburger(String str) {
+		HamburgerVO hvo = mdao.SearchHamburger(str);
+		return hvo;
+	}
+	public DessertVO SearchDessert(String str) {
+		DessertVO dvo = mdao.SearchDessert(str);
+		return dvo;
+	}
+	public SnacksAndSideVO SearchSnacksAndSide(String str) {
+		SnacksAndSideVO svo = mdao.SearchSnacksAndSide(str);
+		return svo;
+	}
+	public DrinkVO SearchDrink(String str) {
+		DrinkVO dvo = mdao.SearchDrink(str);
+		return dvo;
+	}
+	public SauceVO SearchSauce(String str) {
+		SauceVO svo = mdao.SearchSauce(str);
+		return svo;
 	}
 
+	public void HamburgerUpdate(HamburgerVO hvo) {
+		mdao.HamburgerUpdate(hvo);
+	}
+
+	public void DessertUpdate(DessertVO dvo) {
+		mdao.DessertUpdate(dvo);
+	}
+
+	public void SnacksAndSideUpdate(SnacksAndSideVO sasvo) {
+		mdao.SnacksAndSideUpdate(sasvo);
+	}
+
+	public void DrinkUpdate(DrinkVO dkvo) {
+		mdao.DrinkUpdate(dkvo);
+	}
+
+	public void SauceUpdate(SauceVO sacvo) {
+		mdao.SauceUpdate(sacvo);
+	}
 }

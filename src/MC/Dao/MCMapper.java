@@ -12,13 +12,15 @@ import MC.VO.SnacksAndSideVO;
 
 public interface MCMapper {
 
-	public DessertVO SearchDDessert(String str);
+	public HamburgerVO SearchHamburger(String str);
+
+	public DessertVO SearchDessert(String str);
+
+	public SnacksAndSideVO SearchSnacksAndSide(String str);
 
 	public DrinkVO SearchDrink(String str);
 
-	public HamburgerVO SearchHamburger(String str);
-
-	public SnacksAndSideVO SearchSnacksAndSide(String str);
+	public SauceVO SearchSauceVO(String str);
 
 	public KioskVO ShoppingBasketorder(); // 장바구니 주문
 
@@ -55,7 +57,7 @@ public interface MCMapper {
 	public int SauceAdd(SauceVO sauce); //
 
 	public int HamburgerUpdate(HamburgerVO hamburger); //
- 
+
 	public int DessertUpdate(DessertVO dessert); //
 
 	public int SnacksAndSideUpdate(SnacksAndSideVO snacksAndSide); //
@@ -63,9 +65,9 @@ public interface MCMapper {
 	public int DrinkUpdate(DrinkVO drink); //
 
 	public int SauceUpdate(SauceVO sauce); //
-	
+
 	public int HamburgerDelete(String str); //
-	 
+
 	public int DessertDelete(String str); //
 
 	public int SnacksAndSideDelete(String str); //
@@ -73,7 +75,7 @@ public interface MCMapper {
 	public int DrinkDelete(String str); //
 
 	public int SauceDeletee(String str); //
-	
+
 	public List<SnacksAndSideVO> getHappySnacksAndSides();
 
 }

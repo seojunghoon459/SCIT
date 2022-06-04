@@ -5,7 +5,7 @@
 
 <mapper namespace="MC.Dao.MCMapper">
 
-	<select id="SearchDDessert" resultType="DessertVO"
+	<select id="SearchDessert" resultType="DessertVO"
 		parameterType="String">
 		SELECT
 		*
@@ -58,6 +58,19 @@
 		snacksandside_name
 	</select>
 
+	<select id="SearchSauce" resultType="SauceVO"
+		parameterType="String">
+		SELECT
+		*
+		FROM
+		sauce
+		WHERE
+		sauce_name like '%'
+		||#{sauce_name}|| '%'
+		ORDER BY
+		sauce_name
+	</select>
+
 	<select id="getHamburger" resultType="HamburgerVO">
 		SELECT
 		*
@@ -107,7 +120,8 @@
 		FROM
 		drink
 		WHERE
-		price = 0 and setprice = 0
+		price = 0
+		and setprice = 0
 		ORDER BY
 		drink_name
 	</select>
