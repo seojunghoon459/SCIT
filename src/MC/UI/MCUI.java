@@ -624,7 +624,7 @@ public class MCUI {
 		int cnt = 1;
 		for (SnacksAndSideVO svo : slist) {
 			if (cnt < 10)
-				System.out.println("0" + cnt++ + "." + svo);
+				System.out.println("0" + "" + cnt++ + "." + svo);
 			else
 				System.out.println(cnt++ + "." + svo);
 		}
@@ -649,7 +649,7 @@ public class MCUI {
 		int cnt = 1;
 		for (DessertVO dvo : dist) {
 			if (cnt < 10)
-				System.out.println("0" + cnt++ + "." + dvo);
+				System.out.println("0" + "" + cnt++ + "." + dvo);
 			else
 				System.out.println(cnt++ + "." + dvo);
 		}
@@ -674,7 +674,7 @@ public class MCUI {
 		int cnt = 1;
 		for (DrinkVO dvo : dist) {
 			if (cnt < 10)
-				System.out.println("0" + cnt++ + "." + dvo);
+				System.out.println("0" + "" + cnt++ + "." + dvo);
 			else
 				System.out.println(cnt++ + "." + dvo);
 		}
@@ -699,7 +699,7 @@ public class MCUI {
 		int cnt = 1;
 		for (HamburgerVO hvo : hlist) {
 			if (cnt < 10)
-				System.out.println("0" +""+ cnt++ + "." + hvo);
+				System.out.println("0" + "" + cnt++ + "." + hvo);
 			else
 				System.out.println(cnt++ + "." + hvo);
 		}
