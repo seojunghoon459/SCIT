@@ -102,7 +102,7 @@ public class MCService {
 		if (HappyMeallist.size() > 0) {
 			for (HappyMealVO vo : HappyMeallist) {
 
-				str += "해피밀\n";
+				str += "해피밀 ";
 
 				if (vo.getHamburger() != null) {
 					str += vo.getHamburger().getHamburger_name();
@@ -119,7 +119,7 @@ public class MCService {
 				if (vo.getHamburger() == null) {
 					str += vo.getSnacksAndSide().getSnacksandside_name() + "\n";
 					str += vo.getSnacksAndSide2().getSnacksandside_name() + "," + vo.getSauce().getSauce_name() + ','
-							+ "해피밀 랜덤 토이" + vo.getDrink().getDrink_name();
+							+ "해피밀 랜덤 토이," + vo.getDrink().getDrink_name() + "\n";
 
 					int HappyMealPrice = (vo.getSnacksAndSide().getPrice() + vo.getSnacksAndSide2().getSetprice()
 							+ vo.getSauce().getSetprice() + vo.getDrink().getSetprice()) * vo.getCount();

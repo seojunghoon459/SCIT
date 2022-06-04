@@ -487,7 +487,7 @@ public class MCUI {
 
 				if (vo.getHamburger() != null) {
 					System.out.println(vo.getHamburger().getHamburger_name());
-					System.out.println(vo.getSnacksAndSide().getSnacksandside_name() + ",해피밀 랜덤 토이"
+					System.out.println(vo.getSnacksAndSide2().getSnacksandside_name() + ",해피밀 랜덤 토이"
 							+ vo.getDrink().getDrink_name());
 
 					int HappyMealPrice = (vo.getHamburger().getPrice() + vo.getDrink().getPrice()) * vo.getCount();
@@ -586,7 +586,6 @@ public class MCUI {
 
 	private void HamburgerMenu() {
 		List<HamburgerVO> hlist = mcs.getHamburger();
-		System.out.println(hlist.size());
 
 		int HamburgerNum = 1;
 		for (HamburgerVO hvo : hlist) {
