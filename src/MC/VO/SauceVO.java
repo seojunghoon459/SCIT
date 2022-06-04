@@ -28,7 +28,6 @@ public class SauceVO {
 		this.Sauce_name = sauce_name;
 		this.price = price;
 		this.setprice = setprice;
-		this.ssize = ssize;
 	}
 
 	public String getSauce_name() {

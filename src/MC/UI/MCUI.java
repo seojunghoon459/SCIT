@@ -52,10 +52,7 @@ public class MCUI {
 				mcs.cancel();
 				break;
 			case "1972":
-				administrateMenu();
-				System.out.print("> 메뉴를 선택해 주세요 : ");
-				firstChoice = sc.nextLine();
-				Administrate(firstChoice);
+				Administrate();
 			}
 		}
 	}
@@ -65,66 +62,74 @@ public class MCUI {
 
 	}
 
-	private void Administrate(String firstChoice) {
-		String adminchoice;
-		switch (firstChoice) {
-		case "1":
-			addmenu();
+	private void Administrate() {
+		while (true) {
+			administrateMenu();
 			System.out.print("> 메뉴를 선택해 주세요 : ");
-			adminchoice = sc.nextLine();
-			addmenu(adminchoice);
-			break;
-		case "2":
-			updatemenu();
-			System.out.print("> 메뉴를 선택해 주세요 : ");
-			adminchoice = sc.nextLine();
-			updatemenu(adminchoice);
-			break;
-		case "3":
-			deletemenu();
-			adminchoice = sc.nextLine();
-			deletemenu(adminchoice);
-			break;
-		case "4":
-			systemMacmorning();
-			adminchoice = sc.nextLine();
-			systemMacmoring(adminchoice);
-			break;
-		case "5":
-			System.out.println("**관리자 모드를 종료합니다.");
-			return;
+			String adminchoice = sc.nextLine();
+			switch (adminchoice) {
+			case "1":
+				addmenus();
+				break;
+			case "2":
+				updatemenus();
+				break;
+			case "3":
+				deletemenus();
+				break;
+			case "4":
+				systemMacmorings();
+				break;
+			case "5":
+				System.out.println("**관리자 모드를 종료합니다.");
+				return;
+			}
 		}
-
 	}
 
-	private void systemMacmoring(String adminchoice) {
+	private void systemMacmorings() {
 		// TODO Auto-generated method stub
 
 	}
 
-	private void deletemenu(String adminchoice) {
+	private void deletemenus() {
 		// TODO Auto-generated method stub
 
 	}
 
-	private void updatemenu(String adminchoice) {
-		String hamburger_name, Dessert_name, snacksandside_name, Drink_name, Sauce_name;
+	private void updatemenus() {
+		List<HamburgerVO> Hamburgerlist = mcs.getHamburger();
+		List<SnacksAndSideVO> SnacksAndSidelist = mcs.getSnaksandSides();
+		List<DrinkVO> Drinklist = mcs.getDrink();
+		List<DessertVO> Dessertlist = mcs.getDessert();
+		List<SauceVO> Saucelist = mcs.getSauce();
 		int price;
 		int setprice;
 		int popularity;
 		int reorder;
+		int cnt = 0;
 		HamburgerVO hvo = null;
 		DessertVO dvo = null;
 		SnacksAndSideVO sasvo = null;
 		DrinkVO dkvo = null;
 		SauceVO sacvo = null;
 		while (true) {
+			updatemenu();
+			System.out.print("> 메뉴를 선택해 주세요 : ");
+			String adminchoice = sc.nextLine();
 			switch (adminchoice) {
 			case "1":
 				System.out.println("====Hamburger Menu====");
-				System.out.print("> 제품명을 입력하세요 : ");
-				hamburger_name = sc.nextLine();
-				hvo = mcs.searchHamburger(hamburger_name);
+				for (HamburgerVO hvos : Hamburgerlist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + hvos);
+					else
+						System.out.println(cnt++ + "." + hvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickburger = Integer.parseInt(sc.nextLine());
+
+				hvo = Hamburgerlist.get(pickburger - 1);
 				if (hvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -149,9 +154,15 @@ public class MCUI {
 				break;
 			case "2":
 				System.out.println("====Dessert Menu====");
-				System.out.print("> 제품명을 입력하세요 : ");
-				Dessert_name = sc.nextLine();
-				dvo = mcs.searchDessert(Dessert_name);
+				for (DessertVO dvos : Dessertlist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + dvos);
+					else
+						System.out.println(cnt++ + "." + dvos);
+				}
+				System.out.print("디저트를 선택해주세요 (숫자) : ");
+				int pickDessert = Integer.parseInt(sc.nextLine());
+				dvo = Dessertlist.get(pickDessert - 1);
 				if (dvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -176,9 +187,16 @@ public class MCUI {
 				break;
 			case "3":
 				System.out.println("====SnacksAndSide Menu====");
-				System.out.print("> 제품명을 입력하세요 : ");
-				snacksandside_name = sc.nextLine();
-				sasvo = mcs.searchSnacksAndSide(snacksandside_name);
+				for (SnacksAndSideVO sasvos : SnacksAndSidelist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + sasvos);
+					else
+						System.out.println(cnt++ + "." + sasvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickSnacksAndSide = Integer.parseInt(sc.nextLine());
+
+				sasvo = SnacksAndSidelist.get(pickSnacksAndSide - 1);
 				if (sasvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -203,9 +221,16 @@ public class MCUI {
 				break;
 			case "4":
 				System.out.println("====Drink Menu====");
-				System.out.print("> 제품명을 입력하세요 : ");
-				Drink_name = sc.nextLine();
-				dkvo = mcs.searchDrink(Drink_name);
+				for (DrinkVO dkvos : Drinklist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + dkvos);
+					else
+						System.out.println(cnt++ + "." + dkvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickDrink = Integer.parseInt(sc.nextLine());
+
+				dkvo = Drinklist.get(pickDrink - 1);
 				if (dkvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -230,9 +255,16 @@ public class MCUI {
 				break;
 			case "5":
 				System.out.println("====Sauce Menu====");
-				System.out.print("> 제품명을 입력하세요 : ");
-				Sauce_name = sc.nextLine();
-				sacvo = mcs.searchSauce(Sauce_name);
+				for (SauceVO sacvos : Saucelist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + sacvos);
+					else
+						System.out.println(cnt++ + "." + sacvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickSauce = Integer.parseInt(sc.nextLine());
+
+				sacvo= Saucelist.get(pickSauce - 1);
 				if (sacvo == null) {
 					System.out.println("> 등록되지 않은 상품입니다.");
 				}
@@ -255,19 +287,21 @@ public class MCUI {
 				mcs.updateSauce(sacvo);
 				System.out.println("> 해당 상품의 정보 수정이 완료되었습니다.");
 				break;
-			case "6":
+			case "6" :
 				return;
-
 			}
 		}
 	}
 
-	public void addmenu(String adminchoice) {
+	public void addmenus() {
 		String hamburger_name, Dessert_name, snacksandside_name, Drink_name, Sauce_name;
 		int price;
 		int setprice;
 		int ssize;
 		while (true) {
+			addmenu();
+			System.out.print("> 메뉴를 선택해 주세요 : ");
+			String adminchoice = sc.nextLine();
 			switch (adminchoice) {
 			case "1":
 				System.out.println("====Hamburger Menu====");
@@ -275,10 +309,8 @@ public class MCUI {
 				hamburger_name = sc.nextLine();
 				System.out.print("> 제품가격을 입력하세요 : ");
 				price = sc.nextInt();
-				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
-				sc.nextLine();
 				HamburgerVO hvo = new HamburgerVO(hamburger_name, price, setprice);
 				mcs.addHamburger(hvo);
 				System.out.println("> 상품등록이 완료되었습니다.");
@@ -289,10 +321,8 @@ public class MCUI {
 				Dessert_name = sc.nextLine();
 				System.out.print("> 제품가격을 입력하세요 : ");
 				price = sc.nextInt();
-				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
-				sc.nextLine();
 				DessertVO dvo = new DessertVO(Dessert_name, price, setprice);
 				mcs.addDessert(dvo);
 				break;
@@ -302,10 +332,8 @@ public class MCUI {
 				snacksandside_name = sc.nextLine();
 				System.out.print("> 제품가격을 입력하세요 : ");
 				price = sc.nextInt();
-				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
-				sc.nextLine();
 				SnacksAndSideVO sasvo = new SnacksAndSideVO(snacksandside_name, price, setprice);
 				mcs.addSnacksAndSide(sasvo);
 				break;
@@ -315,14 +343,11 @@ public class MCUI {
 				Drink_name = sc.nextLine();
 				System.out.print("> 제품가격을 입력하세요 : ");
 				price = sc.nextInt();
-				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
 				setprice = sc.nextInt();
-				sc.nextLine();
 				System.out.println("> 사이즈를 고르시오 ");
 				System.out.println("1) S   2) M   3) L ");
 				ssize = sc.nextInt();
-				sc.nextLine();
 				DrinkVO dkvo = new DrinkVO(Drink_name, price, setprice, ssize);
 				mcs.addDrink(dkvo);
 				break;
@@ -332,16 +357,13 @@ public class MCUI {
 				Sauce_name = sc.nextLine();
 				System.out.print("> 제품가격을 입력하세요 : ");
 				price = sc.nextInt();
-				sc.nextLine();
 				System.out.print("> 제품 세트가격을 입력하세요 : ");
-				setprice =sc.nextInt();
-				sc.nextLine();
+				setprice = sc.nextInt();
 				SauceVO sacvo = new SauceVO(Sauce_name, price, setprice);
 				mcs.addSauce(sacvo);
 				break;
 			case "6":
 				return;
-
 			}
 		}
 	}
@@ -357,7 +379,7 @@ public class MCUI {
 		System.out.println("3. 스낵앤사이드 삭제");
 		System.out.println("4. 음료 삭제");
 		System.out.println("5. 소스 삭제");
-		System.out.println("6. 삭제메뉴 나가기");
+		System.out.println("6. 삭제 메뉴 나가기");
 	}
 
 	private void updatemenu() {
@@ -367,7 +389,7 @@ public class MCUI {
 		System.out.println("3. 스낵앤사이드 수정");
 		System.out.println("4. 음료 수정");
 		System.out.println("5. 소스 수정");
-		System.out.println("6. 수정메뉴 나가기");
+		System.out.println("6. 수정 메뉴 나가기");
 	}
 
 	private void addmenu() {
@@ -377,7 +399,7 @@ public class MCUI {
 		System.out.println("3. 스낵앤사이드 추가");
 		System.out.println("4. 음료 추가");
 		System.out.println("5. 소스 추가");
-		System.out.println("6. 추가메뉴 나가기");
+		System.out.println("6. 추가 메뉴 나가기");
 
 	}
 
@@ -549,21 +571,21 @@ public class MCUI {
 		int cNum = 0;
 		if (changeNum <= sbNum) {
 			if (changeNum <= result1) {
-				changeNum = result1-1;
+				changeNum = result1 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Hamburgerlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
-				changeNum = (changeNum - result1) - result2-1;
+				changeNum = (changeNum - result1) - result2 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				SnacksAndSidelist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
-				changeNum = (changeNum - result1 - result2) - result3-1;
+				changeNum = (changeNum - result1 - result2) - result3 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Drinklist.get(changeNum).setCount(cNum);
@@ -571,7 +593,7 @@ public class MCUI {
 			}
 
 			if (changeNum - result1 - result2 - result3 <= result4) {
-				changeNum = (changeNum - result1 - result2 - result3) - result4-1;
+				changeNum = (changeNum - result1 - result2 - result3) - result4 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				System.out.println(Setlist.get(changeNum - 1));
@@ -579,14 +601,14 @@ public class MCUI {
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 <= result5) {
-				changeNum = (changeNum - result1 - result2 - result3 - result4) - result5-1;
+				changeNum = (changeNum - result1 - result2 - result3 - result4) - result5 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Setlist.get(changeNum).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
-				changeNum = (changeNum - result1 - result2 - result3 - result4 - result5) - result6-1;
+				changeNum = (changeNum - result1 - result2 - result3 - result4 - result5) - result6 - 1;
 				System.out.print("숫자를 변경해주세요 : ");
 				cNum = sc.nextInt();
 				HappyMeallist.get(changeNum).setCount(cNum);

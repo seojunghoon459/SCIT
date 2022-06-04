@@ -187,24 +187,24 @@
 
 	<insert id="addHamburger" parameterType="HamburgerVO">
 		INSERT INTO hamburger
-		(hamburger_name,price,setprice,ssize)
+		(hamburger_name,price,setprice)
 		VALUES
-		(#{hamburger_name},#{price},#{setprice},#{ssize})
+		(#{hamburger_name},#{price},#{setprice})
 	</insert>
 
 	<insert id="addDessert" parameterType="DessertVO">
 		INSERT INTO dessert
-		(dessert_name,price,setprice,ssize)
+		(dessert_name,price,setprice)
 		VALUES
-		(#{dessert_name},#{price},#{setprice},#{ssize})
+		(#{dessert_name},#{price},#{setprice})
 	</insert>
 
 	<insert id="addSnacksAndSide" parameterType="SnacksAndSideVO">
 		INSERT INTO
 		snacksAndSidet
-		(snacksAndSide_name,price,setprice,ssize)
+		(snacksAndSide_name,price,setprice)
 		VALUES
-		(#{snacksAndSide_name},#{price},#{setprice},#{ssize})
+		(#{snacksAndSide_name},#{price},#{setprice})
 	</insert>
 
 	<insert id="addDrink" parameterType="DrinkVO">
@@ -216,9 +216,9 @@
 
 	<insert id="addSauce" parameterType="SauceVO">
 		INSERT INTO Sauce
-		(Sauce_name,price,setprice,ssize)
+		(Sauce_name,price,setprice)
 		VALUES
-		(#{Sauce_name},#{price},#{setprice},#{ssize})
+		(#{Sauce_name},#{price},#{setprice})
 	</insert>
 
 	<update id="updateHamburger" parameterType="HamburgerVO">
