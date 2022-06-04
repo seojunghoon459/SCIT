@@ -77,22 +77,153 @@ public class MCUI {
 				deletemenus();
 				break;
 			case "4":
-				systemMacmorings();
-				break;
-			case "5":
 				System.out.println("**관리자 모드를 종료합니다.");
 				return;
 			}
 		}
 	}
 
-	private void systemMacmorings() {
-		// TODO Auto-generated method stub
-
-	}
 
 	private void deletemenus() {
-		// TODO Auto-generated method stub
+		List<HamburgerVO> Hamburgerlist = mcs.getHamburger();
+		List<SnacksAndSideVO> SnacksAndSidelist = mcs.getSnaksandSides();
+		List<DrinkVO> Drinklist = mcs.getDrink();
+		List<DessertVO> Dessertlist = mcs.getDessert();
+		List<SauceVO> Saucelist = mcs.getSauce();
+		int cnt = 0;
+		String answer;
+		HamburgerVO hvo = null;
+		DessertVO dvo = null;
+		SnacksAndSideVO sasvo = null;
+		DrinkVO dkvo = null;
+		SauceVO sacvo = null;
+		while (true) {
+			updatemenu();
+			System.out.print("> 메뉴를 선택해 주세요 : ");
+			String adminchoice = sc.nextLine();
+			switch (adminchoice) {
+			case "1":
+				System.out.println("====Hamburger Menu====");
+				for (HamburgerVO hvos : Hamburgerlist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + hvos);
+					else
+						System.out.println(cnt++ + "." + hvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickburger = Integer.parseInt(sc.nextLine());
+				hvo = Hamburgerlist.get(pickburger - 1);
+				if (hvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.println("> 정말로 삭제하시겠습니까?(y/n) : ");
+				answer =  sc.nextLine().toLowerCase();
+				if(answer != "y") {
+					System.out.println(">삭제 작업을 취소하였습니다");
+					return;
+				}
+				mcs.deleteHamburger(hvo.getHamburger_name());
+				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
+				break;
+			case "2":
+				System.out.println("====Dessert Menu====");
+				for (DessertVO dvos : Dessertlist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + dvos);
+					else
+						System.out.println(cnt++ + "." + dvos);
+				}
+				System.out.print("디저트를 선택해주세요 (숫자) : ");
+				int pickDessert = Integer.parseInt(sc.nextLine());
+				dvo = Dessertlist.get(pickDessert - 1);
+				if (dvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.println("> 정말로 삭제하시겠습니까?(y/n) : ");
+				answer =  sc.nextLine().toLowerCase();
+				if(answer != "y") {
+					System.out.println(">삭제 작업을 취소하였습니다");
+					return;
+				}
+				mcs.deleteDessert(dvo.getDessert_name());
+				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
+				break;
+			case "3":
+				System.out.println("====SnacksAndSide Menu====");
+				for (SnacksAndSideVO sasvos : SnacksAndSidelist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + sasvos);
+					else
+						System.out.println(cnt++ + "." + sasvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickSnacksAndSide = Integer.parseInt(sc.nextLine());
+
+				sasvo = SnacksAndSidelist.get(pickSnacksAndSide - 1);
+				if (sasvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.println("> 정말로 삭제하시겠습니까?(y/n) : ");
+				answer =  sc.nextLine().toLowerCase();
+				if(answer != "y") {
+					System.out.println(">삭제 작업을 취소하였습니다");
+					return;
+				}
+				mcs.deleteSnacksAndSide(sasvo.getSnacksandside_name());
+				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
+				break;
+			case "4":
+				System.out.println("====Drink Menu====");
+				for (DrinkVO dkvos : Drinklist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + dkvos);
+					else
+						System.out.println(cnt++ + "." + dkvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickDrink = Integer.parseInt(sc.nextLine());
+
+				dkvo = Drinklist.get(pickDrink - 1);
+				if (dkvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.println("> 정말로 삭제하시겠습니까?(y/n) : ");
+				answer =  sc.nextLine().toLowerCase();
+				if(answer != "y") {
+					System.out.println(">삭제 작업을 취소하였습니다");
+					return;
+				}
+				mcs.deleteDrink(dkvo.getDrink_name());
+				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
+				break;
+			case "5":
+				System.out.println("====Sauce Menu====");
+				for (SauceVO sacvos : Saucelist) {
+					if (cnt < 10)
+						System.out.println("0" + "" + cnt++ + "." + sacvos);
+					else
+						System.out.println(cnt++ + "." + sacvos);
+				}
+				System.out.print("버거를 선택해주세요 (숫자) : ");
+				int pickSauce = Integer.parseInt(sc.nextLine());
+
+				sacvo= Saucelist.get(pickSauce - 1);
+				if (sacvo == null) {
+					System.out.println("> 등록되지 않은 상품입니다.");
+				}
+				System.out.println("> 정말로 삭제하시겠습니까?(y/n) : ");
+				answer =  sc.nextLine().toLowerCase();
+				if(answer != "y") {
+					System.out.println(">삭제 작업을 취소하였습니다");
+					return;
+				}
+				mcs.deleteSauce(sacvo.getSauce_name());
+				System.out.println("> 해당 상품의 정보 삭제가 완료되었습니다.");
+				break;
+			case "6" :
+				return;
+			}
+		}
 
 	}
 
@@ -367,9 +498,6 @@ public class MCUI {
 		}
 	}
 
-	private void systemMacmorning() {
-
-	}
 
 	private void deletemenu() {
 		System.out.println("==========Delete==========");
@@ -407,8 +535,7 @@ public class MCUI {
 		System.out.println("1. 메뉴 추가");
 		System.out.println("2. 메뉴 수정");
 		System.out.println("3. 메뉴 삭제");
-		System.out.println("4. 맥모닝 변경");
-		System.out.println("5. 관리메뉴 나가기");
+		System.out.println("4. 관리메뉴 나가기");
 	}
 
 	// 수정필요
