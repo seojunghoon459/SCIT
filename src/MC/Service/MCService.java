@@ -37,7 +37,7 @@ public class MCService {
 		}
 	}
 
-	public void ShoppingBasketorder() {
+	public KioskVO ShoppingBasketorder() {
 		KioskVO k = new KioskVO();
 
 		k.setKnum(kioskNum++);
@@ -142,6 +142,8 @@ public class MCService {
 		Dessertlist.clear();
 		Setlist.clear();
 		HappyMeallist.clear();
+
+		return k;
 	}
 
 	public void order(Object obj) {
