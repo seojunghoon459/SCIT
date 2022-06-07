@@ -225,7 +225,6 @@ public class MCUI {
 			case "6":
 				return;
 			}
-			sc.nextLine();
 		}
 
 	}
@@ -427,7 +426,6 @@ public class MCUI {
 			case "6":
 				return;
 			}
-			sc.nextLine();
 		}
 	}
 
