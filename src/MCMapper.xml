@@ -76,6 +76,8 @@
 		*
 		FROM
 		hamburger
+		WHERE
+		price != 5100
 		ORDER
 		BY
 		hamburger_name
