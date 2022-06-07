@@ -225,6 +225,7 @@ public class MCUI {
 			case "6":
 				return;
 			}
+			sc.nextLine();
 		}
 
 	}
@@ -426,6 +427,7 @@ public class MCUI {
 			case "6":
 				return;
 			}
+			sc.nextLine();
 		}
 	}
 
@@ -501,6 +503,7 @@ public class MCUI {
 			case "6":
 				return;
 			}
+			sc.nextLine();
 		}
 	}
 
@@ -705,21 +708,21 @@ public class MCUI {
 				changeNum = result1;
 				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Hamburgerlist.get(changeNum-1).setCount(cNum);
+				Hamburgerlist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
 				changeNum = result2;
 				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
-				SnacksAndSidelist.get(changeNum-1).setCount(cNum);
+				SnacksAndSidelist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
 				changeNum = result3;
 				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Drinklist.get(changeNum-1).setCount(cNum);
+				Drinklist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 
@@ -735,14 +738,14 @@ public class MCUI {
 				changeNum = result5;
 				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
-				Setlist.get(changeNum-1).setCount(cNum);
+				Setlist.get(changeNum - 1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
 				changeNum = result6;
 				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
-				HappyMeallist.get(changeNum-1).setCount(cNum);
+				HappyMeallist.get(changeNum - 1).setCount(cNum);
 				return;
 
 			}
