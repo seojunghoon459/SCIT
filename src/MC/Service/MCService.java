@@ -88,7 +88,7 @@ public class MCService {
 			for (SetVO vo : Setlist) {
 
 				str += vo.getHamburger().getHamburger_name() + "¼¼Æ®\n";
-				str += vo.getSnacksAndSide().getSnacksandside_name() + "," + vo.getDrink().getDrink_name();
+				str += vo.getSnacksAndSide().getSnacksandside_name() + "," + vo.getDrink().getDrink_name() + "\n";
 
 				int setPrice = (vo.getHamburger().getPrice() + vo.getSnacksAndSide().getSetprice()
 						+ vo.getDrink().getSetprice()) * vo.getCount();

@@ -703,21 +703,21 @@ public class MCUI {
 		if (changeNum <= sbNum) {
 			if (changeNum <= result1) {
 				changeNum = result1;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Hamburgerlist.get(changeNum-1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 <= result2) {
 				changeNum = result2;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				SnacksAndSidelist.get(changeNum-1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 <= result3) {
 				changeNum = result3;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Drinklist.get(changeNum-1).setCount(cNum);
 				return;
@@ -725,7 +725,7 @@ public class MCUI {
 
 			if (changeNum - result1 - result2 - result3 <= result4) {
 				changeNum = result4;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				System.out.println(Setlist.get(changeNum - 1));
 				Dessertlist.get(changeNum).setCount(cNum);
@@ -733,14 +733,14 @@ public class MCUI {
 			}
 			if (changeNum - result1 - result2 - result3 - result4 <= result5) {
 				changeNum = result5;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				Setlist.get(changeNum-1).setCount(cNum);
 				return;
 			}
 			if (changeNum - result1 - result2 - result3 - result4 - result5 <= result6) {
 				changeNum = result6;
-				System.out.print("숫자를 변경해주세요 : ");
+				System.out.print("수량을 변경해주세요 : ");
 				cNum = sc.nextInt();
 				HappyMeallist.get(changeNum-1).setCount(cNum);
 				return;

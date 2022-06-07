@@ -462,28 +462,6 @@ hamburger;
     count number default 1
 );
 
-DROP TABLE mcmorning;
-
-CREATE TABLE mcmorning (
-    mcmorning_name  VARCHAR2(100) PRIMARY KEY,
-    price           NUMBER NOT NULL,
-    setprice        NUMBER NOT NULL,
-    ssize           NUMBER(1) DEFAULT 2 CHECK ( ssize IN (
-        1,
-        2,
-        3
-    ) ),
-    popularity      NUMBER(1) DEFAULT 0 CHECK ( popularity IN (
-        0,
-        1
-    ) ),
-    reorder         NUMBER(1) DEFAULT 0 CHECK ( reorder IN (
-        0,
-        1
-    ) ),
-    count number default 1
-);
-
 ------------------------------------------------------------------
 
 INSERT INTO hamburger (
