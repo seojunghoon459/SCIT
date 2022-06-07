@@ -461,6 +461,7 @@ public class MCUI {
 				setprice = sc.nextInt();
 				DessertVO dvo = new DessertVO(Dessert_name, price, setprice);
 				mcs.addDessert(dvo);
+				System.out.println("> 상품등록이 완료되었습니다.");
 				break;
 			case "3":
 				System.out.println("====스낵앤사이드 추가====");
@@ -472,6 +473,7 @@ public class MCUI {
 				setprice = sc.nextInt();
 				SnacksAndSideVO sasvo = new SnacksAndSideVO(snacksandside_name, price, setprice);
 				mcs.addSnacksAndSide(sasvo);
+				System.out.println("> 상품등록이 완료되었습니다.");
 				break;
 			case "4":
 				System.out.println("====음료 추가====");
@@ -486,6 +488,7 @@ public class MCUI {
 				ssize = sc.nextInt();
 				DrinkVO dkvo = new DrinkVO(Drink_name, price, setprice, ssize);
 				mcs.addDrink(dkvo);
+				System.out.println("> 상품등록이 완료되었습니다.");
 				break;
 			case "5":
 				System.out.println("====소스 추가====");
@@ -497,6 +500,7 @@ public class MCUI {
 				setprice = sc.nextInt();
 				SauceVO sacvo = new SauceVO(Sauce_name, price, setprice);
 				mcs.addSauce(sacvo);
+				System.out.println("> 상품등록이 완료되었습니다.");
 				break;
 			case "6":
 				return;
