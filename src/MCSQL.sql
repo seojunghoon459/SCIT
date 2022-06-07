@@ -38,14 +38,15 @@ create table snacksandside
     count number default 1
 );
 
+drop table kiosk;
 create table kiosk
 (
-    knum number primary key,
-    kiosk_bill	varchar2(1000),
-    count	 number(1) default 1
+    knum number,
+    kiosk_bill	varchar2(1000)
 );
+select * from kiosk;
 
-create SEQUENCE kiosk_seq;
+
 
 insert into drink (drink_name,price,setprice,ssize) values ('제주 한라봉 칠러 미디엄',3600,0,2);
 insert into drink (drink_name,price,setprice,ssize) values ('제주 한라봉 칠러 라지',4400,0,3);
@@ -392,6 +393,16 @@ INSERT INTO hamburger (
     5200
 );
 
+INSERT INTO hamburger (
+    hamburger_name,
+    price,
+    setprice
+) VALUES (
+    '햄버거',
+    5100,
+    5100
+);
+
 -------------------------------------------------------------
 
 INSERT INTO dessert 
@@ -716,4 +727,6 @@ VALUES
 ('바닐라 선데이 아이스크림',2400,2400, 1);
 
 commit;
+
+select * from KIOSK;
 
